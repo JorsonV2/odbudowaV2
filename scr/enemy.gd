@@ -4,9 +4,11 @@ class_name enemy
 
 signal exit_spawn_point
 
+export var distance_enemy = false
 export var field_of_view = 200
 export var damage = 10
 export var equipment_amount = [0,0,0,0]
+export var hit_stand_time = 0.3
 
 var flipped_left = false
 var patrol_position = Vector2()
@@ -17,8 +19,11 @@ var patrol_stand_time = 3
 var patrol_direction = 1
 var patrol_stop = false
 var time_delta
+var current_hit_stand_time = 0
 
 func _ready():
+	$Area2D.add_to_group("enemy")
+	#$Area2D.connect("area_entered", self, "area_entered")
 	patrol_position = global_position
 	player = get_tree().get_root().get_node("testMap/player")
 	for ea in range(0, equipment_amount.size()):
@@ -26,6 +31,10 @@ func _ready():
 	pass
 
 func _process(delta):
+	if current_hit_stand_time > 0:
+		current_hit_stand_time -= delta
+	else:
+		active_move = true
 	time_delta = delta
 	action()
 	if not is_patroling:
@@ -85,4 +94,14 @@ func flip_enemy():
 func dead():
 	.dead()
 	emit_signal("exit_spawn_point")
+	pass
+	
+func hit_player():
+	active_move = false
+	current_hit_stand_time = hit_stand_time
+	pass
+	
+func area_entered(area):
+	if area.is_in_group("player"):
+		hit_player()
 	pass
