@@ -50,9 +50,9 @@ func _process(delta):
 				$aniamated_sprite.play("run")
 		else:
 			if movement.y > 0:
-				$aniamated_sprite.play("jump")
-			else:
 				$aniamated_sprite.play("fall")
+			else:
+				$aniamated_sprite.play("jump")
 			
 		
 		
