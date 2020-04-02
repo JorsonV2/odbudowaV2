@@ -17,7 +17,6 @@ func _process(delta):
 	pass
 	
 func collected():
-	print_debug("collected " + item_name)
 	signals.emit_collect_item(item_name)
 	queue_free()
 	pass

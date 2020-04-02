@@ -21,9 +21,12 @@ position = Vector2( 781.473, 649.442 )
 position = Vector2( 365.13, 573.593 )
 
 [node name="spawn_point" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2204.87, 611.253 )
+position = Vector2( 2244.87, 675.253 )
+spawn_distance = 400
 enemy_scene = ExtResource( 3 )
+max_spawn_count = 6
+spawn_time = 1
 
 [node name="spawn_point2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2380.48, 283.861 )
+position = Vector2( 2432.48, 343.861 )
 enemy_scene = ExtResource( 7 )

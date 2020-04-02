@@ -31,7 +31,6 @@ func update_health(health):
 	
 func update_current_mission():
 	var container = find_node("missions_container")
-	print_debug("update_curent_mission")
 	for i in range(0, container.get_child_count()):
 		if container.get_child(i).name != "missions_text":
 			container.get_child(i).queue_free()

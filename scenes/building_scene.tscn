@@ -14,6 +14,7 @@ size = 50
 font_data = ExtResource( 5 )
 
 [node name="building" type="Area2D"]
+z_index = -3
 script = ExtResource( 2 )
 ruins_texture = ExtResource( 3 )
 building_texture = ExtResource( 1 )

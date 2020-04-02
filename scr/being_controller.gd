@@ -41,7 +41,6 @@ func take_damage(val):
 	
 func dead():
 	for e in range(equipment.size()):
-		print_debug(equipment[e])
 		for i in range(equipment[e]):
 			var item_name
 			match e:
@@ -53,7 +52,6 @@ func dead():
 					item_name = "rock"
 				3:
 					item_name = "leather"
-			print_debug(i)
 			fire_item(item_name)			
 	queue_free()
 	pass
