@@ -103,7 +103,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("enemy"):
-		print_debug(area)
+		print_debug(area, "enemy_atack")
 		area.get_parent().hit_player()
 		
 	pass # Replace with function body.

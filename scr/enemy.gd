@@ -31,6 +31,7 @@ func _ready():
 	pass
 
 func _process(delta):
+	check_if_player_overlaps()
 	if current_hit_stand_time > 0:
 		current_hit_stand_time -= delta
 	else:
@@ -104,4 +105,9 @@ func hit_player():
 func area_entered(area):
 	if area.is_in_group("player"):
 		hit_player()
+	pass
+	
+func check_if_player_overlaps():
+	if $Area2D.overlaps_area(player.get_node("Area2D")):
+		print_debug("elo atakuje cię")
 	pass
