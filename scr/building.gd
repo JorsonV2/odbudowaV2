@@ -1,3 +1,5 @@
+tool
+
 extends Area2D
 
 class_name building
@@ -15,15 +17,21 @@ var active = false
 func _ready():
 	connect("area_entered", self, "building_entered")
 	connect("area_exited", self, "building_exited")
+	find_node("Sprite").texture = ruins_texture
 	find_node("build_button").connect("pressed", self, "build")
 	update_build_requirements()
 	update_action_requirements()
 	update_texts()
 	pass
 
+func _process(delta):
+	if Engine.editor_hint:
+		get_node("Sprite").texture = ruins_texture
+	pass
+
 func player_entered():
 	show_bulding_info()
-	find_node("Sprite").modulate = Color(0.3,0.3,0.3)
+	find_node("Sprite").modulate = Color(0.6,0.6,0.6)
 	if active:
 		show_action_info()
 		pass
