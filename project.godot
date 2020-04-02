@@ -8,62 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "enemy",
-"class": "animal",
-"language": "GDScript",
-"path": "res://scr/animal.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "being_controller",
-"language": "GDScript",
-"path": "res://scr/being_controller.gd"
-}, {
-"base": "Area2D",
-"class": "building",
-"language": "GDScript",
-"path": "res://scr/building.gd"
-}, {
-"base": "being_controller",
-"class": "enemy",
-"language": "GDScript",
-"path": "res://scr/enemy.gd"
-}, {
-"base": "animal",
-"class": "fox",
-"language": "GDScript",
-"path": "res://scr/fox.gd"
-}, {
-"base": "RigidBody2D",
-"class": "item",
-"language": "GDScript",
-"path": "res://scr/item.gd"
-}, {
-"base": "Node",
-"class": "mission",
-"language": "GDScript",
-"path": "res://scr/misssion.gd"
-}, {
-"base": "being_controller",
-"class": "player",
-"language": "GDScript",
-"path": "res://scr/player.gd"
-}, {
-"base": "animal",
-"class": "rabbit",
-"language": "GDScript",
-"path": "res://scr/rabbit.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"animal": "",
-"being_controller": "",
-"building": "",
-"enemy": "",
-"fox": "",
-"item": "",
-"mission": "",
-"player": "",
-"rabbit": ""
+
 }
 
 [application]
