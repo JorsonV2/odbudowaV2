@@ -22,7 +22,7 @@ func _ready():
 	patrol_position = global_position
 	player = get_tree().get_root().get_node("testMap/player")
 	for ea in range(0, equipment_amount.size()):
-		equipment[ea] = config.random.randi_range(0, equipment_amount[ea])
+		equipment[ea] = game_controller.random.randi_range(0, equipment_amount[ea])
 	pass
 
 func _process(delta):

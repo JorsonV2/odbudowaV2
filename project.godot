@@ -75,7 +75,7 @@ config/icon="res://icon.png"
 [autoload]
 
 signals="*res://scr/signals.gd"
-config="*res://scr/config.gd"
+game_controller="*res://scr/game_controller.gd"
 mission_controller="*res://scr/mission_controller.gd"
 
 [input]
