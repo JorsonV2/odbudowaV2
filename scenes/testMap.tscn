@@ -23,7 +23,7 @@ font_data = ExtResource( 10 )
 
 [node name="building" type="Area2D" parent="."]
 position = Vector2( 853.313, 616.423 )
-z_index = -3
+z_index = -1
 script = ExtResource( 6 )
 ruins_texture = ExtResource( 11 )
 building_texture = ExtResource( 8 )
@@ -31,12 +31,12 @@ resources_to_build = [ 10, 0, 0, 10 ]
 building_name = "Test building"
 
 [node name="Sprite" type="Sprite" parent="building"]
-position = Vector2( 3.16028, 1.16629 )
+position = Vector2( 6.00427, 1.16629 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="building"]
-position = Vector2( -15.2, 26.6 )
+position = Vector2( -0.98003, 32.8568 )
 shape = SubResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="building"]
