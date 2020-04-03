@@ -56,7 +56,6 @@ func show_build_info():
 	var can_build = true
 	for e in range(0, resources_to_build.size()):
 		if resources_to_build[e] > game_controller.player_equipment[e]:
-			print_debug("sorki, nie stać cię")
 			can_build = false
 			break
 	find_node("build_button").disabled = !can_build

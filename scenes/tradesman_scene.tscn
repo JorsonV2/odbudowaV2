@@ -41,7 +41,7 @@
 [ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=39]
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=40]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 25 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 7 ), ExtResource( 17 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 26 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 26 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 35 ) ],
 "loop": true,
@@ -49,7 +49,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 47.2298, 67 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -57,17 +57,22 @@ size = 50
 font_data = ExtResource( 40 )
 
 [node name="tradesman" type="Area2D"]
+z_index = -1
 script = ExtResource( 2 )
+cost_for_gold = [ 3, 2, 5 ]
+cost_for_wood = [ 1, 1, 2 ]
+cost_for_rock = [ 1, 1, 3 ]
+cost_for_leather = [ 1, 1, 1 ]
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "stand"
-frame = 19
+frame = 17
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Node2D" type="Node2D" parent="."]
 z_index = 1
@@ -588,3 +593,15 @@ custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 [connection signal="area_entered" from="." to="." method="_on_tradesman_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_tradesman_area_exited"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/wood_for_gold/wood_for_gold_button" to="." method="_on_wood_for_gold_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/rock_for_gold/rock_for_gold_button" to="." method="_on_rock_for_gold_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/leather_for_gold/leather_for_gold_button" to="." method="_on_leather_for_gold_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/gold_for_wood/gold_for_wood_button" to="." method="_on_gold_for_wood_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/rock_for_wood/rock_for_wood_button" to="." method="_on_rock_for_wood_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/leather_for_wood/leather_for_wood_button" to="." method="_on_leather_for_wood_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/gold_for_rock/gold_for_rock_button" to="." method="_on_gold_for_rock_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/wood_for_rock/wood_for_rock_button" to="." method="_on_wood_for_rock_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/leather_for_rock/leather_for_rock_button" to="." method="_on_leather_for_rock_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/gold_for_leather/gold_for_leather_button" to="." method="_on_gold_for_leather_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/wood_for_leather/wood_for_leather_button" to="." method="_on_wood_for_leather_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/rock_for_leather/rock_for_leather_button" to="." method="_on_rock_for_leather_button_pressed"]

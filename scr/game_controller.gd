@@ -10,7 +10,7 @@ var random = RandomNumberGenerator.new()
 var player_equipment = [0,0,0,0]
 var player_scene
 var in_game_ui
-var player
+var player : player
 var player_destination
 var village_scene
 var forest_scene
@@ -34,6 +34,8 @@ func _ready():
 func update_equipment(equipment):
 	player_equipment = equipment
 	pass
+	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
