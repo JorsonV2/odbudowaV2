@@ -20,9 +20,12 @@ var patrol_direction = 1
 var patrol_stop = false
 var time_delta
 var current_hit_stand_time = 0
+var current_animation = "stand"
+var hitting = false
 
 func _ready():
 	$Area2D.add_to_group("enemy")
+	$animated_sprite.connect("animation_finished", self, "animation_finished")
 	#$Area2D.connect("area_entered", self, "area_entered")
 	patrol_position = global_position
 	player = get_tree().get_root().get_node("testMap/player")
@@ -31,25 +34,34 @@ func _ready():
 	pass
 
 func _process(delta):
-	check_if_player_overlaps()
+	
+	movement.x = 0
+	
 	if current_hit_stand_time > 0:
 		current_hit_stand_time -= delta
 	else:
 		active_move = true
+	check_if_player_overlaps()
 	time_delta = delta
-	action()
-	if not is_patroling:
-		movement.x = movement_speed * direction
+	if active_move:
+		action()
+		if not is_patroling:
+			movement.x = movement_speed * direction
+			
+	if movement.x != 0:
+		current_animation = "run"
+	else:
+		current_animation = "stand"
+		
+	if !active_move:
+		current_animation = "hit"
 	
 	if movement.x < 0 and !flipped_left:
 		flip_enemy()
 	elif movement.x > 0 and flipped_left:
 		flip_enemy()
-			
-	if movement.x != 0:
-		$animated_sprite.play("run")
-	else:
-		$animated_sprite.play("stand")
+	if $animated_sprite.animation != current_animation:		
+		$animated_sprite.play(current_animation)
 	pass
 	
 func action():
@@ -98,7 +110,6 @@ func dead():
 	pass
 	
 func hit_player():
-	active_move = false
 	current_hit_stand_time = hit_stand_time
 	pass
 	
@@ -109,5 +120,18 @@ func area_entered(area):
 	
 func check_if_player_overlaps():
 	if $Area2D.overlaps_area(player.get_node("Area2D")):
-		print_debug("elo atakuje cię")
+		active_move = false
+		hitting = true
+		#print_debug("elo atakuje cię")
+	else:
+		hitting = false
+	pass
+	
+func animation_finished():
+	if !active_move and hitting:
+		print_debug($animated_sprite.animation)
+		if $animated_sprite.animation == "hit":
+			hit_player()
+			$animated_sprite.frame = 0
+			$animated_sprite.playing = true
 	pass
