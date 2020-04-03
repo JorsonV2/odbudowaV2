@@ -15,6 +15,8 @@ var player_destination
 var village_scene
 var forest_scene
 var deep_forest_scene
+var scene_changer_scene
+var scene_changer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +27,7 @@ func _ready():
 	village_scene = preload("res://scenes/village_scene.tscn")
 	forest_scene = preload("res://scenes/forest_scene.tscn")
 	deep_forest_scene = preload("res://scenes/deep_forest_scene.tscn")
+	scene_changer_scene = preload("res://scenes/Scene_animation.tscn")
 	random.randomize()
 	pass # Replace with function body.
 
