@@ -18,12 +18,15 @@ func _ready():
 	pass # Replace with function body.
 	
 func spawn_player():
+	var animation_map = game_controller.scene_changer_scene.instance()
 	var player = game_controller.player_scene.instance()
 	var in_game_ui = game_controller.in_game_ui.instance()
 	player.position = left_spawn_point.position
 	game_controller.player = player
+	game_controller.scene_changer = animation_map
 	get_tree().get_root().call_deferred("add_child", in_game_ui)
 	get_tree().get_root().call_deferred("add_child", player)
+	get_tree().get_root().call_deferred("add_child", animation_map)
 	pass
 
 
