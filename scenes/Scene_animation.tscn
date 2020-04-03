@@ -16,6 +16,7 @@ tracks/0/keys = {
 }
 
 [node name="scene_changer" type="CanvasLayer"]
+layer = 0
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0

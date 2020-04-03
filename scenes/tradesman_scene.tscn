@@ -1,25 +1,590 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=44 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_12.png" type="Texture" id=1]
 [ext_resource path="res://scr/tradesman.gd" type="Script" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_13.png" type="Texture" id=3]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_16.png" type="Texture" id=4]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_15.png" type="Texture" id=5]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_14.png" type="Texture" id=6]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_05.png" type="Texture" id=7]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_07.png" type="Texture" id=8]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (3).png" type="Texture" id=9]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (7).png" type="Texture" id=10]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_02.png" type="Texture" id=11]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (9).png" type="Texture" id=12]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (6).png" type="Texture" id=13]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (11).png" type="Texture" id=14]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_08.png" type="Texture" id=15]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_03.png" type="Texture" id=16]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_06.png" type="Texture" id=17]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (2).png" type="Texture" id=18]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (4).png" type="Texture" id=19]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (5).png" type="Texture" id=20]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (8).png" type="Texture" id=21]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (10).png" type="Texture" id=22]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_04.png" type="Texture" id=23]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_17.png" type="Texture" id=24]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_01.png" type="Texture" id=25]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (14).png" type="Texture" id=26]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia.png" type="Texture" id=27]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (12).png" type="Texture" id=28]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_10.png" type="Texture" id=29]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09.png" type="Texture" id=30]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (19).png" type="Texture" id=31]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_11.png" type="Texture" id=32]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (13).png" type="Texture" id=33]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (15).png" type="Texture" id=34]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (17).png" type="Texture" id=35]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (18).png" type="Texture" id=36]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (16).png" type="Texture" id=37]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (20).png" type="Texture" id=38]
+[ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=39]
+[ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=40]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 7 ), ExtResource( 17 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 26 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 26 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 35 ) ],
 "loop": true,
 "name": "stand",
-"speed": 5.0
+"speed": 10.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47.2298, 67 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 40 )
 
 [node name="tradesman" type="Area2D"]
 script = ExtResource( 2 )
 
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+animation = "stand"
+frame = 19
+playing = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-animation = "stand"
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 1
+
+[node name="trade_info" type="VBoxContainer" parent="Node2D"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -489.0
+margin_top = -270.0
+margin_right = 489.0
+margin_bottom = -77.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="npc_name" type="Label" parent="Node2D/trade_info"]
+margin_right = 978.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 3 )
+text = "Tradesman"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node2D/trade_info"]
+margin_top = 45.0
+margin_right = 978.0
+margin_bottom = 193.0
+alignment = 1
+
+[node name="gold_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer"]
+margin_right = 240.0
+margin_bottom = 148.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/gold_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 233.0
+margin_bottom = 141.0
+
+[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer"]
+margin_right = 226.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange for 1 GOLD "
+
+[node name="wood_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer"]
+margin_top = 30.0
+margin_right = 226.0
+margin_bottom = 62.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
+margin_left = 24.0
+margin_top = 3.0
+margin_right = 36.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
+margin_left = 40.0
+margin_top = 3.0
+margin_right = 92.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Wood"
+
+[node name="wood_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
+margin_left = 96.0
+margin_right = 202.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="rock_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer"]
+margin_top = 66.0
+margin_right = 226.0
+margin_bottom = 98.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
+margin_left = 28.0
+margin_top = 3.0
+margin_right = 40.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
+margin_left = 44.0
+margin_top = 3.0
+margin_right = 88.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Rock"
+
+[node name="rock_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
+margin_left = 92.0
+margin_right = 198.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="leather_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer"]
+margin_top = 102.0
+margin_right = 226.0
+margin_bottom = 134.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
+margin_left = 10.0
+margin_top = 3.0
+margin_right = 22.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
+margin_left = 26.0
+margin_top = 3.0
+margin_right = 106.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Leather"
+
+[node name="leather_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
+margin_left = 110.0
+margin_right = 216.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="wood_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer"]
+margin_left = 244.0
+margin_right = 478.0
+margin_bottom = 148.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/wood_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 227.0
+margin_bottom = 141.0
+
+[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer"]
+margin_right = 220.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange for 1 WOOD"
+
+[node name="gold_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer"]
+margin_top = 30.0
+margin_right = 220.0
+margin_bottom = 62.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
+margin_left = 26.0
+margin_top = 3.0
+margin_right = 38.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
+margin_left = 42.0
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Gold"
+
+[node name="gold_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
+margin_left = 88.0
+margin_right = 194.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="rock_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer"]
+margin_top = 66.0
+margin_right = 220.0
+margin_bottom = 98.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
+margin_left = 25.0
+margin_top = 3.0
+margin_right = 37.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
+margin_left = 41.0
+margin_top = 3.0
+margin_right = 85.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Rock"
+
+[node name="rock_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
+margin_left = 89.0
+margin_right = 195.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="leather_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer"]
+margin_top = 102.0
+margin_right = 220.0
+margin_bottom = 134.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
+margin_left = 7.0
+margin_top = 3.0
+margin_right = 19.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
+margin_left = 23.0
+margin_top = 3.0
+margin_right = 103.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Leather"
+
+[node name="leather_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
+margin_left = 107.0
+margin_right = 213.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="rock_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer"]
+margin_left = 482.0
+margin_right = 712.0
+margin_bottom = 148.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/rock_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 223.0
+margin_bottom = 141.0
+
+[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer"]
+margin_right = 216.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange for 1 ROCK"
+
+[node name="gold_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer"]
+margin_top = 30.0
+margin_right = 216.0
+margin_bottom = 62.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/gold_for_rock"]
+margin_left = 24.0
+margin_top = 3.0
+margin_right = 36.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/gold_for_rock"]
+margin_left = 40.0
+margin_top = 3.0
+margin_right = 82.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Gold"
+
+[node name="gold_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/gold_for_rock"]
+margin_left = 86.0
+margin_right = 192.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="wood_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer"]
+margin_top = 66.0
+margin_right = 216.0
+margin_bottom = 98.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/wood_for_rock"]
+margin_left = 19.0
+margin_top = 3.0
+margin_right = 31.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/wood_for_rock"]
+margin_left = 35.0
+margin_top = 3.0
+margin_right = 87.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Wood"
+
+[node name="wood_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/wood_for_rock"]
+margin_left = 91.0
+margin_right = 197.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="leather_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer"]
+margin_top = 102.0
+margin_right = 216.0
+margin_bottom = 134.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/leather_for_rock"]
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 17.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/leather_for_rock"]
+margin_left = 21.0
+margin_top = 3.0
+margin_right = 101.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Leather"
+
+[node name="leather_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/leather_for_rock"]
+margin_left = 105.0
+margin_right = 211.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="leather_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer"]
+margin_left = 716.0
+margin_right = 978.0
+margin_bottom = 148.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/leather_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 255.0
+margin_bottom = 141.0
+
+[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer"]
+margin_right = 248.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange for 1 Leather"
+
+[node name="gold_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer"]
+margin_top = 30.0
+margin_right = 248.0
+margin_bottom = 62.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/gold_for_leather"]
+margin_left = 40.0
+margin_top = 3.0
+margin_right = 52.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/gold_for_leather"]
+margin_left = 56.0
+margin_top = 3.0
+margin_right = 98.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Gold"
+
+[node name="gold_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/gold_for_leather"]
+margin_left = 102.0
+margin_right = 208.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="wood_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer"]
+margin_top = 66.0
+margin_right = 248.0
+margin_bottom = 98.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/wood_for_leather"]
+margin_left = 35.0
+margin_top = 3.0
+margin_right = 47.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/wood_for_leather"]
+margin_left = 51.0
+margin_top = 3.0
+margin_right = 103.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Wood"
+
+[node name="wood_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/wood_for_leather"]
+margin_left = 107.0
+margin_right = 213.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+
+[node name="rock_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer"]
+margin_top = 102.0
+margin_right = 248.0
+margin_bottom = 134.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/rock_for_leather"]
+margin_left = 39.0
+margin_top = 3.0
+margin_right = 51.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/rock_for_leather"]
+margin_left = 55.0
+margin_top = 3.0
+margin_right = 99.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 39 )
+text = "Rock"
+
+[node name="rock_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/rock_for_leather"]
+margin_left = 103.0
+margin_right = 209.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 39 )
+text = "Exchange"
+[connection signal="area_entered" from="." to="." method="_on_tradesman_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_tradesman_area_exited"]
