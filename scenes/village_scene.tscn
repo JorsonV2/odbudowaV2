@@ -314,7 +314,7 @@ size_flags_vertical = 4
 text = "Action"
 
 [node name="building2" type="Area2D" parent="."]
-position = Vector2( 215.708, 432.553 )
+position = Vector2( 93.3641, 439.078 )
 z_index = -1
 script = ExtResource( 6 )
 ruins_texture = ExtResource( 10 )
@@ -408,7 +408,7 @@ margin_left = 50.0
 margin_right = 62.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
-text = "40"
+text = "0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
 margin_top = 30.0
@@ -426,7 +426,7 @@ margin_left = 60.0
 margin_right = 72.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
-text = "40"
+text = "0"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
 margin_top = 60.0
