@@ -17,6 +17,7 @@ var forest_scene
 var deep_forest_scene
 var scene_changer_scene
 var scene_changer
+var activated_buildings = []
 
 
 # Called when the node enters the scene tree for the first time.

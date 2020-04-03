@@ -4,7 +4,7 @@ class_name enemy
 
 signal exit_spawn_point
 
-export var distance_enemy = false
+export var is_hitting = true
 export var field_of_view = 200
 export var damage = 10
 export var equipment_amount = [0,0,0,0]
@@ -118,7 +118,7 @@ func hit_player():
 	pass
 	
 func stop_hitting_player():
-	if current_animation != "hit":
+	if current_animation != "hit" and is_hitting:
 		active_move = true
 		hitting = false
 	pass	

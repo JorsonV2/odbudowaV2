@@ -22,6 +22,8 @@ func _ready():
 	update_build_requirements()
 	update_action_requirements()
 	update_texts()
+	if game_controller.activated_buildings.has(building_name):
+		activate_building()
 	pass
 
 func _process(delta):
@@ -34,6 +36,7 @@ func player_entered():
 	find_node("Sprite").modulate = Color(0.6,0.6,0.6)
 	if active:
 		show_action_info()
+		hide_build_info()
 		pass
 	else:
 		show_build_info()
@@ -90,15 +93,20 @@ func building_exited(area):
 	if area.is_in_group("player"):
 		player_exited()
 	pass
+	
+func activate_building():
+	find_node("Sprite").texture = building_texture
+	active = true
+	pass
 
 func action():
 	pass
 	
 func build():
-	find_node("Sprite").texture = building_texture
+	activate_building()
 	hide_build_info()
 	show_action_info()
-	active = true
+	game_controller.activated_buildings.append(building_name)
 	signals.emit_mission_task("build", building_name)
 	for e in range(0, resources_to_build.size()):
 		game_controller.player_equipment[e] -= resources_to_build[e]
