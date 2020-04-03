@@ -37,10 +37,10 @@ func _process(delta):
 	
 	movement.x = 0
 	
-	if current_hit_stand_time > 0:
-		current_hit_stand_time -= delta
-	else:
-		active_move = true
+#	if current_hit_stand_time > 0:
+#		current_hit_stand_time -= delta
+#	else:
+#		active_move = true
 	check_if_player_overlaps()
 	time_delta = delta
 	if active_move:
@@ -52,15 +52,18 @@ func _process(delta):
 		current_animation = "run"
 	else:
 		current_animation = "stand"
-		
-	if !active_move:
+
+	if !active_move and hitting:
 		current_animation = "hit"
+		
+	print_debug(current_animation)
 	
 	if movement.x < 0 and !flipped_left:
 		flip_enemy()
 	elif movement.x > 0 and flipped_left:
 		flip_enemy()
-	if $animated_sprite.animation != current_animation:		
+	if $animated_sprite.animation != current_animation:
+		#print_debug(current_animation)
 		$animated_sprite.play(current_animation)
 	pass
 	
@@ -95,7 +98,6 @@ func patrol():
 			patrol_direction = -patrol_direction
 		movement.x = movement_speed * 0.5 * patrol_direction
 		if patrol_position.distance_to(global_position) > patrol_distance :
-			randomize()
 			patrol_stand_time = randi() % 5 + 1
 	pass
 	
@@ -105,33 +107,31 @@ func flip_enemy():
 	pass
 	
 func dead():
-	.dead()
 	emit_signal("exit_spawn_point")
+	.dead()
 	pass
 	
 func hit_player():
-	current_hit_stand_time = hit_stand_time
+	if !player.immute:
+		active_move = false
+		hitting = true
+		player.take_damage(2)
 	pass
 	
-func area_entered(area):
-	if area.is_in_group("player"):
-		hit_player()
-	pass
+func stop_hitting_player():
+	if current_animation != "hit":
+		active_move = true
+		hitting = false
+	pass	
 	
 func check_if_player_overlaps():
 	if $Area2D.overlaps_area(player.get_node("Area2D")):
 		active_move = false
-		hitting = true
-		#print_debug("elo atakuje cię")
-	else:
-		hitting = false
+		hit_player()
 	pass
 	
 func animation_finished():
-	if !active_move and hitting:
-		print_debug($animated_sprite.animation)
-		if $animated_sprite.animation == "hit":
-			hit_player()
-			$animated_sprite.frame = 0
-			$animated_sprite.playing = true
+	if $animated_sprite.animation == "hit":
+		active_move = true
+		hitting = false
 	pass

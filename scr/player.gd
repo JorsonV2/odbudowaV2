@@ -3,6 +3,7 @@ extends being_controller
 class_name player
 
 export (PackedScene) var arrow_scene
+export var immute_time = 2
 
 var double_jump = false
 var sword_active = false
@@ -11,9 +12,14 @@ var first_weapon_damage = 10
 var secound_weapon_damage = 10
 var flipped_left = false
 var max_health = 100
+var current_animation = "stand"
+var shooting = false
+var current_immute_time = 0
+var immute = false
 
 func _ready():
 	signals.connect("collect_item", self, "collected_item")
+	get_node("animated_sprite").connect("animation_finished", self, "animation_finished")
 	signals.emit_update_health(health)
 	pass
 
@@ -45,20 +51,30 @@ func _process(delta):
 		if is_on_floor():
 			double_jump = true
 			if movement.x == 0:
-				$aniamated_sprite.play("stand")
+				current_animation = "stand"
 			else:
-				$aniamated_sprite.play("run")
+				current_animation = "run"
 		else:
 			if movement.y > 0:
-				$aniamated_sprite.play("fall")
+				current_animation = "fall"
 			else:
-				$aniamated_sprite.play("jump")
-			
+				current_animation = "jump"
+	elif shooting:
+		current_animation = "shot"
 		
+	if $animated_sprite.animation != current_animation:
+		$animated_sprite.play(current_animation)
+		
+	if current_immute_time > 0:
+		current_immute_time -= delta
+	elif immute:
+		immute = false	
 		
 	pass
 	
 func shoot_arrow():
+	active_move = false
+	shooting = true
 	var arrow = arrow_scene.instance()
 	arrow.position = $shoot_position.global_position
 	arrow.linear_velocity = Vector2(600 * direction, 3)
@@ -72,7 +88,7 @@ func hit_with_sword():
 	
 func flip_player():
 	flipped_left = !flipped_left
-	$aniamated_sprite.flip_h = !$aniamated_sprite.flip_h
+	$animated_sprite.flip_h = !$animated_sprite.flip_h
 	$shoot_position.position.x = -$shoot_position.position.x
 	pass
 
@@ -92,7 +108,15 @@ func collected_item(item):
 	
 func take_damage(val):
 	.take_damage(val)
+	print_debug("take_damage")
+	immute = true
+	current_immute_time = immute_time
 	signals.emit_update_health(health)
+	pass
+	
+func animation_finished():
+	if current_animation == "shot":
+		active_move = true
 	pass
 
 func _on_Area2D_body_entered(body):
@@ -103,7 +127,10 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("enemy"):
-		print_debug(area, "enemy_atack")
 		area.get_parent().hit_player()
-		
+	pass # Replace with function body.
+
+func _on_Area2D_area_exited(area):
+	if area.is_in_group("enemy"):
+		area.get_parent().stop_hitting_player()
 	pass # Replace with function body.

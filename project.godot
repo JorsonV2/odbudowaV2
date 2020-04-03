@@ -53,6 +53,11 @@ _global_script_classes=[ {
 "class": "rabbit",
 "language": "GDScript",
 "path": "res://scr/rabbit.gd"
+}, {
+"base": "being_controller",
+"class": "savage",
+"language": "GDScript",
+"path": "res://scr/savage.gd"
 } ]
 _global_script_class_icons={
 "animal": "",
@@ -63,7 +68,8 @@ _global_script_class_icons={
 "item": "",
 "mission": "",
 "player": "",
-"rabbit": ""
+"rabbit": "",
+"savage": ""
 }
 
 [application]
