@@ -12,11 +12,11 @@
 script = ExtResource( 7 )
 
 [node name="next_map_trigger" parent="." instance=ExtResource( 8 )]
-position = Vector2( -335.824, 487.858 )
+position = Vector2( -334.992, 480.373 )
 map_name = "deep_forest"
 
 [node name="next_map_trigger2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2949.82, 493.952 )
+position = Vector2( 2949.82, 478.16 )
 map_name = "village"
 trigger_side = "right"
 
