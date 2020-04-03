@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://gfx/fox/run/run_06.png" type="Texture" id=1]
 [ext_resource path="res://scr/fox.gd" type="Script" id=2]
@@ -8,9 +8,18 @@
 [ext_resource path="res://gfx/fox/run/run_02.png" type="Texture" id=6]
 [ext_resource path="res://gfx/fox/run/run_01.png" type="Texture" id=7]
 [ext_resource path="res://gfx/fox/run/run_04.png" type="Texture" id=8]
+[ext_resource path="res://gfx/fox/hit/hit_3.png" type="Texture" id=9]
+[ext_resource path="res://gfx/fox/hit/hit_5.png" type="Texture" id=10]
+[ext_resource path="res://gfx/fox/hit/hit_6.png" type="Texture" id=11]
+[ext_resource path="res://gfx/fox/hit/hit_4.png" type="Texture" id=12]
+[ext_resource path="res://gfx/fox/hit/hit_2.png" type="Texture" id=13]
+[ext_resource path="res://gfx/fox/hit/hit_1.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.8517, 15.8994 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 19.3523
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -23,6 +32,11 @@ animations = [ {
 "loop": true,
 "name": "stand",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "hit",
+"speed": 20.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
@@ -37,7 +51,7 @@ equipment_amount = [ 0, 0, 0, 3 ]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
@@ -46,10 +60,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+position = Vector2( -2, -0.5 )
+shape = SubResource( 3 )
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.0848501, -0.58486 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-animation = "stand"
+animation = "hit"

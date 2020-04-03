@@ -19,9 +19,8 @@ func _ready():
 	pass
 
 func _process(delta):
-	if active_move:
-		movement.y += gravity * delta
-		movement = move_and_slide(movement, Vector2(0,-1), true)
+	movement.y += gravity * delta
+	movement = move_and_slide(movement, Vector2(0,-1), true)
 	pass
 	
 func fire_item(name):
