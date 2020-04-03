@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=1]
 [ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/tradesman_scene.tscn" type="PackedScene" id=9]
 [ext_resource path="res://gfx/Home/Wooden.png" type="Texture" id=10]
 [ext_resource path="res://gfx/Home/Wooden_builded.png" type="Texture" id=11]
+[ext_resource path="res://scenes/ParallaxBackground_scene.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 64 )
@@ -21,6 +22,8 @@ font_data = ExtResource( 3 )
 
 [node name="map" type="Node2D"]
 script = ExtResource( 7 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 12 )]
 
 [node name="next_map_trigger" parent="." instance=ExtResource( 8 )]
 position = Vector2( -335.824, 487.858 )
