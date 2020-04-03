@@ -13,3 +13,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_tradesman_area_entered(area):
+	find_node("trade_info").show()
+	pass # Replace with function body.
+
+
+func _on_tradesman_area_exited(area):
+	find_node("trade_info").hide()
+	pass # Replace with function body.

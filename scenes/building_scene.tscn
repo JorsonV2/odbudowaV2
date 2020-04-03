@@ -66,32 +66,32 @@ margin_right = 221.0
 margin_bottom = 75.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Node2D/building_info/CenterContainer/build_info"]
-margin_right = 194.0
+margin_right = 116.0
 margin_bottom = 130.0
 
 [node name="build_label" type="Label" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer"]
 margin_left = 7.0
-margin_top = 37.0
-margin_right = 187.0
-margin_bottom = 92.0
+margin_top = 52.0
+margin_right = 109.0
+margin_bottom = 78.0
 custom_fonts/font = ExtResource( 4 )
 text = "Build text"
 align = 1
 valign = 1
 
 [node name="PanelContainer2" type="PanelContainer" parent="Node2D/building_info/CenterContainer/build_info"]
-margin_left = 198.0
-margin_right = 312.0
+margin_left = 120.0
+margin_right = 246.0
 margin_bottom = 130.0
 
 [node name="requirements" type="VBoxContainer" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 107.0
+margin_right = 119.0
 margin_bottom = 123.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
-margin_right = 100.0
+margin_right = 112.0
 margin_bottom = 26.0
 
 [node name="gold_label" type="Label" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer"]
@@ -102,14 +102,14 @@ text = "Gold:"
 
 [node name="gold_amount" type="Label" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer"]
 margin_left = 50.0
-margin_right = 62.0
+margin_right = 74.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 4 )
 text = "10"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
 margin_top = 30.0
-margin_right = 100.0
+margin_right = 112.0
 margin_bottom = 56.0
 
 [node name="wood_label" type="Label" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer2"]
@@ -127,7 +127,7 @@ text = "0"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
 margin_top = 60.0
-margin_right = 100.0
+margin_right = 112.0
 margin_bottom = 86.0
 
 [node name="rock_label" type="Label" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer3"]
@@ -145,7 +145,7 @@ text = "0"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
 margin_top = 90.0
-margin_right = 100.0
+margin_right = 112.0
 margin_bottom = 116.0
 
 [node name="leather_label" type="Label" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer4"]
@@ -156,15 +156,15 @@ text = "Leather:"
 
 [node name="leather_amount" type="Label" parent="Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer4"]
 margin_left = 88.0
-margin_right = 100.0
+margin_right = 112.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 4 )
 text = "10"
 
 [node name="build_button" type="Button" parent="Node2D/building_info/CenterContainer/build_info"]
-margin_left = 316.0
+margin_left = 250.0
 margin_top = 55.0
-margin_right = 361.0
+margin_right = 295.0
 margin_bottom = 75.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
