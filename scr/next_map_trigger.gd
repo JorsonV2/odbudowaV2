@@ -35,11 +35,13 @@ func _on_next_map_trigger_area_entered(area):
 		
 		get_tree().get_root().call_deferred("add_child", new_map)
 		new_map.set_name("map")
+		old_map.hide()
+		old_map.pause_mode = true
 		game_controller.player.active_move=true
 		animation_map.play_backwards("fade")
-		
-		old_map.queue_free()
 		yield(animation_map,"animation_finished")
+		old_map.queue_free()
+		
 		
 		if trigger_side == "left":
 			game_controller.player_destination = "right"
