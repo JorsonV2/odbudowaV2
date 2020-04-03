@@ -24,6 +24,7 @@ func _on_next_map_trigger_area_entered(area):
 		var old_map = get_tree().get_root().get_node("map")
 		old_map.set_name("map1")
 		
+		game_controller.scene_changer.get_node("Control").show()
 		animation_map = game_controller.scene_changer.find_node("animation_map")
 		black = game_controller.scene_changer.find_node("panel_black")
 		#yield(get_tree().create_timer(time_delay), "timeout")
@@ -34,11 +35,11 @@ func _on_next_map_trigger_area_entered(area):
 		
 		get_tree().get_root().call_deferred("add_child", new_map)
 		new_map.set_name("map")
-		old_map.queue_free()
 		game_controller.player.active_move=true
 		animation_map.play_backwards("fade")
-		yield(animation_map,"animation_finished")
 		
+		old_map.queue_free()
+		yield(animation_map,"animation_finished")
 		
 		if trigger_side == "left":
 			game_controller.player_destination = "right"

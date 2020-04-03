@@ -24,6 +24,7 @@ func spawn_player():
 	player.position = left_spawn_point.position
 	game_controller.player = player
 	game_controller.scene_changer = animation_map
+	game_controller.scene_changer.get_node("Control").hide()
 	get_tree().get_root().call_deferred("add_child", in_game_ui)
 	get_tree().get_root().call_deferred("add_child", player)
 	get_tree().get_root().call_deferred("add_child", animation_map)
