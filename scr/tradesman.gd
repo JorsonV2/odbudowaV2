@@ -139,6 +139,21 @@ func set_costs():
 				container = leather_panel.find_node("rock_for_leather")
 		container.get_node("amount_label").text = String(cost_for_leather[c])
 	pass
+	
+func add_resoure(resource, val):
+	match resource:
+		"gold":
+			game_controller.player_equipment[0] += val
+		"wood":
+			game_controller.player_equipment[1] += val
+		"rock":
+			game_controller.player_equipment[2] += val
+		"leather":
+			game_controller.player_equipment[3] += val
+	
+	signals.emit_update_equipment(game_controller.player_equipment)
+	update_buttons()
+	pass
 
 func _on_tradesman_area_entered(area):
 	if area.is_in_group("player"):
@@ -154,48 +169,72 @@ func _on_tradesman_area_exited(area):
 
 
 func _on_wood_for_gold_button_pressed():
+	add_resoure("gold", 1)
+	add_resoure("wood", -cost_for_gold[0])
 	pass # Replace with function body.
 
 
 func _on_rock_for_gold_button_pressed():
+	add_resoure("gold", 1)
+	add_resoure("rock", -cost_for_gold[1])
 	pass # Replace with function body.
 
 
 func _on_leather_for_gold_button_pressed():
+	add_resoure("gold", 1)
+	add_resoure("leather", -cost_for_gold[2])
 	pass # Replace with function body.
 
 
 func _on_gold_for_wood_button_pressed():
+	add_resoure("wood", 1)
+	add_resoure("gold", -cost_for_wood[0])
 	pass # Replace with function body.
 
 
 func _on_rock_for_wood_button_pressed():
+	add_resoure("wood", 1)
+	add_resoure("rock", -cost_for_wood[1])
 	pass # Replace with function body.
 
 
 func _on_leather_for_wood_button_pressed():
+	add_resoure("wood", 1)
+	add_resoure("leather", -cost_for_wood[2])
 	pass # Replace with function body.
 
 
 func _on_gold_for_rock_button_pressed():
+	add_resoure("rock", 1)
+	add_resoure("gold", -cost_for_rock[0])
 	pass # Replace with function body.
 
 
 func _on_wood_for_rock_button_pressed():
+	add_resoure("rock", 1)
+	add_resoure("wood", -cost_for_rock[1])
 	pass # Replace with function body.
 
 
 func _on_leather_for_rock_button_pressed():
+	add_resoure("rock", 1)
+	add_resoure("leather", -cost_for_rock[2])
 	pass # Replace with function body.
 
 
 func _on_gold_for_leather_button_pressed():
+	add_resoure("leather", 1)
+	add_resoure("gold", -cost_for_leather[0])
 	pass # Replace with function body.
 
 
 func _on_wood_for_leather_button_pressed():
+	add_resoure("leather", 1)
+	add_resoure("wood", -cost_for_leather[1])
 	pass # Replace with function body.
 
 
 func _on_rock_for_leather_button_pressed():
+	add_resoure("leather", 1)
+	add_resoure("rock", -cost_for_leather[2])
 	pass # Replace with function body.
