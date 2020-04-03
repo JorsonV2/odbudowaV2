@@ -1,4 +1,4 @@
-extends being_controller
+extends enemy
 
 class_name savage
 

@@ -29,7 +29,7 @@ func fire_item(name):
 	new_item.global_position = global_position
 	new_item.linear_velocity = Vector2(randi() % 150 - 75, -(randi() % 50 + 50) )
 	new_item.angular_velocity = randi() % 40 - 20
-	get_tree().get_root().call_deferred("add_child", new_item)
+	get_tree().get_root().get_node("map").call_deferred("add_child", new_item)
 	pass
 	
 func take_damage(val):

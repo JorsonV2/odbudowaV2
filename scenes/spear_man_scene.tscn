@@ -1,39 +1,34 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://gfx/fox/run/run_06.png" type="Texture" id=1]
+[ext_resource path="res://gfx/dzida/run/run_07.png" type="Texture" id=1]
 [ext_resource path="res://scr/spear_man.gd" type="Script" id=2]
-[ext_resource path="res://gfx/fox/run/run_05.png" type="Texture" id=3]
-[ext_resource path="res://gfx/fox/stand/stand_small.png" type="Texture" id=4]
-[ext_resource path="res://gfx/fox/run/run_03.png" type="Texture" id=5]
-[ext_resource path="res://gfx/fox/run/run_02.png" type="Texture" id=6]
-[ext_resource path="res://gfx/fox/run/run_01.png" type="Texture" id=7]
-[ext_resource path="res://gfx/fox/run/run_04.png" type="Texture" id=8]
-[ext_resource path="res://gfx/fox/hit/hit_3.png" type="Texture" id=9]
-[ext_resource path="res://gfx/fox/hit/hit_5.png" type="Texture" id=10]
-[ext_resource path="res://gfx/fox/hit/hit_6.png" type="Texture" id=11]
-[ext_resource path="res://gfx/fox/hit/hit_4.png" type="Texture" id=12]
-[ext_resource path="res://gfx/fox/hit/hit_2.png" type="Texture" id=13]
-[ext_resource path="res://gfx/fox/hit/hit_1.png" type="Texture" id=14]
+[ext_resource path="res://gfx/dzida/run/run_08.png" type="Texture" id=3]
+[ext_resource path="res://gfx/dzida/run/run_06.png" type="Texture" id=4]
+[ext_resource path="res://gfx/dzida/run/run_01.png" type="Texture" id=5]
+[ext_resource path="res://gfx/dzida/run/run_03.png" type="Texture" id=6]
+[ext_resource path="res://gfx/dzida/run/run_04.png" type="Texture" id=7]
+[ext_resource path="res://gfx/dzida/run/run_05.png" type="Texture" id=8]
+[ext_resource path="res://gfx/dzida/run/run_02.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 36.8517, 15.8994 )
+extents = Vector2( 29.9723, 38.0931 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 19.3523
+[sub_resource type="CapsuleShape2D" id=2]
+height = 49.4085
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "run",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "stand",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "hit",
 "speed": 15.0
@@ -45,6 +40,10 @@ animations = [ {
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 2 )
+health = 60
+movement_speed = 190
+field_of_view = 400
+equipment_amount = [ 10, 5, 5, 1 ]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
@@ -57,11 +56,10 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2, -0.5 )
 shape = SubResource( 2 )
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.0848501, -0.58486 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "hit"
+offset = Vector2( 20, -10 )

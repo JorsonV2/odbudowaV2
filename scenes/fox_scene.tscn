@@ -15,6 +15,8 @@
 [ext_resource path="res://gfx/fox/hit/hit_2.png" type="Texture" id=13]
 [ext_resource path="res://gfx/fox/hit/hit_1.png" type="Texture" id=14]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.8517, 15.8994 )
 

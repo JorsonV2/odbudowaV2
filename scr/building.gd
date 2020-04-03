@@ -53,6 +53,13 @@ func player_exited():
 
 func show_build_info():
 	find_node("build_info").show()
+	var can_build = true
+	for e in range(0, resources_to_build.size()):
+		if resources_to_build[e] > game_controller.player_equipment[e]:
+			print_debug("sorki, nie stać cię")
+			can_build = false
+			break
+	find_node("build_button").disabled = !can_build
 	pass
 	
 func hide_build_info():
@@ -94,6 +101,9 @@ func build():
 	show_action_info()
 	active = true
 	signals.emit_mission_task("build", building_name)
+	for e in range(0, resources_to_build.size()):
+		game_controller.player_equipment[e] -= resources_to_build[e]
+	signals.emit_update_equipment(game_controller.player_equipment)
 	pass
 	
 func update_build_requirements():

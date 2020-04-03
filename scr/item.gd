@@ -7,7 +7,7 @@ var drag_distance = 150
 var player
 
 func _ready():
-	player = get_tree().get_root().get_node("testMap/player")
+	player = get_tree().get_root().get_node("player")
 	pass # Replace with function body.
 
 func _process(delta):

@@ -25,7 +25,7 @@ building_name = "Test building"
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D" parent="."]

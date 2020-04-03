@@ -1,0 +1,849 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=1]
+[ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://gfx/Home/ruina1.png" type="Texture" id=4]
+[ext_resource path="res://gfx/Home/Domek1.png" type="Texture" id=5]
+[ext_resource path="res://scr/building.gd" type="Script" id=6]
+[ext_resource path="res://scr/map.gd" type="Script" id=7]
+[ext_resource path="res://scenes/next_map_trigger_scene.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64, 64 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="map" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="next_map_trigger" parent="." instance=ExtResource( 8 )]
+position = Vector2( -335.824, 487.858 )
+map_name = "forest"
+
+[node name="next_map_trigger2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1796.3, 487.541 )
+collision_layer = 7
+collision_mask = 7
+map_name = "forest"
+trigger_side = "right"
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+z_index = -2
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( 589818, 16, 0, 589819, 12, 0, 589820, 12, 0, 589821, 12, 0, 589822, 12, 0, 589823, 12, 0, 524288, 12, 0, 524289, 12, 0, 524290, 12, 0, 524291, 12, 0, 524292, 12, 0, 524293, 12, 0, 524294, 12, 0, 524295, 12, 0, 524296, 12, 0, 524297, 12, 0, 524298, 12, 0, 524299, 12, 0, 524300, 12, 0, 524301, 12, 0, 524302, 12, 0, 524303, 12, 0, 524304, 12, 0, 524305, 12, 0, 524306, 12, 0, 524307, 12, 0, 524308, 12, 0, 524309, 12, 0, 524310, 12, 0, 524311, 12, 0, 524312, 12, 0, 524313, 12, 0, 524314, 12, 0, 524315, 12, 0, 524316, 17, 0, 655354, 20, 0, 655355, 20, 0, 655356, 20, 0, 655357, 20, 0, 655358, 20, 0, 655359, 20, 0, 589824, 20, 0, 589825, 20, 0, 589826, 20, 0, 589827, 20, 0, 589828, 20, 0, 589829, 20, 0, 589830, 20, 0, 589831, 20, 0, 589832, 20, 0, 589833, 20, 0, 589834, 20, 0, 589835, 20, 0, 589836, 20, 0, 589837, 20, 0, 589838, 20, 0, 589839, 20, 0, 589840, 20, 0, 589841, 20, 0, 589842, 20, 0, 589843, 20, 0, 589844, 20, 0, 589845, 20, 0, 589846, 20, 0, 589847, 20, 0, 589848, 20, 0, 589849, 20, 0, 589850, 20, 0, 589851, 20, 0, 589852, 20, 0, 720890, 20, 0, 720891, 20, 0, 720892, 20, 0, 720893, 20, 0, 720894, 20, 0, 720895, 20, 0, 655360, 20, 0, 655361, 20, 0, 655362, 20, 0, 655363, 20, 0, 655364, 20, 0, 655365, 20, 0, 655366, 20, 0, 655367, 20, 0, 655368, 20, 0, 655369, 20, 0, 655370, 20, 0, 655371, 20, 0, 655372, 20, 0, 655373, 20, 0, 655374, 20, 0, 655375, 20, 0, 655376, 20, 0, 655377, 20, 0, 655378, 20, 0, 655379, 20, 0, 655380, 20, 0, 655381, 20, 0, 655382, 20, 0, 655383, 20, 0, 655384, 20, 0, 655385, 20, 0, 655386, 20, 0, 655387, 20, 0, 655388, 20, 0, 786426, 20, 0, 786427, 20, 0, 786428, 20, 0, 786429, 20, 0, 786430, 20, 0, 786431, 20, 0, 720896, 20, 0, 720897, 20, 0, 720898, 20, 0, 720899, 20, 0, 720900, 20, 0, 720901, 20, 0, 720902, 20, 0, 720903, 20, 0, 720904, 20, 0, 720905, 20, 0, 720906, 20, 0, 720907, 20, 0, 720908, 20, 0, 720909, 20, 0, 720910, 20, 0, 720911, 20, 0, 720912, 20, 0, 720913, 20, 0, 720914, 20, 0, 720915, 20, 0, 720916, 20, 0, 720917, 20, 0, 720918, 20, 0, 720919, 20, 0, 720920, 20, 0, 720921, 20, 0, 720922, 20, 0, 720923, 20, 0, 720924, 20, 0, 851962, 20, 0, 851963, 20, 0, 851964, 20, 0, 851965, 20, 0, 851966, 20, 0, 851967, 20, 0, 786432, 20, 0, 786433, 20, 0, 786434, 20, 0, 786435, 20, 0, 786436, 20, 0, 786437, 20, 0, 786438, 20, 0, 786439, 20, 0, 786440, 20, 0, 786441, 20, 0, 786442, 20, 0, 786443, 20, 0, 786444, 20, 0, 786445, 20, 0, 786446, 20, 0, 786447, 20, 0, 786448, 20, 0, 786449, 20, 0, 786450, 20, 0, 786451, 20, 0, 786452, 20, 0, 786453, 20, 0, 786454, 20, 0, 786455, 20, 0, 786456, 20, 0, 786457, 20, 0, 786458, 20, 0, 786459, 20, 0, 786460, 20, 0, 917498, 20, 0, 917499, 20, 0, 917500, 20, 0, 917501, 20, 0, 917502, 20, 0, 917503, 20, 0, 851968, 20, 0, 851969, 20, 0, 851970, 20, 0, 851971, 20, 0, 851972, 20, 0, 851973, 20, 0, 851974, 20, 0, 851975, 20, 0, 851976, 20, 0, 851977, 20, 0, 851978, 20, 0, 851979, 20, 0, 851980, 20, 0, 851981, 20, 0, 851982, 20, 0, 851983, 20, 0, 851984, 20, 0, 851985, 20, 0, 851986, 20, 0, 851987, 20, 0, 851988, 20, 0, 851989, 20, 0, 851990, 20, 0, 851991, 20, 0, 851992, 20, 0, 851993, 20, 0, 851994, 20, 0, 851995, 20, 0, 851996, 20, 0, 983034, 20, 0, 983035, 20, 0, 983036, 20, 0, 983037, 20, 0, 983038, 20, 0, 983039, 20, 0, 917504, 20, 0, 917505, 20, 0, 917506, 20, 0, 917507, 20, 0, 917508, 20, 0, 917509, 20, 0, 917510, 20, 0, 917511, 20, 0, 917512, 20, 0, 917513, 20, 0, 917514, 20, 0, 917515, 20, 0, 917516, 20, 0, 917517, 20, 0, 917518, 20, 0, 917519, 20, 0, 917520, 20, 0, 917521, 20, 0, 917522, 20, 0, 917523, 20, 0, 917524, 20, 0, 917525, 20, 0, 917526, 20, 0, 917527, 20, 0, 917528, 20, 0, 917529, 20, 0, 917530, 20, 0, 917531, 20, 0, 917532, 20, 0, 1048570, 20, 0, 1048571, 20, 0, 1048572, 20, 0, 1048573, 20, 0, 1048574, 20, 0, 1048575, 20, 0, 983040, 20, 0, 983041, 20, 0, 983042, 20, 0, 983043, 20, 0, 983044, 20, 0, 983045, 20, 0, 983046, 20, 0, 983047, 20, 0, 983048, 20, 0, 983049, 20, 0, 983050, 20, 0, 983051, 20, 0, 983052, 20, 0, 983053, 20, 0, 983054, 20, 0, 983055, 20, 0, 983056, 20, 0, 983057, 20, 0, 983058, 20, 0, 983059, 20, 0, 983060, 20, 0, 983061, 20, 0, 983062, 20, 0, 983063, 20, 0, 983064, 20, 0, 983065, 20, 0, 983066, 20, 0, 983067, 20, 0, 983068, 20, 0, 1114106, 20, 0, 1114107, 20, 0, 1114108, 20, 0, 1114109, 20, 0, 1114110, 20, 0, 1114111, 20, 0, 1048576, 20, 0, 1048577, 20, 0, 1048578, 20, 0, 1048579, 20, 0, 1048580, 20, 0, 1048581, 20, 0, 1048582, 20, 0, 1048583, 20, 0, 1048584, 20, 0, 1048585, 20, 0, 1048586, 20, 0, 1048587, 20, 0, 1048588, 20, 0, 1048589, 20, 0, 1048590, 20, 0, 1048591, 20, 0, 1048592, 20, 0, 1048593, 20, 0, 1048594, 20, 0, 1048595, 20, 0, 1048596, 20, 0, 1048597, 20, 0, 1048598, 20, 0, 1048599, 20, 0, 1048600, 20, 0, 1048601, 20, 0, 1048602, 20, 0, 1048603, 20, 0, 1048604, 20, 0, 1179642, 20, 0, 1179643, 20, 0, 1179644, 20, 0, 1179645, 20, 0, 1179646, 20, 0, 1179647, 20, 0, 1114112, 20, 0, 1114113, 20, 0, 1114114, 20, 0, 1114115, 20, 0, 1114116, 20, 0, 1114117, 20, 0, 1114118, 20, 0, 1114119, 20, 0, 1114120, 20, 0, 1114121, 20, 0, 1114122, 20, 0, 1114123, 20, 0, 1114124, 20, 0, 1114125, 20, 0, 1114126, 20, 0, 1114127, 20, 0, 1114128, 20, 0, 1114129, 20, 0, 1114130, 20, 0, 1114131, 20, 0, 1114132, 20, 0, 1114133, 20, 0, 1114134, 20, 0, 1114135, 20, 0, 1114136, 20, 0, 1114137, 20, 0, 1114138, 20, 0, 1114139, 20, 0, 1114140, 20, 0, 1245178, 20, 0, 1245179, 20, 0, 1245180, 20, 0, 1245181, 20, 0, 1245182, 20, 0, 1245183, 20, 0, 1179648, 20, 0, 1179649, 20, 0, 1179650, 20, 0, 1179651, 20, 0, 1179652, 20, 0, 1179653, 20, 0, 1179654, 20, 0, 1179655, 20, 0, 1179656, 20, 0, 1179657, 20, 0, 1179658, 20, 0, 1179659, 20, 0, 1179660, 20, 0, 1179661, 20, 0, 1179662, 20, 0, 1179663, 20, 0, 1179664, 20, 0, 1179665, 20, 0, 1179666, 20, 0, 1179667, 20, 0, 1179668, 20, 0, 1179669, 20, 0, 1179670, 20, 0, 1179671, 20, 0, 1179672, 20, 0, 1179673, 20, 0, 1179674, 20, 0, 1179675, 20, 0, 1179676, 20, 0, 1310714, 20, 0, 1310715, 20, 0, 1310716, 20, 0, 1310717, 20, 0, 1310718, 20, 0, 1310719, 20, 0, 1245184, 20, 0, 1245185, 20, 0, 1245186, 20, 0, 1245187, 20, 0, 1245188, 20, 0, 1245189, 20, 0, 1245190, 20, 0, 1245191, 20, 0, 1245192, 20, 0, 1245193, 20, 0, 1245194, 20, 0, 1245195, 20, 0, 1245196, 20, 0, 1245197, 20, 0, 1245198, 20, 0, 1245199, 20, 0, 1245200, 20, 0, 1245201, 20, 0, 1245202, 20, 0, 1245203, 20, 0, 1245204, 20, 0, 1245205, 20, 0, 1245206, 20, 0, 1245207, 20, 0, 1245208, 20, 0, 1245209, 20, 0, 1245210, 20, 0, 1245211, 20, 0, 1245212, 20, 0, 1376250, 20, 0, 1376251, 20, 0, 1376252, 20, 0, 1376253, 20, 0, 1376254, 20, 0, 1376255, 20, 0, 1310720, 20, 0, 1310721, 20, 0, 1310722, 20, 0, 1310723, 20, 0, 1310724, 20, 0, 1310725, 20, 0, 1310726, 20, 0, 1310727, 20, 0, 1310728, 20, 0, 1310729, 20, 0, 1310730, 20, 0, 1310731, 20, 0, 1310732, 20, 0, 1310733, 20, 0, 1310734, 20, 0, 1310735, 20, 0, 1310736, 20, 0, 1310737, 20, 0, 1310738, 20, 0, 1310739, 20, 0, 1310740, 20, 0, 1310741, 20, 0, 1310742, 20, 0, 1310743, 20, 0, 1310744, 20, 0, 1310745, 20, 0, 1310746, 20, 0, 1310747, 20, 0, 1310748, 20, 0, 1441786, 20, 0, 1441787, 20, 0, 1441788, 20, 0, 1441789, 20, 0, 1441790, 20, 0, 1441791, 20, 0, 1376256, 20, 0, 1376257, 20, 0, 1376258, 20, 0, 1376259, 20, 0, 1376260, 20, 0, 1376261, 20, 0, 1376262, 20, 0, 1376263, 20, 0, 1376264, 20, 0, 1376265, 20, 0, 1376266, 20, 0, 1376267, 20, 0, 1376268, 20, 0, 1376269, 20, 0, 1376270, 20, 0, 1376271, 20, 0, 1376272, 20, 0, 1376273, 20, 0, 1376274, 20, 0, 1376275, 20, 0, 1376276, 20, 0, 1376277, 20, 0, 1376278, 20, 0, 1376279, 20, 0, 1376280, 20, 0, 1376281, 20, 0, 1376282, 20, 0, 1376283, 20, 0, 1376284, 20, 0 )
+
+[node name="building" type="Area2D" parent="."]
+position = Vector2( 806.529, 429.915 )
+z_index = -1
+script = ExtResource( 6 )
+ruins_texture = ExtResource( 4 )
+building_texture = ExtResource( 5 )
+resources_to_build = [ 10, 10, 0, 0 ]
+building_name = "Building 1"
+build_text = "Zbuduj go sobie"
+action_text = "Zrób coś"
+
+[node name="Sprite" type="Sprite" parent="building"]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="building"]
+position = Vector2( 0, 24.3348 )
+shape = SubResource( 1 )
+
+[node name="Node2D" type="Node2D" parent="building"]
+z_index = 1
+
+[node name="building_info" type="VBoxContainer" parent="building/Node2D"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.5
+margin_top = -250.0
+margin_right = 180.5
+margin_bottom = -90.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="building_name" type="Label" parent="building/Node2D/building_info"]
+margin_right = 361.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 2 )
+text = "Building 1"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="building/Node2D/building_info"]
+margin_top = 51.0
+margin_right = 361.0
+margin_bottom = 181.0
+
+[node name="build_info" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer"]
+margin_left = 140.0
+margin_top = 55.0
+margin_right = 221.0
+margin_bottom = 75.0
+
+[node name="PanelContainer" type="PanelContainer" parent="building/Node2D/building_info/CenterContainer/build_info"]
+margin_right = 194.0
+margin_bottom = 130.0
+
+[node name="build_label" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer"]
+margin_left = 7.0
+margin_top = 37.0
+margin_right = 187.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 2 )
+text = "Zbuduj go sobie"
+align = 1
+valign = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="building/Node2D/building_info/CenterContainer/build_info"]
+margin_left = 198.0
+margin_right = 312.0
+margin_bottom = 130.0
+
+[node name="requirements" type="VBoxContainer" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 107.0
+margin_bottom = 123.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_right = 100.0
+margin_bottom = 26.0
+
+[node name="gold_label" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer"]
+margin_right = 46.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Gold:"
+
+[node name="gold_amount" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer"]
+margin_left = 50.0
+margin_right = 62.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "10"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 30.0
+margin_right = 100.0
+margin_bottom = 56.0
+
+[node name="wood_label" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_right = 56.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Wood:"
+
+[node name="wood_amount" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_left = 60.0
+margin_right = 72.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "10"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 60.0
+margin_right = 100.0
+margin_bottom = 86.0
+
+[node name="rock_label" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_right = 48.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Rock:"
+
+[node name="rock_amount" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_left = 52.0
+margin_right = 64.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 90.0
+margin_right = 100.0
+margin_bottom = 116.0
+
+[node name="leather_label" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_right = 84.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Leather:"
+
+[node name="leather_amount" type="Label" parent="building/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_left = 88.0
+margin_right = 100.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="build_button" type="Button" parent="building/Node2D/building_info/CenterContainer/build_info"]
+margin_left = 316.0
+margin_top = 55.0
+margin_right = 361.0
+margin_bottom = 75.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Build"
+
+[node name="action_info" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer"]
+visible = false
+margin_left = 136.0
+margin_top = 55.0
+margin_right = 225.0
+margin_bottom = 75.0
+
+[node name="PanelContainer" type="PanelContainer" parent="building/Node2D/building_info/CenterContainer/action_info"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="action_label" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer"]
+margin_top = 27.0
+margin_right = 228.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+text = "Zrób coś"
+
+[node name="PanelContainer2" type="PanelContainer" parent="building/Node2D/building_info/CenterContainer/action_info"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="requirements" type="VBoxContainer" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2"]
+margin_left = 145.0
+margin_right = 245.0
+margin_bottom = 116.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_right = 64.0
+margin_bottom = 14.0
+
+[node name="gold_label" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer"]
+margin_right = 34.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Gold:"
+
+[node name="gold_amount" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer"]
+margin_left = 38.0
+margin_right = 46.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 32.0
+
+[node name="wood_label" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_right = 41.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Wood:"
+
+[node name="wood_amount" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_left = 45.0
+margin_right = 53.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 36.0
+margin_right = 64.0
+margin_bottom = 50.0
+
+[node name="rock_label" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_right = 34.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Rock:"
+
+[node name="rock_amount" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_left = 38.0
+margin_right = 46.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 54.0
+margin_right = 64.0
+margin_bottom = 68.0
+
+[node name="leather_label" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_right = 52.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Leather:"
+
+[node name="leather_amount" type="Label" parent="building/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="action_buton" type="Button" parent="building/Node2D/building_info/CenterContainer/action_info"]
+margin_left = 213.0
+margin_top = 24.0
+margin_right = 266.0
+margin_bottom = 44.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Action"
+
+[node name="building2" type="Area2D" parent="."]
+position = Vector2( 185.006, 429.915 )
+z_index = -1
+script = ExtResource( 6 )
+ruins_texture = ExtResource( 4 )
+building_texture = ExtResource( 5 )
+resources_to_build = [ 40, 40, 0, 0 ]
+building_name = "Building 2"
+build_text = "Zbuduj go sobie"
+action_text = "Zrób coś"
+
+[node name="Sprite" type="Sprite" parent="building2"]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="building2"]
+position = Vector2( 0, 24.3348 )
+shape = SubResource( 1 )
+
+[node name="Node2D" type="Node2D" parent="building2"]
+z_index = 1
+
+[node name="building_info" type="VBoxContainer" parent="building2/Node2D"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.5
+margin_top = -250.0
+margin_right = 180.5
+margin_bottom = -90.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="building_name" type="Label" parent="building2/Node2D/building_info"]
+margin_right = 361.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 2 )
+text = "Building 2"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="building2/Node2D/building_info"]
+margin_top = 51.0
+margin_right = 361.0
+margin_bottom = 181.0
+
+[node name="build_info" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer"]
+margin_left = 140.0
+margin_top = 55.0
+margin_right = 221.0
+margin_bottom = 75.0
+
+[node name="PanelContainer" type="PanelContainer" parent="building2/Node2D/building_info/CenterContainer/build_info"]
+margin_right = 194.0
+margin_bottom = 130.0
+
+[node name="build_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer"]
+margin_left = 7.0
+margin_top = 37.0
+margin_right = 187.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 2 )
+text = "Zbuduj go sobie"
+align = 1
+valign = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="building2/Node2D/building_info/CenterContainer/build_info"]
+margin_left = 198.0
+margin_right = 312.0
+margin_bottom = 130.0
+
+[node name="requirements" type="VBoxContainer" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 107.0
+margin_bottom = 123.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_right = 100.0
+margin_bottom = 26.0
+
+[node name="gold_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer"]
+margin_right = 46.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Gold:"
+
+[node name="gold_amount" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer"]
+margin_left = 50.0
+margin_right = 62.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "40"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 30.0
+margin_right = 100.0
+margin_bottom = 56.0
+
+[node name="wood_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_right = 56.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Wood:"
+
+[node name="wood_amount" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_left = 60.0
+margin_right = 72.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "40"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 60.0
+margin_right = 100.0
+margin_bottom = 86.0
+
+[node name="rock_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_right = 48.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Rock:"
+
+[node name="rock_amount" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_left = 52.0
+margin_right = 64.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 90.0
+margin_right = 100.0
+margin_bottom = 116.0
+
+[node name="leather_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_right = 84.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Leather:"
+
+[node name="leather_amount" type="Label" parent="building2/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_left = 88.0
+margin_right = 100.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="build_button" type="Button" parent="building2/Node2D/building_info/CenterContainer/build_info"]
+margin_left = 316.0
+margin_top = 55.0
+margin_right = 361.0
+margin_bottom = 75.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Build"
+
+[node name="action_info" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer"]
+visible = false
+margin_left = 136.0
+margin_top = 55.0
+margin_right = 225.0
+margin_bottom = 75.0
+
+[node name="PanelContainer" type="PanelContainer" parent="building2/Node2D/building_info/CenterContainer/action_info"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="action_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer"]
+margin_top = 27.0
+margin_right = 228.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+text = "Zrób coś"
+
+[node name="PanelContainer2" type="PanelContainer" parent="building2/Node2D/building_info/CenterContainer/action_info"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="requirements" type="VBoxContainer" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2"]
+margin_left = 145.0
+margin_right = 245.0
+margin_bottom = 116.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_right = 64.0
+margin_bottom = 14.0
+
+[node name="gold_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer"]
+margin_right = 34.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Gold:"
+
+[node name="gold_amount" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer"]
+margin_left = 38.0
+margin_right = 46.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 32.0
+
+[node name="wood_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_right = 41.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Wood:"
+
+[node name="wood_amount" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_left = 45.0
+margin_right = 53.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 36.0
+margin_right = 64.0
+margin_bottom = 50.0
+
+[node name="rock_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_right = 34.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Rock:"
+
+[node name="rock_amount" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_left = 38.0
+margin_right = 46.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 54.0
+margin_right = 64.0
+margin_bottom = 68.0
+
+[node name="leather_label" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_right = 52.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Leather:"
+
+[node name="leather_amount" type="Label" parent="building2/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="action_buton" type="Button" parent="building2/Node2D/building_info/CenterContainer/action_info"]
+margin_left = 213.0
+margin_top = 24.0
+margin_right = 266.0
+margin_bottom = 44.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Action"
+
+[node name="building3" type="Area2D" parent="."]
+position = Vector2( 1386.65, 429.915 )
+z_index = -1
+script = ExtResource( 6 )
+ruins_texture = ExtResource( 4 )
+building_texture = ExtResource( 5 )
+resources_to_build = [ 100, 50, 50, 0 ]
+building_name = "Building 3"
+build_text = "Zbuduj go sobie"
+action_text = "Zrób coś"
+
+[node name="Sprite" type="Sprite" parent="building3"]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="building3"]
+position = Vector2( 0, 24.3348 )
+shape = SubResource( 1 )
+
+[node name="Node2D" type="Node2D" parent="building3"]
+z_index = 1
+
+[node name="building_info" type="VBoxContainer" parent="building3/Node2D"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.5
+margin_top = -250.0
+margin_right = 180.5
+margin_bottom = -90.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="building_name" type="Label" parent="building3/Node2D/building_info"]
+margin_right = 361.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 2 )
+text = "Building 3"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="building3/Node2D/building_info"]
+margin_top = 51.0
+margin_right = 361.0
+margin_bottom = 181.0
+
+[node name="build_info" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer"]
+margin_left = 140.0
+margin_top = 55.0
+margin_right = 221.0
+margin_bottom = 75.0
+
+[node name="PanelContainer" type="PanelContainer" parent="building3/Node2D/building_info/CenterContainer/build_info"]
+margin_right = 194.0
+margin_bottom = 130.0
+
+[node name="build_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer"]
+margin_left = 7.0
+margin_top = 37.0
+margin_right = 187.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 2 )
+text = "Zbuduj go sobie"
+align = 1
+valign = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="building3/Node2D/building_info/CenterContainer/build_info"]
+margin_left = 198.0
+margin_right = 312.0
+margin_bottom = 130.0
+
+[node name="requirements" type="VBoxContainer" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 107.0
+margin_bottom = 123.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_right = 100.0
+margin_bottom = 26.0
+
+[node name="gold_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer"]
+margin_right = 46.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Gold:"
+
+[node name="gold_amount" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer"]
+margin_left = 50.0
+margin_right = 62.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "100"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 30.0
+margin_right = 100.0
+margin_bottom = 56.0
+
+[node name="wood_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_right = 56.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Wood:"
+
+[node name="wood_amount" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_left = 60.0
+margin_right = 72.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "50"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 60.0
+margin_right = 100.0
+margin_bottom = 86.0
+
+[node name="rock_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_right = 48.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Rock:"
+
+[node name="rock_amount" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_left = 52.0
+margin_right = 64.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "50"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements"]
+margin_top = 90.0
+margin_right = 100.0
+margin_bottom = 116.0
+
+[node name="leather_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_right = 84.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Leather:"
+
+[node name="leather_amount" type="Label" parent="building3/Node2D/building_info/CenterContainer/build_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_left = 88.0
+margin_right = 100.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="build_button" type="Button" parent="building3/Node2D/building_info/CenterContainer/build_info"]
+margin_left = 316.0
+margin_top = 55.0
+margin_right = 361.0
+margin_bottom = 75.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Build"
+
+[node name="action_info" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer"]
+visible = false
+margin_left = 136.0
+margin_top = 55.0
+margin_right = 225.0
+margin_bottom = 75.0
+
+[node name="PanelContainer" type="PanelContainer" parent="building3/Node2D/building_info/CenterContainer/action_info"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="action_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer"]
+margin_top = 27.0
+margin_right = 228.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+text = "Zrób coś"
+
+[node name="PanelContainer2" type="PanelContainer" parent="building3/Node2D/building_info/CenterContainer/action_info"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="requirements" type="VBoxContainer" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2"]
+margin_left = 145.0
+margin_right = 245.0
+margin_bottom = 116.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_right = 64.0
+margin_bottom = 14.0
+
+[node name="gold_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer"]
+margin_right = 34.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Gold:"
+
+[node name="gold_amount" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer"]
+margin_left = 38.0
+margin_right = 46.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 32.0
+
+[node name="wood_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_right = 41.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Wood:"
+
+[node name="wood_amount" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer2"]
+margin_left = 45.0
+margin_right = 53.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 36.0
+margin_right = 64.0
+margin_bottom = 50.0
+
+[node name="rock_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_right = 34.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Rock:"
+
+[node name="rock_amount" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer3"]
+margin_left = 38.0
+margin_right = 46.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements"]
+margin_top = 54.0
+margin_right = 64.0
+margin_bottom = 68.0
+
+[node name="leather_label" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_right = 52.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Leather:"
+
+[node name="leather_amount" type="Label" parent="building3/Node2D/building_info/CenterContainer/action_info/PanelContainer2/requirements/HBoxContainer4"]
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+
+[node name="action_buton" type="Button" parent="building3/Node2D/building_info/CenterContainer/action_info"]
+margin_left = 213.0
+margin_top = 24.0
+margin_right = 266.0
+margin_bottom = 44.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Action"
+
+[node name="left_spawn_point" type="Position2D" parent="."]
+position = Vector2( -186.413, 455.994 )
+
+[node name="right_spawn_point" type="Position2D" parent="."]
+position = Vector2( 1646.17, 453.126 )

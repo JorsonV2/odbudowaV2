@@ -13,7 +13,7 @@ var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_tree().get_root().get_node("testMap/player")
+	player = game_controller.player
 	pass # Replace with function body.
 
 
@@ -24,7 +24,7 @@ func _process(delta):
 	else:
 		current_spawn_time = spawn_time
 		if player != null:
-			if global_position.distance_to(player.global_position) - (get_viewport().size.x / 2) - (spawn_distance * 2) > 0:
+			if global_position.distance_to(player.global_position) - (get_viewport().size.x / 2) - (spawn_distance) > 0:
 				#jeżeli brakuje mobów to je spawni
 				if current_spawn_count < max_spawn_count:
 					spawn_enemy()
@@ -37,6 +37,7 @@ func _process(delta):
 	pass
 	
 func spawn_enemy():
+	print_debug("spawn_enemy")
 	var new_enemy = enemy_scene.instance()
 	new_enemy.position.x = randi() % (2 * spawn_distance) - spawn_distance
 	add_child(new_enemy)

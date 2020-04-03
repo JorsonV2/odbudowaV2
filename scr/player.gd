@@ -18,6 +18,8 @@ var current_immute_time = 0
 var immute = false
 
 func _ready():
+	print_debug("elo melo")
+	signals.connect("update_equipment", self, "update_equipment")
 	signals.connect("collect_item", self, "collected_item")
 	get_node("animated_sprite").connect("animation_finished", self, "animation_finished")
 	signals.emit_update_health(health)
@@ -79,7 +81,7 @@ func shoot_arrow():
 	arrow.position = $shoot_position.global_position
 	arrow.linear_velocity = Vector2(600 * direction, 3)
 	arrow.damage = first_weapon_damage
-	get_tree().get_root().add_child(arrow)
+	get_tree().get_root().get_node("map").add_child(arrow)
 	
 	pass
 	
@@ -117,6 +119,10 @@ func take_damage(val):
 func animation_finished():
 	if current_animation == "shot":
 		active_move = true
+	pass
+	
+func update_equipment(eq):
+	equipment = eq
 	pass
 
 func _on_Area2D_body_entered(body):

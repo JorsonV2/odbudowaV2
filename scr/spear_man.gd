@@ -1,6 +1,6 @@
 extends savage
 
-
+class_name spear_man
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,7 +10,8 @@ extends savage
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+		
+func flip_enemy():
+	.flip_enemy()
+	$animated_sprite.offset.x = -$animated_sprite.offset.x
+	pass

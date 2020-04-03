@@ -24,11 +24,12 @@ var current_animation = "stand"
 var hitting = false
 
 func _ready():
+	print_debug("elo jestem mobem")
 	$Area2D.add_to_group("enemy")
 	$animated_sprite.connect("animation_finished", self, "animation_finished")
 	#$Area2D.connect("area_entered", self, "area_entered")
 	patrol_position = global_position
-	player = get_tree().get_root().get_node("testMap/player")
+	player = game_controller.player
 	for ea in range(0, equipment_amount.size()):
 		equipment[ea] = game_controller.random.randi_range(0, equipment_amount[ea])
 	pass
@@ -55,8 +56,6 @@ func _process(delta):
 
 	if !active_move and hitting:
 		current_animation = "hit"
-		
-	print_debug(current_animation)
 	
 	if movement.x < 0 and !flipped_left:
 		flip_enemy()

@@ -35,6 +35,11 @@ animations = [ {
 "name": "run",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "stand",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "jump",
@@ -43,11 +48,6 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "fall",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "stand",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 5 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 14 ) ],
@@ -87,8 +87,10 @@ frames = SubResource( 3 )
 animation = "shot"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -100 )
 current = true
 smoothing_enabled = true
+editor_draw_drag_margin = true
 
 [node name="shoot_position" type="Position2D" parent="."]
 position = Vector2( 17.4578, -2.69614 )

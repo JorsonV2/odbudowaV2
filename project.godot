@@ -54,10 +54,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scr/rabbit.gd"
 }, {
-"base": "being_controller",
+"base": "enemy",
 "class": "savage",
 "language": "GDScript",
 "path": "res://scr/savage.gd"
+}, {
+"base": "savage",
+"class": "spear_man",
+"language": "GDScript",
+"path": "res://scr/spear_man.gd"
 } ]
 _global_script_class_icons={
 "animal": "",
@@ -69,13 +74,14 @@ _global_script_class_icons={
 "mission": "",
 "player": "",
 "rabbit": "",
-"savage": ""
+"savage": "",
+"spear_man": ""
 }
 
 [application]
 
 config/name="odbudowa"
-run/main_scene="res://scenes/testMap.tscn"
+run/main_scene="res://scenes/village_scene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
