@@ -305,3 +305,5 @@ spawn_time = 1
 [node name="spawn_point2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2432.48, 343.861 )
 enemy_scene = ExtResource( 7 )
+max_spawn_count = 4
+spawn_time = 2
