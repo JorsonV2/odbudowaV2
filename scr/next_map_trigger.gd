@@ -13,6 +13,8 @@ func _on_next_map_trigger_area_entered(area):
 				new_map = game_controller.village_scene.instance()
 			"forest":
 				new_map = game_controller.forest_scene.instance()
+			"deep_forest":
+				new_map = game_controller.deep_forest_scene.instance()
 		var old_map = get_tree().get_root().get_node("map")
 		old_map.set_name("map1")
 		get_tree().get_root().call_deferred("add_child", new_map)

@@ -89,7 +89,6 @@ animation = "shot"
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -100 )
 current = true
-smoothing_enabled = true
 editor_draw_drag_margin = true
 
 [node name="shoot_position" type="Position2D" parent="."]

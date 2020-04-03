@@ -14,6 +14,7 @@ var player
 var player_destination
 var village_scene
 var forest_scene
+var deep_forest_scene
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,6 +24,7 @@ func _ready():
 	in_game_ui = preload("res://scenes/in_game_ui.tscn")
 	village_scene = preload("res://scenes/village_scene.tscn")
 	forest_scene = preload("res://scenes/forest_scene.tscn")
+	deep_forest_scene = preload("res://scenes/deep_forest_scene.tscn")
 	random.randomize()
 	pass # Replace with function body.
 
