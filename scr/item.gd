@@ -7,7 +7,9 @@ var drag_distance = 150
 var player
 
 func _ready():
-	player = get_tree().get_root().get_node("player")
+	player = game_controller.player
+	get_node("Sprite").texture = load("res://gfx/items/" + item_name + ".png")
+			
 	pass # Replace with function body.
 
 func _process(delta):
