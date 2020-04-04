@@ -38,7 +38,7 @@
 [ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (18).png" type="Texture" id=36]
 [ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (16).png" type="Texture" id=37]
 [ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (20).png" type="Texture" id=38]
-[ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=39]
+[ext_resource path="res://fonts/basic_font_28.tres" type="DynamicFont" id=39]
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=40]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -66,7 +66,7 @@ cost_for_leather = [ 1, 1, 1 ]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "stand"
-frame = 12
+frame = 31
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -82,9 +82,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -489.0
-margin_top = -270.0
+margin_top = -370.0
 margin_right = 489.0
-margin_bottom = -77.0
+margin_bottom = -49.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -100,506 +100,515 @@ valign = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="Node2D/trade_info"]
 margin_top = 45.0
 margin_right = 978.0
-margin_bottom = 193.0
+margin_bottom = 321.0
 alignment = 1
 
-[node name="gold_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer"]
-margin_right = 240.0
-margin_bottom = 148.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer"]
+margin_left = 257.0
+margin_right = 477.0
+margin_bottom = 276.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/gold_panel"]
+[node name="gold_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer"]
+margin_right = 220.0
+margin_bottom = 136.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 233.0
-margin_bottom = 141.0
+margin_right = 213.0
+margin_bottom = 129.0
 
-[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer"]
-margin_right = 226.0
-margin_bottom = 26.0
+[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer"]
+margin_right = 206.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange for 1 GOLD "
 
-[node name="wood_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer"]
-margin_top = 30.0
-margin_right = 226.0
-margin_bottom = 62.0
+[node name="wood_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer"]
+margin_top = 27.0
+margin_right = 206.0
+margin_bottom = 56.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
-margin_left = 24.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
+margin_left = 21.0
 margin_top = 3.0
-margin_right = 36.0
-margin_bottom = 29.0
+margin_right = 32.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
-margin_left = 40.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
+margin_left = 36.0
 margin_top = 3.0
-margin_right = 92.0
-margin_bottom = 29.0
+margin_right = 83.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Wood"
 
-[node name="wood_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
-margin_left = 96.0
-margin_right = 202.0
-margin_bottom = 32.0
+[node name="wood_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/wood_for_gold"]
+margin_left = 87.0
+margin_right = 185.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="rock_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer"]
-margin_top = 66.0
-margin_right = 226.0
-margin_bottom = 98.0
+[node name="rock_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer"]
+margin_top = 60.0
+margin_right = 206.0
+margin_bottom = 89.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
-margin_left = 28.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
+margin_left = 24.0
 margin_top = 3.0
-margin_right = 40.0
-margin_bottom = 29.0
+margin_right = 35.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
-margin_left = 44.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
+margin_left = 39.0
 margin_top = 3.0
-margin_right = 88.0
-margin_bottom = 29.0
+margin_right = 79.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Rock"
 
-[node name="rock_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
-margin_left = 92.0
-margin_right = 198.0
-margin_bottom = 32.0
+[node name="rock_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/rock_for_gold"]
+margin_left = 83.0
+margin_right = 181.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="leather_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer"]
-margin_top = 102.0
-margin_right = 226.0
-margin_bottom = 134.0
+[node name="leather_for_gold" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer"]
+margin_top = 93.0
+margin_right = 206.0
+margin_bottom = 122.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
-margin_left = 10.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
+margin_left = 8.0
 margin_top = 3.0
-margin_right = 22.0
-margin_bottom = 29.0
+margin_right = 19.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
-margin_left = 26.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
+margin_left = 23.0
 margin_top = 3.0
-margin_right = 106.0
-margin_bottom = 29.0
+margin_right = 96.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Leather"
 
-[node name="leather_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
-margin_left = 110.0
-margin_right = 216.0
-margin_bottom = 32.0
+[node name="leather_for_gold_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/leather_for_gold"]
+margin_left = 100.0
+margin_right = 198.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="wood_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer"]
-margin_left = 244.0
-margin_right = 478.0
-margin_bottom = 148.0
+[node name="wood_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer"]
+margin_top = 140.0
+margin_right = 220.0
+margin_bottom = 276.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/wood_panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 227.0
-margin_bottom = 141.0
+margin_right = 213.0
+margin_bottom = 129.0
 
-[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer"]
-margin_right = 220.0
-margin_bottom = 26.0
+[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer"]
+margin_right = 206.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange for 1 WOOD"
 
-[node name="gold_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer"]
-margin_top = 30.0
-margin_right = 220.0
-margin_bottom = 62.0
+[node name="gold_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer"]
+margin_top = 27.0
+margin_right = 206.0
+margin_bottom = 56.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
-margin_left = 26.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
+margin_left = 25.0
 margin_top = 3.0
-margin_right = 38.0
-margin_bottom = 29.0
+margin_right = 36.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
-margin_left = 42.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
+margin_left = 40.0
 margin_top = 3.0
-margin_right = 84.0
-margin_bottom = 29.0
+margin_right = 78.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Gold"
 
-[node name="gold_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
-margin_left = 88.0
-margin_right = 194.0
-margin_bottom = 32.0
+[node name="gold_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/gold_for_wood"]
+margin_left = 82.0
+margin_right = 180.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="rock_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer"]
-margin_top = 66.0
-margin_right = 220.0
-margin_bottom = 98.0
+[node name="rock_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer"]
+margin_top = 60.0
+margin_right = 206.0
+margin_bottom = 89.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
-margin_left = 25.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
+margin_left = 24.0
 margin_top = 3.0
-margin_right = 37.0
-margin_bottom = 29.0
+margin_right = 35.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
-margin_left = 41.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
+margin_left = 39.0
 margin_top = 3.0
-margin_right = 85.0
-margin_bottom = 29.0
+margin_right = 79.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Rock"
 
-[node name="rock_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
-margin_left = 89.0
-margin_right = 195.0
-margin_bottom = 32.0
+[node name="rock_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/rock_for_wood"]
+margin_left = 83.0
+margin_right = 181.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="leather_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer"]
-margin_top = 102.0
-margin_right = 220.0
-margin_bottom = 134.0
+[node name="leather_for_wood" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer"]
+margin_top = 93.0
+margin_right = 206.0
+margin_bottom = 122.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
-margin_left = 7.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
+margin_left = 8.0
 margin_top = 3.0
 margin_right = 19.0
-margin_bottom = 29.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
 margin_left = 23.0
 margin_top = 3.0
-margin_right = 103.0
-margin_bottom = 29.0
+margin_right = 96.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Leather"
 
-[node name="leather_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
-margin_left = 107.0
-margin_right = 213.0
-margin_bottom = 32.0
+[node name="leather_for_wood_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/leather_for_wood"]
+margin_left = 100.0
+margin_right = 198.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="rock_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer"]
-margin_left = 482.0
-margin_right = 712.0
-margin_bottom = 148.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer"]
+margin_left = 481.0
+margin_right = 721.0
+margin_bottom = 276.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/rock_panel"]
+[node name="rock_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2"]
+margin_right = 240.0
+margin_bottom = 136.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 223.0
-margin_bottom = 141.0
+margin_right = 233.0
+margin_bottom = 129.0
 
-[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer"]
-margin_right = 216.0
-margin_bottom = 26.0
+[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer"]
+margin_right = 226.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange for 1 ROCK"
 
-[node name="gold_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer"]
-margin_top = 30.0
-margin_right = 216.0
-margin_bottom = 62.0
+[node name="gold_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer"]
+margin_top = 27.0
+margin_right = 226.0
+margin_bottom = 56.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/gold_for_rock"]
-margin_left = 24.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/gold_for_rock"]
+margin_left = 35.0
 margin_top = 3.0
-margin_right = 36.0
-margin_bottom = 29.0
+margin_right = 46.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/gold_for_rock"]
-margin_left = 40.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/gold_for_rock"]
+margin_left = 50.0
 margin_top = 3.0
-margin_right = 82.0
-margin_bottom = 29.0
+margin_right = 88.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Gold"
 
-[node name="gold_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/gold_for_rock"]
-margin_left = 86.0
-margin_right = 192.0
-margin_bottom = 32.0
+[node name="gold_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/gold_for_rock"]
+margin_left = 92.0
+margin_right = 190.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="wood_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer"]
-margin_top = 66.0
-margin_right = 216.0
-margin_bottom = 98.0
+[node name="wood_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer"]
+margin_top = 60.0
+margin_right = 226.0
+margin_bottom = 89.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/wood_for_rock"]
-margin_left = 19.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/wood_for_rock"]
+margin_left = 31.0
 margin_top = 3.0
-margin_right = 31.0
-margin_bottom = 29.0
+margin_right = 42.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/wood_for_rock"]
-margin_left = 35.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/wood_for_rock"]
+margin_left = 46.0
 margin_top = 3.0
-margin_right = 87.0
-margin_bottom = 29.0
+margin_right = 93.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Wood"
 
-[node name="wood_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/wood_for_rock"]
-margin_left = 91.0
-margin_right = 197.0
-margin_bottom = 32.0
+[node name="wood_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/wood_for_rock"]
+margin_left = 97.0
+margin_right = 195.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="leather_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer"]
-margin_top = 102.0
-margin_right = 216.0
-margin_bottom = 134.0
+[node name="leather_for_rock" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer"]
+margin_top = 93.0
+margin_right = 226.0
+margin_bottom = 122.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/leather_for_rock"]
-margin_left = 5.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/leather_for_rock"]
+margin_left = 18.0
 margin_top = 3.0
-margin_right = 17.0
-margin_bottom = 29.0
+margin_right = 29.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/leather_for_rock"]
-margin_left = 21.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/leather_for_rock"]
+margin_left = 33.0
 margin_top = 3.0
-margin_right = 101.0
-margin_bottom = 29.0
+margin_right = 106.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Leather"
 
-[node name="leather_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/leather_for_rock"]
-margin_left = 105.0
-margin_right = 211.0
-margin_bottom = 32.0
+[node name="leather_for_rock_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/leather_for_rock"]
+margin_left = 110.0
+margin_right = 208.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="leather_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer"]
-margin_left = 716.0
-margin_right = 978.0
-margin_bottom = 148.0
+[node name="leather_panel" type="PanelContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2"]
+margin_top = 140.0
+margin_right = 240.0
+margin_bottom = 276.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/leather_panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 255.0
-margin_bottom = 141.0
+margin_right = 233.0
+margin_bottom = 129.0
 
-[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer"]
-margin_right = 248.0
-margin_bottom = 26.0
+[node name="for_what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer"]
+margin_right = 226.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange for 1 Leather"
 
-[node name="gold_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer"]
-margin_top = 30.0
-margin_right = 248.0
-margin_bottom = 62.0
+[node name="gold_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer"]
+margin_top = 27.0
+margin_right = 226.0
+margin_bottom = 56.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/gold_for_leather"]
-margin_left = 40.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/gold_for_leather"]
+margin_left = 35.0
 margin_top = 3.0
-margin_right = 52.0
-margin_bottom = 29.0
+margin_right = 46.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/gold_for_leather"]
-margin_left = 56.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/gold_for_leather"]
+margin_left = 50.0
 margin_top = 3.0
-margin_right = 98.0
-margin_bottom = 29.0
+margin_right = 88.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Gold"
 
-[node name="gold_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/gold_for_leather"]
-margin_left = 102.0
-margin_right = 208.0
-margin_bottom = 32.0
+[node name="gold_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/gold_for_leather"]
+margin_left = 92.0
+margin_right = 190.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="wood_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer"]
-margin_top = 66.0
-margin_right = 248.0
-margin_bottom = 98.0
+[node name="wood_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer"]
+margin_top = 60.0
+margin_right = 226.0
+margin_bottom = 89.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/wood_for_leather"]
-margin_left = 35.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/wood_for_leather"]
+margin_left = 31.0
 margin_top = 3.0
-margin_right = 47.0
-margin_bottom = 29.0
+margin_right = 42.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/wood_for_leather"]
-margin_left = 51.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/wood_for_leather"]
+margin_left = 46.0
 margin_top = 3.0
-margin_right = 103.0
-margin_bottom = 29.0
+margin_right = 93.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Wood"
 
-[node name="wood_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/wood_for_leather"]
-margin_left = 107.0
-margin_right = 213.0
-margin_bottom = 32.0
+[node name="wood_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/wood_for_leather"]
+margin_left = 97.0
+margin_right = 195.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 
-[node name="rock_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer"]
-margin_top = 102.0
-margin_right = 248.0
-margin_bottom = 134.0
+[node name="rock_for_leather" type="HBoxContainer" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer"]
+margin_top = 93.0
+margin_right = 226.0
+margin_bottom = 122.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/rock_for_leather"]
-margin_left = 39.0
+[node name="amount_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/rock_for_leather"]
+margin_left = 34.0
 margin_top = 3.0
-margin_right = 51.0
-margin_bottom = 29.0
+margin_right = 45.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/rock_for_leather"]
-margin_left = 55.0
+[node name="what_label" type="Label" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/rock_for_leather"]
+margin_left = 49.0
 margin_top = 3.0
-margin_right = 99.0
-margin_bottom = 29.0
+margin_right = 89.0
+margin_bottom = 26.0
 custom_fonts/font = ExtResource( 39 )
 text = "Rock"
 
-[node name="rock_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/rock_for_leather"]
-margin_left = 103.0
-margin_right = 209.0
-margin_bottom = 32.0
+[node name="rock_for_leather_button" type="Button" parent="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/rock_for_leather"]
+margin_left = 93.0
+margin_right = 191.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 39 )
 text = "Exchange"
 [connection signal="area_entered" from="." to="." method="_on_tradesman_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_tradesman_area_exited"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/wood_for_gold/wood_for_gold_button" to="." method="_on_wood_for_gold_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/rock_for_gold/rock_for_gold_button" to="." method="_on_rock_for_gold_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/gold_panel/VBoxContainer/leather_for_gold/leather_for_gold_button" to="." method="_on_leather_for_gold_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/gold_for_wood/gold_for_wood_button" to="." method="_on_gold_for_wood_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/rock_for_wood/rock_for_wood_button" to="." method="_on_rock_for_wood_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/wood_panel/VBoxContainer/leather_for_wood/leather_for_wood_button" to="." method="_on_leather_for_wood_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/gold_for_rock/gold_for_rock_button" to="." method="_on_gold_for_rock_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/wood_for_rock/wood_for_rock_button" to="." method="_on_wood_for_rock_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/rock_panel/VBoxContainer/leather_for_rock/leather_for_rock_button" to="." method="_on_leather_for_rock_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/gold_for_leather/gold_for_leather_button" to="." method="_on_gold_for_leather_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/wood_for_leather/wood_for_leather_button" to="." method="_on_wood_for_leather_button_pressed"]
-[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/leather_panel/VBoxContainer/rock_for_leather/rock_for_leather_button" to="." method="_on_rock_for_leather_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/wood_for_gold/wood_for_gold_button" to="." method="_on_wood_for_gold_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/rock_for_gold/rock_for_gold_button" to="." method="_on_rock_for_gold_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer/gold_panel/VBoxContainer/leather_for_gold/leather_for_gold_button" to="." method="_on_leather_for_gold_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/gold_for_wood/gold_for_wood_button" to="." method="_on_gold_for_wood_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/rock_for_wood/rock_for_wood_button" to="." method="_on_rock_for_wood_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/leather_for_wood/leather_for_wood_button" to="." method="_on_leather_for_wood_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/gold_for_rock/gold_for_rock_button" to="." method="_on_gold_for_rock_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/wood_for_rock/wood_for_rock_button" to="." method="_on_wood_for_rock_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/leather_for_rock/leather_for_rock_button" to="." method="_on_leather_for_rock_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/gold_for_leather/gold_for_leather_button" to="." method="_on_gold_for_leather_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/wood_for_leather/wood_for_leather_button" to="." method="_on_wood_for_leather_button_pressed"]
+[connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/rock_for_leather/rock_for_leather_button" to="." method="_on_rock_for_leather_button_pressed"]
