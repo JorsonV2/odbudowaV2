@@ -5,7 +5,8 @@ export var trigger_side = "left"
 var time_delay =0.5
 
 func _ready():
-	
+	if trigger_side == "right":
+		get_node("Sprite").flip_h =true
 	pass # Replace with function body.
 
 func _on_next_map_trigger_area_entered(area):

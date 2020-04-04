@@ -56,6 +56,7 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 7
 collision_mask = 7
 format = 1
+tile_data = PoolIntArray( 3276571, 32, 0, 3276681, 30, 0, 3473461, 32, 0, 3473534, 30, 0, 3539006, 31, 0, 3800914, 30, 0, 3735658, 32, 0, 3801110, 31, 0, 3801205, 31, 0, 3801224, 536870943, 0, 3801246, 31, 0, 4063054, 32, 0, 4063101, 536870943, 0, 4063131, 31, 0, 4063138, 32, 0, 4063182, 536870943, 0, 4063202, 30, 0, 4325359, 32, 0, 4325372, 536870943, 0 )
 
 [node name="TileMap4" type="TileMap" parent="." groups=[
 "tilemap",
@@ -67,6 +68,7 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 7
 collision_mask = 7
 format = 1
+tile_data = PoolIntArray( 3014433, 30, 0, 3145784, 30, 0, 3276763, 536870943, 0, 3473294, 31, 0, 3407955, 30, 0, 3735474, 30, 0, 3735562, 536870943, 0, 3735620, 31, 0, 4259816, 31, 0 )
 
 [node name="left_spawn_point" type="Position2D" parent="."]
 position = Vector2( -3202.8, 792.613 )
