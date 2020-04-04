@@ -17,6 +17,8 @@ var shooting = false
 var current_immute_time = 0
 var immute = false
 
+var sound=false
+
 func _ready():
 	print_debug("elo melo")
 	signals.connect("update_equipment", self, "update_equipment")
@@ -27,12 +29,15 @@ func _ready():
 
 func _process(delta):
 	movement.x = 0
+	
 	if active_move:
+		
 		if Input.is_action_pressed("left"):
 			if !flipped_left:
 				flip_player()
 				direction = -1
 			movement.x = -movement_speed
+			
 		elif Input.is_action_pressed("right"):
 			if flipped_left:
 				flip_player()
@@ -45,11 +50,11 @@ func _process(delta):
 			elif double_jump:
 				movement.y = -jump_force
 				double_jump = false
-				
+			
 		if Input.is_action_just_pressed("shoot"):
 			if active_weapon == "bow":
 				shoot_arrow()
-		
+			
 		if is_on_floor():
 			double_jump = true
 			if movement.x == 0:
@@ -65,15 +70,37 @@ func _process(delta):
 		current_animation = "shot"
 		
 	if $animated_sprite.animation != current_animation:
-		$animated_sprite.play(current_animation)
 		
+		if current_animation == "run":
+			sound_off()
+			$sfx_run.play()
+		elif current_animation == "shot":
+			sound_off()
+			$sfx_shot.play()
+		elif current_animation == "jump":
+			sound_off()
+			$sfx_jump.play()
+		else:
+			sound_off()
+			
+		$animated_sprite.play(current_animation)
+	
+	
 	if current_immute_time > 0:
 		current_immute_time -= delta
 	elif immute:
 		immute = false	
-		
-	pass
 	
+
+	
+	pass
+
+func sound_off():
+	$sfx_run.stop()
+	$sfx_shot.stop()
+	$sfx_jump.stop()
+	
+
 func shoot_arrow():
 	active_move = false
 	shooting = true
@@ -111,7 +138,10 @@ func collected_item(item):
 func take_damage(val):
 	.take_damage(val)
 	print_debug("take_damage")
+	
+	$sfx_dmg.play()
 	immute = true
+	
 	current_immute_time = immute_time
 	signals.emit_update_health(health)
 	pass

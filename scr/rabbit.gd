@@ -17,6 +17,7 @@ func action():
 func dead():
 	.dead()
 	signals.emit_mission_task("kill", "rabbit")
+	
 	pass
 
 
