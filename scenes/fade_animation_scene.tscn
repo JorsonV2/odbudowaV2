@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scr/fade_animation.gd" type="Script" id=1]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/panel_black:modulate")
+tracks/0/path = NodePath("animation_panels/panel_black:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -17,15 +19,17 @@ tracks/0/keys = {
 
 [node name="scene_changer" type="CanvasLayer"]
 layer = 2
+script = ExtResource( 1 )
 
-[node name="Control" type="Control" parent="."]
+[node name="animation_panels" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="panel_black" type="ColorRect" parent="Control"]
+[node name="panel_black" type="ColorRect" parent="animation_panels"]
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,6 +38,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="animation_map" type="AnimationPlayer" parent="."]
+[node name="animation_player" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
 anims/fade = SubResource( 1 )
