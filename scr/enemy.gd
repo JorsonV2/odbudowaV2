@@ -9,6 +9,8 @@ export var field_of_view = 200
 export var damage = 10
 export var equipment_amount = [0,0,0,0]
 export var hit_stand_time = 0.3
+export var dangerous = true
+export var save_distance = 200
 
 var flipped_left = false
 var patrol_position = Vector2()
@@ -16,18 +18,20 @@ var player
 var is_patroling = true
 var patrol_distance = 100
 var patrol_stand_time = 3
-var patrol_direction = 1
 var patrol_stop = false
 var time_delta
 var current_hit_stand_time = 0
 var current_animation = "stand"
 var hitting = false
+var running_away = false
+var jumped = false
+var previous_jump_position_y
+var moving_away_from_player = false
+
 
 func _ready():
-	print_debug("elo jestem mobem")
 	$Area2D.add_to_group("enemy")
 	$animated_sprite.connect("animation_finished", self, "animation_finished")
-	#$Area2D.connect("area_entered", self, "area_entered")
 	patrol_position = global_position
 	player = game_controller.player
 	for ea in range(0, equipment_amount.size()):
@@ -36,8 +40,6 @@ func _ready():
 
 func _process(delta):
 	
-	movement.x = 0
-	
 #	if current_hit_stand_time > 0:
 #		current_hit_stand_time -= delta
 #	else:
@@ -45,8 +47,11 @@ func _process(delta):
 	check_if_player_overlaps()
 	time_delta = delta
 	if active_move:
-		action()
-		if not is_patroling:
+		move()
+
+		if is_patroling:
+			movement.x = movement_speed * 0.5 * direction
+		else:
 			movement.x = movement_speed * direction
 			
 	if movement.x != 0:
@@ -66,37 +71,72 @@ func _process(delta):
 		$animated_sprite.play(current_animation)
 	pass
 	
-func action():
+func move():
+	
+	if is_on_floor():
+		if jumped and previous_jump_position_y == global_position.y:
+			direction = -direction
+			jumped = false
+		elif !patrol_stop and movement.x == 0:
+			previous_jump_position_y = global_position.y
+			movement.y = -jump_force
+			jumped = true
+			
 	if global_position.distance_to(player.global_position) < field_of_view:
+		var direction_to_player = global_position.direction_to(player.global_position)
 		if is_patroling:
 			is_patroling = false
-		var vector = global_position.direction_to(player.global_position)
-		if vector.x > 0:
-			direction = 1
+		if dangerous:
+			move_to_player(direction_to_player)
 		else:
-			direction = -1
+			move_away_from_player(direction_to_player)
+	elif running_away:
+		var direction_to_player = global_position.direction_to(player.global_position)
+		move_away_from_player(direction_to_player)
 	else:
 		if is_patroling:
 			patrol()
 		else:
 			is_patroling = true
-			direction = 0
 			patrol_position = global_position
+			
+	pass
+	
+func move_to_player(direction_to_player):
+	if direction_to_player.x > 0:
+		direction = 1
+	else:
+		direction = -1
+	pass
+	
+func move_away_from_player(player_direction):
+	move_to_player(player_direction)
+	direction = -direction
+	if global_position.distance_to(game_controller.player.global_position) < field_of_view + save_distance:
+		running_away = true
+	else:
+		running_away = false
 	pass
 	
 func patrol():
 	if patrol_stand_time > 0:
-		movement.x = 0
+		direction = 0
 		if !patrol_stop:
 			patrol_stop = true
-			patrol_position.x += patrol_direction * 10
+			patrol_position.x += direction * 10
 		patrol_stand_time -= time_delta
 	else:
+#		if is_on_floor() and jumped:
+#			if previous_jump_position_y == global_position.y:
+#				direction = -direction
+#				jumped = false
 		if patrol_stop:
 			patrol_stop = false
-			patrol_direction = -patrol_direction
-		movement.x = movement_speed * 0.5 * patrol_direction
-		if patrol_position.distance_to(global_position) > patrol_distance :
+			if patrol_position.x - global_position.x > 0:
+				direction = 1
+			else:
+				direction = -1
+		if -(patrol_position.x - global_position.x) * direction > patrol_distance:
 			patrol_stand_time = randi() % 5 + 1
 	pass
 	
@@ -111,7 +151,7 @@ func dead():
 	pass
 	
 func hit_player():
-	if !player.immute:
+	if !player.immute and dangerous:
 		active_move = false
 		hitting = true
 		player.take_damage(2)

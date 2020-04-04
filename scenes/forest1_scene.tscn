@@ -94,8 +94,8 @@ enemy_scene = ExtResource( 2 )
 spawn_time = 4
 
 [node name="spawn_point3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1602.94, 916.521 )
-spawn_distance = 400
+position = Vector2( 1442.56, 924.746 )
+spawn_distance = 300
 enemy_scene = ExtResource( 2 )
 
 [node name="spawn_point6" parent="." instance=ExtResource( 5 )]
