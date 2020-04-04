@@ -19,17 +19,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if current_spawn_time > 0:
-		current_spawn_time -= delta
-	else:
-		current_spawn_time = spawn_time
-		if player != null:
-			if global_position.distance_to(player.global_position) - (get_viewport().size.x / 2) - (spawn_distance) > 0:
-				#jeżeli brakuje mobów to je spawni
-				if current_spawn_count < max_spawn_count:
-					spawn_enemy()
+	if !Engine.editor_hint:
+		if current_spawn_time > 0:
+			current_spawn_time -= delta
+		else:
+			current_spawn_time = spawn_time
+			if player != null:
+				if global_position.distance_to(player.global_position) - (get_viewport().size.x / 2) - (spawn_distance) > 0:
+					#jeżeli brakuje mobów to je spawni
+					if current_spawn_count < max_spawn_count:
+						spawn_enemy()
+						pass
 					pass
-				pass
 	
 	if Engine.editor_hint:
 		set_margin_spawn_posiitons()
@@ -37,7 +38,6 @@ func _process(delta):
 	pass
 	
 func spawn_enemy():
-	print_debug("spawn_enemy")
 	var new_enemy = enemy_scene.instance()
 	new_enemy.position.x = randi() % (2 * spawn_distance) - spawn_distance
 	add_child(new_enemy)

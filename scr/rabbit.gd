@@ -9,11 +9,6 @@ class_name rabbit
 func _ready():
 	pass # Replace with function body.
 
-func action():
-	.action()
-	direction = -direction
-	pass
-	
 func dead():
 	.dead()
 	signals.emit_mission_task("kill", "rabbit")

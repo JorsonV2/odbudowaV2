@@ -2,7 +2,6 @@ extends enemy
 
 class_name animal
 
-export var dangerous = true
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
