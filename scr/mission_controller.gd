@@ -9,7 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 func add_missions():
-	var new_mission = mission.new()
+	var new_mission = mission.new("meteor")
 	new_mission.add_task("Kill rabbits", "kill", "rabbit", 6)
 	new_mission.active = true
 	current_mission = new_mission

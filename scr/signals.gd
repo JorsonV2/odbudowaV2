@@ -6,6 +6,7 @@ signal update_health(health)
 signal mission_task(type, object)
 signal update_current_mission()
 signal spawn_player()
+signal mission_trigger(trigger)
 
 func _ready():
 	pass
@@ -27,3 +28,7 @@ func emit_update_current_mission():
 	
 func emit_spawn_player():
 	emit_signal("spawn_player")
+	
+func emit_mission_trigger(trigger):
+	emit_signal("mission_trigger", trigger)
+	pass

@@ -23,6 +23,7 @@ var activated_buildings = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	signals.connect("update_equipment", self, "update_equipment")
+	signals.connect("mission_trigger", self, "mission_trigger")
 	player_scene = preload("res://scenes/player_scene.tscn")
 	in_game_ui = preload("res://scenes/in_game_ui.tscn")
 	village_scene = preload("res://scenes/village_scene.tscn")
@@ -34,6 +35,10 @@ func _ready():
 
 func update_equipment(equipment):
 	player_equipment = equipment
+	pass
+	
+func mission_trigger(trigger):
+	print_debug(trigger)
 	pass
 	
 
