@@ -4,7 +4,7 @@
 [ext_resource path="res://gfx/background/back_ready/Background_Fard_trees.png" type="Texture" id=2]
 [ext_resource path="res://gfx/background/back_ready/Background_trees.png" type="Texture" id=3]
 
-[node name="ParallaxBackground" type="ParallaxBackground"]
+[node name="background" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2( 0, -200 )
