@@ -51,6 +51,7 @@ func _on_next_map_trigger_area_entered(area):
 		game_controller.player.active_move=true
 		animation_map.play_backwards("fade")
 		yield(animation_map,"animation_finished")
+		game_controller.scene_changer.get_node("Control").hide()
 		signals.emit_mission_task("place", map_name)
 		old_map.queue_free()
 		
