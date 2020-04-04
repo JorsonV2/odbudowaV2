@@ -26,7 +26,7 @@ func _ready():
 	player_scene = preload("res://scenes/player_scene.tscn")
 	in_game_ui = preload("res://scenes/in_game_ui.tscn")
 	village_scene = preload("res://scenes/village_scene.tscn")
-	forest_scene = preload("res://scenes/forest_scene.tscn")
+	forest_scene = preload("res://scenes/forest1_scene.tscn")
 	deep_forest_scene = preload("res://scenes/deep_forest_scene.tscn")
 	scene_changer_scene = preload("res://scenes/Scene_animation.tscn")
 	random.randomize()
