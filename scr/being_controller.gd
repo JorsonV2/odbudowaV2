@@ -37,8 +37,7 @@ func fire_item(name):
 	pass
 	
 func take_damage(val):
-	if has_node("sfx_dmg"):
-		 $sfx_dmg.play(); 
+	
 	health -= val
 	if health <= 0:
 		dead()
