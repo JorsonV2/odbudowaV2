@@ -14,11 +14,13 @@ script = ExtResource( 7 )
 [node name="background" parent="." instance=ExtResource( 3 )]
 
 [node name="next_map_trigger" parent="." instance=ExtResource( 8 )]
-position = Vector2( -3311.42, 809.183 )
+position = Vector2( -3320.54, 792.966 )
+scale = Vector2( 1.5, 1.5 )
 map_name = "deep_forest"
 
 [node name="next_map_trigger2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2704.63, 930.676 )
+position = Vector2( 2701.39, 917.724 )
+scale = Vector2( 1.5, 1.5 )
 map_name = "village"
 trigger_side = "right"
 

@@ -15,10 +15,12 @@ script = ExtResource( 7 )
 
 [node name="next_map_trigger" parent="." instance=ExtResource( 8 )]
 position = Vector2( -6453.89, 1051.59 )
+scale = Vector2( 1.5, 1.5 )
 map_name = "deep_forest"
 
 [node name="next_map_trigger2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2788.48, 1048.61 )
+scale = Vector2( 1.5, 1.5 )
 collision_layer = 7
 collision_mask = 7
 map_name = "forest"
