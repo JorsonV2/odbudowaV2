@@ -33,6 +33,7 @@ animations = [ {
 "loop": false,
 "name": "hit",
 "speed": 15.0
+}, {
 "frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "run",
@@ -42,11 +43,6 @@ animations = [ {
 "loop": true,
 "name": "stand",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "hit",
-"speed": 15.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
