@@ -238,3 +238,8 @@ func _on_rock_for_leather_button_pressed():
 	add_resoure("leather", 1)
 	add_resoure("rock", -cost_for_leather[2])
 	pass # Replace with function body.
+
+
+func _on_wood_for_rock_button_mouse_entered():
+	print_debug("elo melonajechałeś mnie")
+	pass # Replace with function body.

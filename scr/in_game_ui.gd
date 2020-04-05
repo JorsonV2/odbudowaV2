@@ -18,6 +18,9 @@ func _ready():
 	animation_player = $animation_player
 	mission_notification = find_node("mission_notification")
 	$right_container.mouse_filter = 1
+	for control in $right_container.get_children():
+		control.mouse_filter = 1
+		pass
 	update_current_mission()
 	pass # Replace with function body.
 	
@@ -51,7 +54,7 @@ func update_current_mission():
 	pass
 	
 func mission_completed():
-	
+	play_mission_notification()
 	pass
 	
 func play_mission_notification():
