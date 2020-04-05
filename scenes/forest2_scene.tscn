@@ -16,12 +16,12 @@ script = ExtResource( 7 )
 [node name="next_map_trigger" parent="." instance=ExtResource( 8 )]
 position = Vector2( -3320.54, 792.966 )
 scale = Vector2( 1.5, 1.5 )
-map_name = "deep_forest"
+map_name = "village"
 
 [node name="next_map_trigger2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2768.79, 862.802 )
 scale = Vector2( 1.5, 1.5 )
-map_name = "village"
+map_name = "deep_forest"
 trigger_side = "right"
 
 [node name="TileMap" type="TileMap" parent="." groups=[
@@ -79,42 +79,30 @@ position = Vector2( -3202.8, 792.613 )
 position = Vector2( 2688.45, 865.065 )
 
 [node name="spawn_point" parent="." instance=ExtResource( 5 )]
-position = Vector2( -240.998, 1023.42 )
-spawn_distance = 250
+position = Vector2( -205.542, 1023.42 )
+spawn_distance = 450
 enemy_scene = ExtResource( 2 )
 max_spawn_count = 2
 spawn_time = 1
 
 [node name="spawn_point7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1920.49, 1303.63 )
+position = Vector2( 1569.87, 1130.29 )
 enemy_scene = ExtResource( 2 )
-
-[node name="spawn_point2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 519.196, 919.749 )
-spawn_distance = 250
-enemy_scene = ExtResource( 2 )
-max_spawn_count = 2
-spawn_time = 4
 
 [node name="spawn_point3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1442.56, 924.746 )
-spawn_distance = 300
-enemy_scene = ExtResource( 2 )
-max_spawn_count = 2
-
-[node name="spawn_point6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 766.267, 1629.4 )
-spawn_distance = 300
-enemy_scene = ExtResource( 2 )
-
-[node name="spawn_point4" parent="." instance=ExtResource( 5 )]
-position = Vector2( -2570.25, 982.862 )
-spawn_distance = 400
+position = Vector2( 1982.29, 893.229 )
+spawn_distance = 500
 enemy_scene = ExtResource( 4 )
 max_spawn_count = 2
 
+[node name="spawn_point4" parent="." instance=ExtResource( 5 )]
+position = Vector2( -2775.11, 935.587 )
+spawn_distance = 300
+enemy_scene = ExtResource( 2 )
+max_spawn_count = 2
+
 [node name="spawn_point5" parent="." instance=ExtResource( 5 )]
-position = Vector2( -1180.26, 978.749 )
-spawn_distance = 350
+position = Vector2( -1121.17, 923.594 )
+spawn_distance = 100
 enemy_scene = ExtResource( 4 )
 max_spawn_count = 2
