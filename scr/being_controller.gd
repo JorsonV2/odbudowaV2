@@ -37,11 +37,14 @@ func fire_item(name):
 	pass
 	
 func take_damage(val):
-	if has_node("sfx_dmg"):
-		 $sfx_dmg.play(); 
+	
 	health -= val
 	if health <= 0:
 		dead()
+	
+	else:
+		if has_node("sfx_dmg"):
+		 $sfx_dmg.play(); 
 	pass
 	
 func dead():
@@ -58,10 +61,11 @@ func dead():
 				3:
 					item_name = "leather"
 			fire_item(item_name)
-	
+	if has_node("sfx_dead"):
+		 $sfx_dead.play(); 
 	hide()
 	is_dead = true
 	set_deferred("collision_layer", 0)
-	yield($sfx_dmg,"finished")
+	yield($sfx_dead,"finished")
 	queue_free()
 	pass
