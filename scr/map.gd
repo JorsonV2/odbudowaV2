@@ -20,10 +20,11 @@ func _ready():
 func spawn_player():
 	var fade_animation = game_controller.fade_animation_scene.instance()
 	var player = game_controller.player_scene.instance()
-	var in_game_ui = game_controller.in_game_ui.instance()
+	var in_game_ui = game_controller.in_game_ui_scene.instance()
 	player.position = left_spawn_point.position
 	game_controller.player = player
 	game_controller.fade_animation = fade_animation
+	game_controller.in_game_ui = in_game_ui
 	get_tree().get_root().call_deferred("add_child", in_game_ui)
 	get_tree().get_root().call_deferred("add_child", player)
 	get_tree().get_root().call_deferred("add_child", fade_animation)

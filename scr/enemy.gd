@@ -9,7 +9,7 @@ export var is_hitting = true
 export var field_of_view = 200
 export var damage = 10
 export var equipment_amount = [0,0,0,0]
-export var hit_stand_time = 0.3
+export var next_hit_time = 2
 export var dangerous = true
 export var save_distance = 200
 
@@ -23,6 +23,7 @@ var patrol_stop = false
 var time_delta
 var current_hit_stand_time = 0
 var current_animation = "stand"
+var current_next_hit_time = 0
 var hitting = false
 var running_away = false
 var jumped = false
@@ -47,8 +48,8 @@ func _process(delta):
 #		current_hit_stand_time -= delta
 #	else:
 #		active_move = true
-	check_if_player_overlaps()
 	time_delta = delta
+	check_if_player_overlaps()
 	if active_move:
 		move()
 
@@ -78,7 +79,7 @@ func move():
 	if is_on_floor():
 		if jumped and movement.y == 0:
 			landed = true
-		elif !patrol_stop and movement.x == 0:
+		elif current_animation != "stand" and movement.x == 0:
 			previous_jump_position_y = global_position.y
 			movement.y = -jump_force
 			jumped = true
@@ -178,10 +179,12 @@ func dead():
 	pass
 	
 func hit_player():
-	if !player.immute and dangerous and !is_dead:
+	#if !player.immute and dangerous and !is_dead:
+	if dangerous and !is_dead:
 		active_move = false
 		hitting = true
 		player.take_damage(2)
+		current_next_hit_time = next_hit_time
 	pass
 	
 func stop_hitting_player():
@@ -193,7 +196,10 @@ func stop_hitting_player():
 func check_if_player_overlaps():
 	if $Area2D.overlaps_area(player.get_node("Area2D")) and dangerous:
 		active_move = false
-		hit_player()
+		if current_next_hit_time > 0:
+			current_next_hit_time -= time_delta
+		else:
+			hit_player()
 	pass
 	
 func animation_finished():

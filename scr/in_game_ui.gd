@@ -6,11 +6,16 @@ extends CanvasLayer
 # var b = "text"
 export (PackedScene) var mission_scene
 
+var animation_player
+var mission_notification 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	signals.connect("update_equipment", self, "update_equipment")
 	signals.connect("update_health", self, "update_health")
 	signals.connect("update_current_mission", self, "update_current_mission")
+	animation_player = $animation_player
+	mission_notification = find_node("mission_notification")
 	update_current_mission()
 	pass # Replace with function body.
 	
@@ -41,8 +46,12 @@ func update_current_mission():
 			new_mission.get_node("current_amount_label").text = String(t.current_amount)
 			new_mission.get_node("amount_label").text = String(t.amount)
 			container.add_child(new_mission)
-			pass
+	
+	animation_player.play("mission_notification")
+	print_debug("play mission notification")
 	pass
+	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
