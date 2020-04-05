@@ -34,11 +34,6 @@ height = 40.1516
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "fall",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 5 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "shot",
@@ -57,6 +52,11 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "jump",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "fall",
 "speed": 10.0
 } ]
 
@@ -110,6 +110,7 @@ volume_db = 6.058
 
 [node name="sfx_dmg" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 24 )
+volume_db = -6.0
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

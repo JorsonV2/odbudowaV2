@@ -181,6 +181,8 @@ func dead():
 func hit_player():
 	#if !player.immute and dangerous and !is_dead:
 	if dangerous and !is_dead:
+		if has_node("sfx_atk"):
+			$sfx_atk.play()
 		active_move = false
 		hitting = true
 		player.take_damage(2)

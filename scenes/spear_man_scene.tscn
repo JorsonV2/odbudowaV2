@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://gfx/dzida/run/run_07.png" type="Texture" id=1]
 [ext_resource path="res://scr/spear_man.gd" type="Script" id=2]
@@ -29,6 +29,9 @@
 [ext_resource path="res://gfx/dzida/stand/syand (2).png" type="Texture" id=27]
 [ext_resource path="res://gfx/dzida/stand/syand (3).png" type="Texture" id=28]
 [ext_resource path="res://gfx/dzida/stand/syand (5.png" type="Texture" id=29]
+[ext_resource path="res://sounds/sfx/dead_savage.ogg" type="AudioStream" id=30]
+[ext_resource path="res://sounds/sfx/dmg_savage.ogg" type="AudioStream" id=31]
+[ext_resource path="res://sounds/sfx/atk_savage.ogg" type="AudioStream" id=32]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.9723, 38.0931 )
@@ -84,3 +87,14 @@ scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "stand"
 offset = Vector2( 20, -10 )
+
+[node name="sfx_dmg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
+volume_db = -16.0
+
+[node name="sfx_dead" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 30 )
+volume_db = 5.0
+
+[node name="sfx_atk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 32 )
