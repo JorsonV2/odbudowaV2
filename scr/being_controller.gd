@@ -33,12 +33,17 @@ func fire_item(name):
 	pass
 	
 func take_damage(val):
+	if has_node("sfx_dmg"): $sfx_dmg.play(); 
 	health -= val
 	if health <= 0:
+		
 		dead()
 	pass
 	
 func dead():
+	
+	
+	
 	for e in range(equipment.size()):
 		for i in range(equipment[e]):
 			var item_name
@@ -51,6 +56,8 @@ func dead():
 					item_name = "rock"
 				3:
 					item_name = "leather"
-			fire_item(item_name)			
+			fire_item(item_name)
+			.hide()
+	yield($sfx_dmg,"finished")
 	queue_free()
 	pass

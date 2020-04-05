@@ -146,6 +146,7 @@ func flip_enemy():
 	pass
 	
 func dead():
+	
 	emit_signal("exit_spawn_point")
 	.dead()
 	pass

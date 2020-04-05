@@ -96,6 +96,7 @@ func _process(delta):
 	pass
 
 func sound_off():
+	
 	$sfx_run.stop()
 	$sfx_shot.stop()
 	$sfx_jump.stop()
