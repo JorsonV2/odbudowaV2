@@ -11,6 +11,7 @@ var player_equipment = [0,0,0,0]
 var game_stop = false
 var player_destination
 var activated_buildings = []
+var buildings_builded = true
 
 var player_scene
 var village_scene
@@ -53,6 +54,7 @@ func mission_trigger(trigger):
 	pass
 	
 func play_meteor_video():
+	game_controller.buildings_builded = false
 	var meteor_video : CanvasLayer = meteor_video_scene.instance()
 	fade_animation.show()
 	fade_animation.play_fade()

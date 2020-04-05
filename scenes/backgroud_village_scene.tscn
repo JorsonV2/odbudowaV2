@@ -19,23 +19,23 @@ centered = false
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 position = Vector2( 0, 200 )
 motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 768, 0 )
+motion_mirroring = Vector2( 1536, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 1e+06, 1536 )
+region_rect = Rect2( 0, 0, 7680, 1536 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
 position = Vector2( 0, 290 )
 motion_scale = Vector2( 0.7, 1 )
-motion_mirroring = Vector2( 768, 0 )
+motion_mirroring = Vector2( 1536, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 100000, 1536 )
+region_rect = Rect2( 0, 0, 7680, 1536 )
