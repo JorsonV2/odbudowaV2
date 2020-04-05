@@ -66,7 +66,7 @@ cost_for_leather = [ 1, 1, 1 ]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "stand"
-frame = 31
+frame = 29
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -607,6 +607,7 @@ text = "Exchange"
 [connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/rock_for_wood/rock_for_wood_button" to="." method="_on_rock_for_wood_button_pressed"]
 [connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer/wood_panel/VBoxContainer/leather_for_wood/leather_for_wood_button" to="." method="_on_leather_for_wood_button_pressed"]
 [connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/gold_for_rock/gold_for_rock_button" to="." method="_on_gold_for_rock_button_pressed"]
+[connection signal="mouse_entered" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/wood_for_rock/wood_for_rock_button" to="." method="_on_wood_for_rock_button_mouse_entered"]
 [connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/wood_for_rock/wood_for_rock_button" to="." method="_on_wood_for_rock_button_pressed"]
 [connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/rock_panel/VBoxContainer/leather_for_rock/leather_for_rock_button" to="." method="_on_leather_for_rock_button_pressed"]
 [connection signal="pressed" from="Node2D/trade_info/HBoxContainer/VBoxContainer2/leather_panel/VBoxContainer/gold_for_leather/gold_for_leather_button" to="." method="_on_gold_for_leather_button_pressed"]
