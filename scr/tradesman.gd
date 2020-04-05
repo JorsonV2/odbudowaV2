@@ -12,16 +12,11 @@ var leather_panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if game_controller.buildings_builded:
-		hide()
-		set_deferred("monitorable", false)
-		set_deferred("monitoring", false)
-	else:
-		gold_panel = find_node("gold_panel")
-		wood_panel = find_node("wood_panel")
-		rock_panel = find_node("rock_panel")
-		leather_panel = find_node("leather_panel")
-		set_costs()
+	gold_panel = find_node("gold_panel")
+	wood_panel = find_node("wood_panel")
+	rock_panel = find_node("rock_panel")
+	leather_panel = find_node("leather_panel")
+	set_costs()
 	pass # Replace with function body.
 
 func update_buttons():
@@ -164,14 +159,12 @@ func _on_tradesman_area_entered(area):
 	if area.is_in_group("player"):
 		update_buttons()
 		find_node("trade_info").show()
-		game_controller.in_game_ui.hide_missions()
 	pass # Replace with function body.
 
 
 func _on_tradesman_area_exited(area):
 	if area.is_in_group("player"):
 		find_node("trade_info").hide()
-		game_controller.in_game_ui.show_missions()
 	pass # Replace with function body.
 
 
