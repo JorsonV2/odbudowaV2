@@ -10,6 +10,7 @@ func _ready():
 	pass # Replace with function body.
 
 func dead():
+	
 	.dead()
 	signals.emit_mission_task("kill", "rabbit")
 	

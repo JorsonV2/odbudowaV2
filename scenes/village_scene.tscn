@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=1]
 [ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=2]
@@ -12,8 +12,6 @@
 [ext_resource path="res://gfx/Home/Wooden.png" type="Texture" id=10]
 [ext_resource path="res://gfx/Home/Wooden_builded.png" type="Texture" id=11]
 [ext_resource path="res://scenes/backgroud_village_scene.tscn" type="PackedScene" id=12]
-[ext_resource path="res://gfx/Home/watchtower_ruins.png" type="Texture" id=13]
-[ext_resource path="res://gfx/Home/watchtower.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 64 )
@@ -589,17 +587,16 @@ text = "Action"
 position = Vector2( 1180.29, 366.034 )
 z_index = -1
 script = ExtResource( 6 )
-ruins_texture = ExtResource( 13 )
-building_texture = ExtResource( 14 )
+ruins_texture = ExtResource( 4 )
+building_texture = ExtResource( 5 )
 resources_to_build = [ 100, 50, 50, 0 ]
 building_name = "Building 3"
 build_text = "Zbuduj go sobie"
 action_text = "Zrób coś"
 
 [node name="Sprite" type="Sprite" parent="building3"]
-position = Vector2( 12.94, -200.753 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 13 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="building3"]
 position = Vector2( 0, 24.3348 )

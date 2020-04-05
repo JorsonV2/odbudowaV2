@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://gfx/fox/run/run_06.png" type="Texture" id=1]
 [ext_resource path="res://scr/fox.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://gfx/fox/hit/hit_4.png" type="Texture" id=12]
 [ext_resource path="res://gfx/fox/hit/hit_2.png" type="Texture" id=13]
 [ext_resource path="res://gfx/fox/hit/hit_1.png" type="Texture" id=14]
+[ext_resource path="res://sounds/sfx/dmg_fox.ogg" type="AudioStream" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.8517, 15.8994 )
@@ -68,3 +69,6 @@ position = Vector2( 0.0848501, -0.58486 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "hit"
+
+[node name="sfx_dmg" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
