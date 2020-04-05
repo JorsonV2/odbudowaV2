@@ -20,7 +20,10 @@ func _ready():
 
 func _process(delta):
 	movement.y += gravity * delta
-	movement = move_and_slide(movement, Vector2(0,-1), true)
+	if active_move:
+		movement = move_and_slide(movement, Vector2(0,-1), true)
+	else:
+		movement = move_and_slide(Vector2(0, movement.y), Vector2(0,-1), true)
 	pass
 	
 func fire_item(name):

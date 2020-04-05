@@ -74,10 +74,7 @@ func _process(delta):
 func move():
 	
 	if is_on_floor():
-		if jumped and previous_jump_position_y == global_position.y:
-			direction = -direction
-			jumped = false
-		elif !patrol_stop and movement.x == 0:
+		if !patrol_stop and movement.x == 0:
 			previous_jump_position_y = global_position.y
 			movement.y = -jump_force
 			jumped = true
@@ -126,10 +123,10 @@ func patrol():
 			patrol_position.x += direction * 10
 		patrol_stand_time -= time_delta
 	else:
-#		if is_on_floor() and jumped:
-#			if previous_jump_position_y == global_position.y:
-#				direction = -direction
-#				jumped = false
+		if is_on_floor() and jumped:
+			if previous_jump_position_y == global_position.y:
+				direction = -direction
+				jumped = false
 		if patrol_stop:
 			patrol_stop = false
 			if patrol_position.x - global_position.x > 0:
@@ -164,7 +161,7 @@ func stop_hitting_player():
 	pass	
 	
 func check_if_player_overlaps():
-	if $Area2D.overlaps_area(player.get_node("Area2D")):
+	if $Area2D.overlaps_area(player.get_node("Area2D")) and dangerous:
 		active_move = false
 		hit_player()
 	pass

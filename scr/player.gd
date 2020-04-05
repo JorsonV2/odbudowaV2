@@ -68,6 +68,7 @@ func _process(delta):
 				current_animation = "jump"
 	elif shooting:
 		current_animation = "shot"
+		shooting = false
 		
 	if $animated_sprite.animation != current_animation:
 		
