@@ -187,5 +187,5 @@ text = "0"
 [node name="animation_player" type="AnimationPlayer" parent="."]
 anims/mission_notification = SubResource( 2 )
 
-[node name="sfx_complete" type="AudioStreamPlayer2D" parent="."]
+[node name="sfx_complete" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
