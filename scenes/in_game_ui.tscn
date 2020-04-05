@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scr/in_game_ui.gd" type="Script" id=1]
 [ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://gfx/life_bar/HpBarOver.png" type="Texture" id=5]
 [ext_resource path="res://scenes/mission_container.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://sounds/sfx/new_mission.ogg" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
@@ -181,3 +182,6 @@ text = "0"
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 anims/mission_notification = SubResource( 2 )
+
+[node name="sfx_complete" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
