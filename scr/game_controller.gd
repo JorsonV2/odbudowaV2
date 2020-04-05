@@ -17,6 +17,7 @@ var village_scene
 var forest_scene
 var deep_forest_scene
 var forest_right_scene
+var deep_forest_right_scene
 
 var fade_animation_scene
 var meteor_video_scene
@@ -36,7 +37,7 @@ func _ready():
 	forest_scene = preload("res://scenes/forest1_scene.tscn")
 	deep_forest_scene = preload("res://scenes/deep_forest_scene.tscn")
 	forest_right_scene = preload("res://scenes/forest2_scene.tscn")
-	
+	deep_forest_right_scene = preload("res://scenes/forest3_scene.tscn")
 	fade_animation_scene = preload("res://scenes/fade_animation_scene.tscn")
 	meteor_video_scene = preload("res://scenes/meteor_video_scene.tscn")
 	random.randomize()
