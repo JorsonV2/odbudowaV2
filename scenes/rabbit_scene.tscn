@@ -35,7 +35,6 @@ movement_speed = 250
 is_hitting = false
 equipment_amount = [ 0, 10, 10, 10 ]
 dangerous = false
-dangerous = false
 
 [node name="Area2D" type="Area2D" parent="."]
 

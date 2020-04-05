@@ -11,6 +11,7 @@ var equipment = [0,0,0,0] #gold/wood/rock/leather
 var item_scene
 var active_move = true
 var movement = Vector2()
+var is_dead = false
 
 var direction = 1
 
@@ -36,17 +37,14 @@ func fire_item(name):
 	pass
 	
 func take_damage(val):
-	if has_node("sfx_dmg"): $sfx_dmg.play(); 
+	if has_node("sfx_dmg"):
+		 $sfx_dmg.play(); 
 	health -= val
 	if health <= 0:
-		
 		dead()
 	pass
 	
 func dead():
-	
-	
-	
 	for e in range(equipment.size()):
 		for i in range(equipment[e]):
 			var item_name
@@ -60,7 +58,10 @@ func dead():
 				3:
 					item_name = "leather"
 			fire_item(item_name)
-			.hide()
+	
+	hide()
+	is_dead = true
+	set_deferred("collision_layer", 0)
 	yield($sfx_dmg,"finished")
 	queue_free()
 	pass

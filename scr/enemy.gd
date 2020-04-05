@@ -25,8 +25,10 @@ var current_animation = "stand"
 var hitting = false
 var running_away = false
 var jumped = false
+var landed = false
 var previous_jump_position_y
 var moving_away_from_player = false
+var agro = false
 
 
 func _ready():
@@ -72,24 +74,30 @@ func _process(delta):
 	pass
 	
 func move():
-	
 	if is_on_floor():
-		if !patrol_stop and movement.x == 0:
+		if jumped and movement.y == 0:
+			landed = true
+		elif !patrol_stop and movement.x == 0:
 			previous_jump_position_y = global_position.y
 			movement.y = -jump_force
 			jumped = true
 			
+	var direction_to_player = global_position.direction_to(player.global_position)
 	if global_position.distance_to(player.global_position) < field_of_view:
-		var direction_to_player = global_position.direction_to(player.global_position)
 		if is_patroling:
 			is_patroling = false
-		if dangerous:
-			move_to_player(direction_to_player)
-		else:
-			move_away_from_player(direction_to_player)
+			patrol_stop = false
+		start_move(direction_to_player)
+		agro = false
+		
+	elif agro:
+		if is_patroling:
+			is_patroling = false
+			patrol_stop = false
+		start_move(direction_to_player)
+		
 	elif running_away:
-		var direction_to_player = global_position.direction_to(player.global_position)
-		move_away_from_player(direction_to_player)
+		start_move(direction_to_player)
 	else:
 		if is_patroling:
 			patrol()
@@ -97,6 +105,19 @@ func move():
 			is_patroling = true
 			patrol_position = global_position
 			
+	if landed:
+		if round(global_position.y) == round(previous_jump_position_y):
+			direction = -direction
+		jumped = false
+		landed = false
+			
+	pass
+	
+func start_move(direction_to_player):
+	if dangerous:
+		move_to_player(direction_to_player)
+	else:
+		move_away_from_player(direction_to_player)
 	pass
 	
 func move_to_player(direction_to_player):
@@ -107,12 +128,17 @@ func move_to_player(direction_to_player):
 	pass
 	
 func move_away_from_player(player_direction):
-	move_to_player(player_direction)
-	direction = -direction
+	if !moving_away_from_player:
+		move_to_player(player_direction)
+		direction = -direction
+		moving_away_from_player = true
+		
 	if global_position.distance_to(game_controller.player.global_position) < field_of_view + save_distance:
 		running_away = true
 	else:
 		running_away = false
+		moving_away_from_player = false
+		agro = false
 	pass
 	
 func patrol():
@@ -123,10 +149,6 @@ func patrol():
 			patrol_position.x += direction * 10
 		patrol_stand_time -= time_delta
 	else:
-		if is_on_floor() and jumped:
-			if previous_jump_position_y == global_position.y:
-				direction = -direction
-				jumped = false
 		if patrol_stop:
 			patrol_stop = false
 			if patrol_position.x - global_position.x > 0:
@@ -142,6 +164,11 @@ func flip_enemy():
 	$animated_sprite.flip_h = flipped_left
 	pass
 	
+func take_damage(val):
+	.take_damage(val)
+	agro = true
+	pass
+	
 func dead():
 	
 	emit_signal("exit_spawn_point")
@@ -149,7 +176,7 @@ func dead():
 	pass
 	
 func hit_player():
-	if !player.immute and dangerous:
+	if !player.immute and dangerous and !is_dead:
 		active_move = false
 		hitting = true
 		player.take_damage(2)
