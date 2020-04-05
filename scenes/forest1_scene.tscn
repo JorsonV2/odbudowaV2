@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/rabbit_scene.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://sounds/music/main.ogg" type="AudioStream" id=6]
 [ext_resource path="res://scr/map.gd" type="Script" id=7]
 [ext_resource path="res://scenes/next_map_trigger_scene.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/spear_man_scene.tscn" type="PackedScene" id=9]
 
 [node name="map" type="Node2D"]
 script = ExtResource( 7 )
@@ -89,7 +88,8 @@ spawn_time = 1
 
 [node name="spawn_point7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1920.49, 1303.63 )
-enemy_scene = ExtResource( 9 )
+enemy_scene = ExtResource( 4 )
+max_spawn_count = 3
 
 [node name="spawn_point2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 519.196, 919.749 )
