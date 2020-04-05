@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/rabbit_scene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/backgroud_forest_scene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/fox_scene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/spawn_point_scene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sounds/music/main.ogg" type="AudioStream" id=6]
 [ext_resource path="res://scr/map.gd" type="Script" id=7]
 [ext_resource path="res://scenes/next_map_trigger_scene.tscn" type="PackedScene" id=8]
 
@@ -106,3 +107,7 @@ position = Vector2( -1121.17, 923.594 )
 spawn_distance = 100
 enemy_scene = ExtResource( 4 )
 max_spawn_count = 2
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -18.0

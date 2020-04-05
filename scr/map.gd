@@ -5,6 +5,7 @@ var right_spawn_point
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	signals.connect("spawn_player", self, "spawn_player")
 	left_spawn_point = get_node("left_spawn_point")
 	right_spawn_point = get_node("right_spawn_point")
@@ -15,6 +16,10 @@ func _ready():
 			game_controller.player.position = left_spawn_point.position
 		else:
 			game_controller.player.position = right_spawn_point.position
+	if has_node("music"):
+		
+			$music.play()
+			
 	pass # Replace with function body.
 	
 func spawn_player():
