@@ -21,9 +21,11 @@ func _on_next_map_trigger_area_entered(area):
 				new_map = game_controller.forest_scene.instance()
 			"deep_forest":
 				new_map = game_controller.deep_forest_scene.instance()
-			"forst_right":
+			"forest_right":
 				new_map = game_controller.forest_right_scene.instance()
-				
+			"deep_forest_right":
+				new_map = game_controller.deep_forest_right_scene.instance()
+			
 		if trigger_side == "left":
 			game_controller.player_destination = "right"
 		else:
