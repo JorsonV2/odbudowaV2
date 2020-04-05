@@ -31,7 +31,7 @@ func fire_item(name):
 	var new_item = item_scene.instance()
 	new_item.item_name = name
 	new_item.global_position = global_position
-	new_item.linear_velocity = Vector2(randi() % 150 - 75, -(randi() % 50 + 50) )
+	new_item.linear_velocity = Vector2(randi() % 300 - 150, -(randi() % 100 + 50) )
 	new_item.angular_velocity = randi() % 40 - 20
 	get_tree().get_root().get_node("map").call_deferred("add_child", new_item)
 	pass
