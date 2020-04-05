@@ -42,7 +42,6 @@ func mission_task(type, object):
 	if current_mission != null:
 		current_mission.mission_task(type, object)
 		if current_mission.completed:
-			
 			if current_mission.next_mission == null:
 				current_mission = null
 			else:

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/new_mission.ogg-4d26649942a0300cb7cd07c78dd5e4c9.ogg
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

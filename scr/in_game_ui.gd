@@ -54,7 +54,6 @@ func update_current_mission():
 	pass
 	
 func mission_completed():
-	$sfx_complete.play()
 	play_mission_notification()
 	pass
 	
