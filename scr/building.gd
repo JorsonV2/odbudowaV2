@@ -15,16 +15,19 @@ export var action_text = "Action text"
 var active = false
 
 func _ready():
-	connect("area_entered", self, "building_entered")
-	connect("area_exited", self, "building_exited")
-	find_node("Sprite").texture = ruins_texture
-	find_node("build_button").connect("pressed", self, "build")
-	update_build_requirements()
-	update_action_requirements()
-	update_texts()
-	if game_controller.activated_buildings.has(building_name):
-		activate_building()
-	pass
+	if game_controller.buildings_builded:
+		find_node("Sprite").texture = building_texture
+	else:
+		connect("area_entered", self, "building_entered")
+		connect("area_exited", self, "building_exited")
+		find_node("Sprite").texture = ruins_texture
+		find_node("build_button").connect("pressed", self, "build")
+		update_build_requirements()
+		update_action_requirements()
+		update_texts()
+		if game_controller.activated_buildings.has(building_name):
+			activate_building()
+		pass
 
 func _process(delta):
 	if Engine.editor_hint:
@@ -34,6 +37,7 @@ func _process(delta):
 func player_entered():
 	show_bulding_info()
 	find_node("Sprite").modulate = Color(0.6,0.6,0.6)
+	game_controller.in_game_ui.hide_missions()
 	if active:
 		show_action_info()
 		hide_build_info()
@@ -45,6 +49,7 @@ func player_entered():
 	
 func player_exited():
 	hide_building_info()
+	game_controller.in_game_ui.show_missions()
 	find_node("Sprite").modulate = Color(1,1,1)
 	if active:
 		hide_action_info()

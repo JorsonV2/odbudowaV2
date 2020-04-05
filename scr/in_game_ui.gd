@@ -17,10 +17,10 @@ func _ready():
 	signals.connect("mission_completed", self, "mission_completed")
 	animation_player = $animation_player
 	mission_notification = find_node("mission_notification")
-	$right_container.mouse_filter = 1
-	for control in $right_container.get_children():
-		control.mouse_filter = 1
-		pass
+#	$right_container.mouse_filter = 1
+#	for control in $right_container.get_children():
+#		control.mouse_filter = 1
+#		pass
 	update_current_mission()
 	pass # Replace with function body.
 	
@@ -62,4 +62,12 @@ func play_mission_notification():
 	animation_player.play("mission_notification")
 	yield(animation_player, "animation_finished")
 	mission_notification.hide()
+	pass
+	
+func hide_missions():
+	find_node("missions_box").hide()
+	pass
+
+func show_missions():
+	find_node("missions_box").show()
 	pass
