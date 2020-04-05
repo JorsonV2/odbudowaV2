@@ -52,7 +52,8 @@ func check_complition():
 			is_completed = false
 			break
 	completed = is_completed
-	complete_mission()
+	if completed:
+		complete_mission()
 	pass
 
 func complete_mission():

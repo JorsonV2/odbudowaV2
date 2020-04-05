@@ -5,15 +5,15 @@
 [node name="HBoxContainer" type="HBoxContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
-alignment = 1
+alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="text_label" type="Label" parent="."]
-margin_left = 10.0
+margin_left = 20.0
 margin_top = 7.0
-margin_right = 10.0
+margin_right = 20.0
 margin_bottom = 33.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )
@@ -21,9 +21,9 @@ align = 1
 valign = 1
 
 [node name="current_amount_label" type="Label" parent="."]
-margin_left = 14.0
+margin_left = 24.0
 margin_top = 7.0
-margin_right = 14.0
+margin_right = 24.0
 margin_bottom = 33.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )
@@ -31,9 +31,9 @@ align = 1
 valign = 1
 
 [node name="separate_label" type="Label" parent="."]
-margin_left = 18.0
+margin_left = 28.0
 margin_top = 7.0
-margin_right = 26.0
+margin_right = 36.0
 margin_bottom = 33.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )
@@ -42,9 +42,9 @@ align = 1
 valign = 1
 
 [node name="amount_label" type="Label" parent="."]
-margin_left = 30.0
+margin_left = 40.0
 margin_top = 7.0
-margin_right = 30.0
+margin_right = 40.0
 margin_bottom = 33.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )

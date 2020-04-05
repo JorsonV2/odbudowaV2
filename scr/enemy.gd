@@ -4,6 +4,7 @@ class_name enemy
 
 signal exit_spawn_point
 
+export var enemy_name = "enemy"
 export var is_hitting = true
 export var field_of_view = 200
 export var damage = 10
@@ -170,7 +171,8 @@ func take_damage(val):
 	pass
 	
 func dead():
-	
+	signals.emit_mission_task("kill", "enemy")
+	signals.emit_mission_task("kill", enemy_name)
 	emit_signal("exit_spawn_point")
 	.dead()
 	pass

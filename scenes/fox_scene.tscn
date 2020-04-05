@@ -53,6 +53,7 @@ collision_mask = 0
 script = ExtResource( 2 )
 health = 40
 movement_speed = 190
+enemy_name = "fox"
 equipment_amount = [ 0, 0, 0, 3 ]
 
 [node name="Area2D" type="Area2D" parent="."]

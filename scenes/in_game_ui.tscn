@@ -19,10 +19,9 @@ mission_scene = ExtResource( 6 )
 [node name="right_container" type="VBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -292.0
 margin_top = 20.0
 margin_right = -20.0
-margin_bottom = 40.0
+grow_horizontal = 0
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
@@ -31,6 +30,7 @@ __meta__ = {
 [node name="health_container" type="VBoxContainer" parent="right_container"]
 margin_right = 272.0
 margin_bottom = 40.0
+alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -38,6 +38,7 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="right_container/health_container"]
 margin_right = 272.0
 margin_bottom = 40.0
+alignment = 2
 
 [node name="health_label" type="Label" parent="right_container/health_container/HBoxContainer"]
 margin_top = 7.0

@@ -62,6 +62,7 @@ collision_mask = 0
 script = ExtResource( 2 )
 health = 60
 movement_speed = 190
+enemy_name = "spear_man"
 field_of_view = 400
 equipment_amount = [ 10, 5, 5, 1 ]
 

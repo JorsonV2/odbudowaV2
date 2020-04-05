@@ -9,13 +9,6 @@ class_name rabbit
 func _ready():
 	pass # Replace with function body.
 
-func dead():
-	
-	.dead()
-	signals.emit_mission_task("kill", "rabbit")
-	
-	pass
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
