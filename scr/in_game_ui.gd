@@ -14,8 +14,10 @@ func _ready():
 	signals.connect("update_equipment", self, "update_equipment")
 	signals.connect("update_health", self, "update_health")
 	signals.connect("update_current_mission", self, "update_current_mission")
+	signals.connect("mission_completed", self, "mission_completed")
 	animation_player = $animation_player
 	mission_notification = find_node("mission_notification")
+	$right_container.mouse_filter = 1
 	update_current_mission()
 	pass # Replace with function body.
 	
@@ -46,14 +48,15 @@ func update_current_mission():
 			new_mission.get_node("current_amount_label").text = String(t.current_amount)
 			new_mission.get_node("amount_label").text = String(t.amount)
 			container.add_child(new_mission)
-	
-	animation_player.play("mission_notification")
-	print_debug("play mission notification")
 	pass
 	
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func mission_completed():
+	
+	pass
+	
+func play_mission_notification():
+	mission_notification.show()
+	animation_player.play("mission_notification")
+	yield(animation_player, "animation_finished")
+	mission_notification.hide()
+	pass

@@ -59,6 +59,7 @@ func check_complition():
 func complete_mission():
 	if trigger != null:
 		signals.emit_mission_trigger(trigger)
+	signals.emit_mission_complete()
 	pass
 	
 func activate_next_mission():

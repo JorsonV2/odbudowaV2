@@ -48,21 +48,25 @@ func update_equipment(equipment):
 	
 func mission_trigger(trigger):
 	if trigger == "meteor":
-		var meteor_video : CanvasLayer = meteor_video_scene.instance()
-		fade_animation.show()
-		fade_animation.play_fade()
-		game_stop = true
-		yield(fade_animation.animation_player, "animation_finished")
-		get_tree().get_root().add_child(meteor_video)
-		fade_animation.play_backwards_fade()
-		yield(meteor_video.get_node("VideoPlayer"), "finished")
-		fade_animation.play_backwards_fade()
-		yield(get_tree().create_timer(0.2), "timeout")
-		print_debug("elo usuń meteor")
-		meteor_video.queue_free()
-		yield(fade_animation.animation_player, "animation_finished")
-		fade_animation.hide()
-		game_stop = false
+		play_meteor_video()
+	pass
+	
+func play_meteor_video():
+	var meteor_video : CanvasLayer = meteor_video_scene.instance()
+	fade_animation.show()
+	fade_animation.play_fade()
+	game_stop = true
+	yield(fade_animation.animation_player, "animation_finished")
+	get_tree().get_root().add_child(meteor_video)
+	fade_animation.play_backwards_fade()
+	yield(meteor_video.get_node("VideoPlayer"), "finished")
+	fade_animation.play_backwards_fade()
+	yield(get_tree().create_timer(0.2), "timeout")
+	meteor_video.queue_free()
+	yield(fade_animation.animation_player, "animation_finished")
+	fade_animation.hide()
+	game_stop = false
+	signals.emit_mission_complete()
 	pass
 	
 
