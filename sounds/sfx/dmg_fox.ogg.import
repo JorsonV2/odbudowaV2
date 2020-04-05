@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dmg_fox.ogg-907329cf266624443f48e13d84254414.oggstr"
+
+[deps]
+
+source_file="res://sounds/sfx/dmg_fox.ogg"
+dest_files=[ "res://.import/dmg_fox.ogg-907329cf266624443f48e13d84254414.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

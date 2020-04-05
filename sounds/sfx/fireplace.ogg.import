@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fireplace.ogg-ba972ba25896d47114db7c4e0e8b2bf3.oggstr"
+
+[deps]
+
+source_file="res://sounds/sfx/fireplace.ogg"
+dest_files=[ "res://.import/fireplace.ogg-ba972ba25896d47114db7c4e0e8b2bf3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

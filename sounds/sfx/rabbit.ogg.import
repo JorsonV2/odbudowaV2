@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rabbit.ogg-d613d1e84a5e52d52d4bb816c0294a7a.oggstr"
+
+[deps]
+
+source_file="res://sounds/sfx/rabbit.ogg"
+dest_files=[ "res://.import/rabbit.ogg-d613d1e84a5e52d52d4bb816c0294a7a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

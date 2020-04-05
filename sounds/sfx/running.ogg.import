@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/running.ogg-037f77329f321e5b80d4c9dad1f1c116.oggstr"
+
+[deps]
+
+source_file="res://sounds/sfx/running.ogg"
+dest_files=[ "res://.import/running.ogg-037f77329f321e5b80d4c9dad1f1c116.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

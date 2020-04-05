@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dead_rabbit.ogg-4273d4cec8b6387d688451619b8890ee.oggstr"
+
+[deps]
+
+source_file="res://sounds/sfx/dead_rabbit.ogg"
+dest_files=[ "res://.import/dead_rabbit.ogg-4273d4cec8b6387d688451619b8890ee.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

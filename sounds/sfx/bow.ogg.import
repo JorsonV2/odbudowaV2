@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bow.ogg-106bfad84a3afef5125d9d98c5defb5a.oggstr"
+
+[deps]
+
+source_file="res://sounds/sfx/bow.ogg"
+dest_files=[ "res://.import/bow.ogg-106bfad84a3afef5125d9d98c5defb5a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

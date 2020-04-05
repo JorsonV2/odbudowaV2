@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Zasób 21shot.png-7b4a54f148ee5dd05cae980dbf77c312.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://gfx/Hero v2/shot/Zasób 21shot.png"
+dest_files=[ "res://.import/Zasób 21shot.png-7b4a54f148ee5dd05cae980dbf77c312.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
