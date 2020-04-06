@@ -1,0 +1,18 @@
+trigger:talk:self:
+-You:
+Jaki piękny kolorowy dzień.
+Przydało by się wybyc na polowanko.
+-You:
+Wiem że porusznie się na boki to "A" i "W"
+-You:
+Skakanie oczywiście pod "W"
+-You:
+I jakże mógłbym zapomnieć o strzelaniu
+-You:
+.
+-You:
+..
+-You:
+...
+-You:
+"SPACJA"

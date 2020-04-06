@@ -12,19 +12,30 @@ func _ready():
 	pass # Replace with function body.
 
 func add_missions():
-	var new_mission = mission.new("meteor")
-	new_mission.add_task("idz do jebanego lasu", "place", "forest", 1)
-	new_mission.add_task("Idź do lasu skórwysynie", "place", "forest", 1)
+	var new_mission = mission.new()
+	new_mission.add_task("W sumie to gadasz ze sobą xD", "talk", "self",  1)
 	new_mission.active = true
 	add_mission_to_table(new_mission)
 	current_mission = new_mission
 	
 	new_mission = mission.new()
-	new_mission.add_task("Sprawdz kurwa co się stało w mieście", "place", "village", 1)
+	new_mission.add_task("Udaj się na polowanie do lasu", "place", "forest", 1)
+	add_mission_to_table(new_mission)
+
+	new_mission = mission.new()
+	new_mission.add_task("Upoluj 10 królików", "kill", "rabbit", 10)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new("meteor")
+	new_mission.add_task("Upoluj 6 lisów", "kill", "fox", 6)
 	add_mission_to_table(new_mission)
 	
 	new_mission = mission.new()
-	new_mission.add_task("Porozmawiaj z dziwnym ziomem", "talk", "tradesman", 1)
+	new_mission.add_task("Sprawdź co stało się z miastem", "place", "village", 1)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Porozmawiaj z nieznajomym", "talk", "tradesman", 1)
 	add_mission_to_table(new_mission)
 	
 	new_mission = mission.new()
@@ -35,6 +46,10 @@ func add_missions():
 	new_mission.add_task("Uzbieraj 10 złota", "resource", "gold", 10)
 	new_mission.add_task("Uzbieraj 10 drewna", "resource", "wood", 10)
 	new_mission.add_task("Uzbieraj 10 kamienia", "resource", "rock", 10)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Odbuduj swój dom", "build", "Dom", 1)
 	add_mission_to_table(new_mission)
 	
 	pass

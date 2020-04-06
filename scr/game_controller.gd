@@ -80,6 +80,9 @@ func start_the_game():
 	
 	yield(signals, "add_map")
 	
+	game_controller.player.position = get_tree().get_root().get_node("map/start_position").position
+	get_tree().get_root().get_node("map/start_trigger").start_dialouge()
+	
 	pass
 
 

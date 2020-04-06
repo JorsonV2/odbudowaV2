@@ -21,7 +21,7 @@ func _ready():
 
 func _process(delta):
 	movement.y += gravity * delta
-	if active_move:
+	if active_move and !game_controller.game_stop:
 		movement = move_and_slide(movement, Vector2(0,-1), true)
 	else:
 		movement = move_and_slide(Vector2(0, movement.y), Vector2(0,-1), true)

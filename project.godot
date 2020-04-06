@@ -93,7 +93,7 @@ _global_script_class_icons={
 [application]
 
 config/name="odbudowa"
-run/main_scene="res://scenes/village_scene.tscn"
+run/main_scene="res://scenes/lobby_scene.tscn"
 config/icon="res://icon.png"
 
 [autoload]

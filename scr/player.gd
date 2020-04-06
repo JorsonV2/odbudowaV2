@@ -30,7 +30,7 @@ func _ready():
 func _process(delta):
 	movement.x = 0
 	
-	if active_move:
+	if active_move and !game_controller.game_stop:
 		
 		if Input.is_action_pressed("left"):
 			if !flipped_left:
@@ -91,9 +91,6 @@ func _process(delta):
 		current_immute_time -= delta
 	elif immute:
 		immute = false	
-	
-
-	
 	pass
 
 func sound_off():
@@ -151,6 +148,7 @@ func take_damage(val):
 func animation_finished():
 	if current_animation == "shot":
 		active_move = true
+		current_animation = "stand"
 	pass
 	
 func update_equipment(eq):
@@ -164,7 +162,7 @@ func _on_Area2D_body_entered(body):
 	pass # Replace with function body.
 
 func _on_Area2D_area_entered(area):
-	if area.is_in_group("enemy"):
+	if area.is_in_group("enemy") and !game_controller.game_stop:
 		area.get_parent().hit_player()
 	pass # Replace with function body.
 

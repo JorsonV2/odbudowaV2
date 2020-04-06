@@ -54,10 +54,9 @@ z_index = -1
 script = ExtResource( 6 )
 ruins_texture = ExtResource( 4 )
 building_texture = ExtResource( 5 )
-resources_to_build = [ 10, 10, 0, 0 ]
-resources_to_action = [ 0, 0, 0, 0 ]
-building_name = "Home"
-build_text = "Zbuduj go sobie"
+resources_to_build = [ 50, 10, 30, 20 ]
+building_name = "Kuźnia"
+build_text = "Pozwala na ulepszenie broni. Musisz odnaleźć kowala."
 action_text = "Zrób coś"
 
 [node name="Sprite" type="Sprite" parent="building"]
@@ -323,11 +322,10 @@ z_index = -1
 script = ExtResource( 6 )
 ruins_texture = ExtResource( 10 )
 building_texture = ExtResource( 11 )
-resources_to_build = [ 0, 0, 0, 0 ]
-resources_to_action = [ 0, 0, 0, 0 ]
-building_name = "Smithy"
-build_text = "Zbuduj go sobie"
-action_text = "Zrób coś"
+resources_to_build = [ 10, 10, 10, 0 ]
+building_name = "Dom"
+build_text = "Po wybudowaniu możesz się w nim uleczyć"
+action_text = "Przywróć sobie życie"
 
 [node name="Sprite" type="Sprite" parent="building2"]
 position = Vector2( 34, -18 )
@@ -594,7 +592,6 @@ script = ExtResource( 6 )
 ruins_texture = ExtResource( 13 )
 building_texture = ExtResource( 14 )
 resources_to_build = [ 100, 50, 50, 0 ]
-resources_to_action = [ 0, 0, 0, 0 ]
 building_name = "Tower"
 build_text = "Zbuduj go sobie"
 action_text = "Zrób coś"
@@ -871,6 +868,17 @@ volume_db = 16.0
 stream = ExtResource( 15 )
 volume_db = -18.0
 
+[node name="start_trigger" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1106.09, 347.431 )
+z_index = 1
+dialouge_name = "talk_to_myself_1"
+
+[node name="dialouge_container" parent="start_trigger" index="1"]
+margin_left = -144.25
+margin_top = -263.044
+margin_right = 155.75
+margin_bottom = -63.0438
+
 [node name="trigger_dialouge" parent="." instance=ExtResource( 17 )]
 position = Vector2( 169.65, 404.551 )
 dialouge_name = "talk_to_tradesman"
@@ -880,5 +888,10 @@ margin_left = -140.288
 margin_top = -218.588
 margin_right = 159.712
 margin_bottom = -18.5878
+
+[node name="start_position" type="Position2D" parent="."]
+position = Vector2( 1108.74, 395.98 )
+
+[editable path="start_trigger"]
 
 [editable path="trigger_dialouge"]

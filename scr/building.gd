@@ -47,6 +47,7 @@ func _process(delta):
 
 func player_entered():
 	show_bulding_info()
+	signals.emit_mission_task("place", building_name)
 	find_node("Sprite").modulate = Color(0.6,0.6,0.6)
 	game_controller.in_game_ui.hide_missions()
 	if active:
@@ -59,7 +60,6 @@ func player_entered():
 	pass
 	
 func player_exited():
-	signals.emit_mission_task("place", building_name)
 	hide_building_info()
 	game_controller.in_game_ui.show_missions()
 	find_node("Sprite").modulate = Color(1,1,1)

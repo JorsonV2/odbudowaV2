@@ -57,6 +57,7 @@ func end_dialouge():
 	$dialouge_container.hide()
 	game_controller.game_stop = false
 	signals.emit_mission_task("talk", proper_dialouge.object)
+	print_debug(proper_dialouge.object)
 	pass
 	
 func show_dialouge():
@@ -76,10 +77,10 @@ func _on_trigger_dialouge_area_entered(area):
 	if area.is_in_group("player") and active:
 		if proper_dialouge != null:
 			proper_dialouge = dialouge_controller.dialouges[dialouge_name]
-		if mission_controller.current_mission.tasks[0].type == "talk":
-			if mission_controller.current_mission.tasks[0].object == proper_dialouge.object:
-				start_dialouge()
-		pass
+		if mission_controller.current_mission != null:
+			if mission_controller.current_mission.tasks[0].type == "talk":
+				if mission_controller.current_mission.tasks[0].object == proper_dialouge.object:
+					start_dialouge()
 	pass # Replace with function body.
 
 func _on_next_button_pressed():

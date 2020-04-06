@@ -48,9 +48,10 @@ func _process(delta):
 #		current_hit_stand_time -= delta
 #	else:
 #		active_move = true
+	
 	time_delta = delta
 	check_if_player_overlaps()
-	if active_move:
+	if active_move and !game_controller.game_stop:
 		move()
 
 		if is_patroling:
@@ -187,7 +188,7 @@ func dead():
 	
 func hit_player():
 	#if !player.immute and dangerous and !is_dead:
-	if dangerous and !is_dead:
+	if dangerous and !is_dead and !game_controller.game_stop:
 		if has_node("sfx_atk"):
 			$sfx_atk.play()
 		active_move = false
@@ -216,4 +217,5 @@ func animation_finished():
 	if $animated_sprite.animation == "hit":
 		active_move = true
 		hitting = false
+		current_animation = "stand"
 	pass
