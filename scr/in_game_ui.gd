@@ -16,6 +16,7 @@ func _ready():
 	signals.connect("update_current_mission", self, "update_current_mission")
 	signals.connect("mission_completed", self, "mission_completed")
 	signals.connect("dead", self, "player_dead")
+	signals.connect("win", self, "win")
 	animation_player = $animation_player
 	mission_notification = find_node("mission_notification")
 #	$right_container.mouse_filter = 1
@@ -42,8 +43,9 @@ func update_equipment():
 #			3:
 #				find_node("leather_amound").text = String(equipment[e])
 	#print_debug("ui ", equipment)
-func update_health(health):
-	find_node("health_bar").value = health 
+func update_health():
+	find_node("health_bar").value = game_controller.player.health
+	find_node("health_bar").max_value = game_controller.player.max_health
 	
 func update_current_mission():
 	var container = find_node("missions_container")
@@ -86,10 +88,18 @@ func player_dead():
 	
 	pass
 
+func win():
+	find_node("win_panel").show()
+	pass
+
 func _on_Button_pressed():
 	save_game.save_the_game()
 	pass # Replace with function body.
 
 func _on_dead_button_pressed():
 	game_controller.go_to_lobby()
+	pass # Replace with function body.
+
+func _on_win_button_pressed():
+	find_node("win_panel").hide()
 	pass # Replace with function body.

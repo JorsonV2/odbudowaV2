@@ -2,7 +2,7 @@ extends Node
 
 signal collect_item(item)
 signal update_equipment(equipment)
-signal update_health(health)
+signal update_health()
 signal mission_task(type, object)
 signal update_current_mission()
 signal spawn_player()
@@ -10,6 +10,7 @@ signal mission_trigger(trigger)
 signal mission_completed()
 signal add_map()
 signal dead()
+signal win()
 
 func _ready():
 	pass
@@ -25,8 +26,8 @@ func emit_update_equipment(equipment):
 	emit_mission_task("resource", "rock")
 	emit_mission_task("resource", "leather")
 
-func emit_update_health(health):
-	emit_signal("update_health", health)
+func emit_update_health():
+	emit_signal("update_health")
 	
 func emit_mission_task(type, object):
 	emit_signal("mission_task", type, object)
@@ -51,4 +52,8 @@ func emit_mission_complete():
 	
 func emit_add_map():
 	emit_signal("add_map")
+	pass
+
+func emit_win():
+	emit_signal("win")
 	pass

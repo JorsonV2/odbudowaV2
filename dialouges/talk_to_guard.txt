@@ -1,0 +1,15 @@
+trigger:talk:guard:
+-Ty:
+Stary, gorszego miejsca sobie nie mogłeś wybrać.
+-Strażnik:
+Ale o co ci chodzi?
+-Ty:
+Wiesz że twojej wieży już niema?
+-Strażnik:
+Ale jak to?
+-Ty:
+No normalnie. Wzieła i się zwineła.
+A jej gruzów nie ma kto pilnować.
+-Strażnik:
+Kurczaki ziemniaki.
+To wracam się jak najszybciej

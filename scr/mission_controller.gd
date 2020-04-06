@@ -20,7 +20,7 @@ func add_missions():
 	add_mission_to_table(new_mission)
 	current_mission = new_mission
 
-	new_mission = mission.new()
+	new_mission = mission.new("meteor")
 	new_mission.add_task("Udaj się na polowanie do lasu", "place", "forest", 1)
 	add_mission_to_table(new_mission)
 
@@ -54,6 +54,56 @@ func add_missions():
 	new_mission.add_task("Odbuduj swój dom", "build", "Dom", 1)
 	add_mission_to_table(new_mission)
 	
+	new_mission = mission.new()
+	new_mission.add_task("Zwiększ swoje zdrowie", "action", "Dom", 4)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Dostań się do głębokiego lasu", "place", "deep_forest", 1)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new("find_smith")
+	new_mission.add_task("Odnajdź kowala", "talk", "smith", 1)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Uzbieraj 10 złota", "resource", "gold", 10)
+	new_mission.add_task("Uzbieraj 10 drewna", "resource", "wood", 10)
+	new_mission.add_task("Uzbieraj 10 kamienia", "resource", "rock", 10)
+	new_mission.add_task("Uzbieraj 10 skór", "resource", "leather", 10)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Odbuduj kuźnię", "build", "Kuźnia", 1)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Ulepsz obrażenia broni", "action", "Kuźnia", 2)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Dostań się na tereny dzikusów", "place", "savage_village", 1)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new("find_guard")
+	new_mission.add_task("Odnajdź strażnika", "talk", "guard", 1)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Uzbieraj 10 złota", "resource", "gold", 10)
+	new_mission.add_task("Uzbieraj 10 drewna", "resource", "wood", 10)
+	new_mission.add_task("Uzbieraj 10 kamienia", "resource", "rock", 10)
+	new_mission.add_task("Uzbieraj 10 skór", "resource", "leather", 10)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Odbuduj wieżę", "build", "Wieża", 1)
+	add_mission_to_table(new_mission)
+	
+	new_mission = mission.new()
+	new_mission.add_task("Ulepsz prędkość biegania", "action", "Wieża", 4)
+	add_mission_to_table(new_mission)
+	
 	pass
 
 func add_mission_to_table(added_mission):
@@ -71,6 +121,7 @@ func mission_task(type, object):
 			
 			if current_mission.next_mission == null:
 				current_mission = null
+				signals.emit_win()
 			else:
 				current_mission = current_mission.next_mission
 				current_mission_id += 1

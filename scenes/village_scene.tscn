@@ -79,8 +79,9 @@ map_name = "village"
 [node name="background" parent="." instance=ExtResource( 12 )]
 
 [node name="next_map_trigger" parent="." instance=ExtResource( 8 )]
-position = Vector2( -335.824, 469.687 )
+position = Vector2( -144.771, 469.687 )
 scale = Vector2( 1.5, 1.5 )
+map_text = "Las"
 map_name = "forest"
 
 [node name="TileMap" type="TileMap" parent="." groups=[
@@ -947,7 +948,7 @@ custom_fonts/font = ExtResource( 18 )
 text = "Ulepsz"
 
 [node name="left_spawn_point" type="Position2D" parent="."]
-position = Vector2( -186.413, 455.994 )
+position = Vector2( -31.9999, 461.228 )
 
 [node name="tradesman" parent="." instance=ExtResource( 9 )]
 position = Vector2( 408.45, 455.443 )
@@ -972,7 +973,7 @@ margin_right = 155.75
 margin_bottom = -63.0438
 
 [node name="trigger_dialouge" parent="." instance=ExtResource( 17 )]
-position = Vector2( 169.65, 404.551 )
+position = Vector2( 240.314, 420.254 )
 dialouge_name = "talk_to_tradesman"
 
 [node name="dialouge_container" parent="trigger_dialouge" index="1"]
@@ -989,7 +990,7 @@ position = Vector2( 1404.82, 412.383 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
 animation = "stand"
-frame = 13
+frame = 17
 playing = true
 script = ExtResource( 45 )
 
@@ -999,6 +1000,9 @@ scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 4 )
 animation = "stand"
 script = ExtResource( 47 )
+[connection signal="pressed" from="smithy/Node2D/building_info/CenterContainer/action_info/action_buton" to="smithy" method="_on_action_buton_pressed"]
+[connection signal="pressed" from="house/Node2D/building_info/CenterContainer/action_info/VBoxContainer/action_buton" to="house" method="_on_action_buton_pressed"]
+[connection signal="pressed" from="tower/Node2D/building_info/CenterContainer/action_info/action_buton" to="tower" method="_on_action_buton_pressed"]
 
 [editable path="start_trigger"]
 

@@ -76,7 +76,7 @@ func show_build_info():
 	find_node("build_info").show()
 	var can_build = true
 	for e in range(0, resources_to_build.size()):
-		if resources_to_build[e] > game_controller.player_equipment[e] and rescue:
+		if resources_to_build[e] > game_controller.player.equipment[e] or !rescue:
 			can_build = false
 			break
 	find_node("build_button").disabled = !can_build
@@ -88,6 +88,12 @@ func hide_build_info():
 
 func show_action_info():
 	find_node("action_info").show()
+	var can_action = true
+	for e in range(0, resources_to_action.size()):
+		if resources_to_action[e] > game_controller.player.equipment[e] or !rescue:
+			can_action = false
+			break
+	find_node("action_buton").disabled = !can_action
 	pass
 	
 func hide_action_info():
@@ -118,6 +124,7 @@ func activate_building():
 	pass
 
 func action():
+	signals.emit_mission_task("action", building_name)
 	pass
 	
 func build():

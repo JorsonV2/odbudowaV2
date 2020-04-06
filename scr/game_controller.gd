@@ -22,6 +22,7 @@ var forest_scene
 var deep_forest_scene
 var forest_right_scene
 var deep_forest_right_scene
+var savage_village_scene
 var lobby_scene
 
 var fade_animation_scene
@@ -44,6 +45,7 @@ func _ready():
 	deep_forest_scene = preload("res://scenes/deep_forest_scene.tscn")
 	forest_right_scene = preload("res://scenes/forest2_scene.tscn")
 	deep_forest_right_scene = preload("res://scenes/forest3_scene.tscn")
+	savage_village_scene = preload("res://scenes/savage_village_scene.tscn")
 	fade_animation_scene = preload("res://scenes/fade_animation_scene.tscn")
 	meteor_video_scene = preload("res://scenes/meteor_video_scene.tscn")
 	lobby_scene = preload("res://scenes/lobby_scene.tscn")
@@ -62,6 +64,10 @@ func update_equipment(equipment):
 func mission_trigger(trigger):
 	if trigger == "meteor":
 		play_meteor_video()
+	if trigger == "find_smith":
+		blacksmith_rescued = true
+	if trigger == "find_guard":
+		guard_rescued = true
 	pass
 	
 func play_meteor_video():
@@ -84,6 +90,7 @@ func play_meteor_video():
 	pass
 	
 func start_the_game():
+	save_game.delete_save()
 	if get_tree().get_root().has_node("lobby"):
 		get_tree().get_root().get_node("lobby").queue_free()
 	get_tree().get_root().call_deferred("add_child", village_scene.instance())

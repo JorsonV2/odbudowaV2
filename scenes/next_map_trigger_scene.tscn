@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scr/next_map_trigger.gd" type="Script" id=1]
 [ext_resource path="res://gfx/items/Znak L.png" type="Texture" id=2]
+[ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.9477, 70.7563 )
@@ -17,4 +18,15 @@ shape = SubResource( 1 )
 position = Vector2( -3.58849, 3.37739 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -42.5643
+margin_top = -65.697
+margin_right = 47.4357
+margin_bottom = -39.697
+custom_fonts/font = ExtResource( 3 )
+text = "direction"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="area_entered" from="." to="." method="_on_next_map_trigger_area_entered"]

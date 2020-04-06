@@ -1,5 +1,6 @@
 extends Area2D
 
+export var map_text = "map_text"
 export var map_name = "map_name"
 export var trigger_side = "left"
 var time_delay =0.5
@@ -7,6 +8,7 @@ var time_delay =0.5
 func _ready():
 	if trigger_side == "right":
 		get_node("Sprite").flip_h =true
+	$Label.text = map_text
 	pass # Replace with function body.
 
 func _on_next_map_trigger_area_entered(area):
@@ -23,8 +25,8 @@ func _on_next_map_trigger_area_entered(area):
 				new_map = game_controller.deep_forest_scene.instance()
 			"forest_right":
 				new_map = game_controller.forest_right_scene.instance()
-			"deep_forest_right":
-				new_map = game_controller.deep_forest_right_scene.instance()
+			"savage_village":
+				new_map = game_controller.savage_village_scene.instance()
 			
 		if trigger_side == "left":
 			game_controller.player_destination = "right"
@@ -35,8 +37,7 @@ func _on_next_map_trigger_area_entered(area):
 		old_map.set_name("map1")	
 		
 		#yield(get_tree().create_timer(time_delay), "timeout")
-		
-		game_controller.player.active_move=false
+		game_controller.game_stop = true
 		game_controller.fade_animation.show()
 		game_controller.fade_animation.play_fade()
 		yield(game_controller.fade_animation.animation_player, "animation_finished")
@@ -45,7 +46,7 @@ func _on_next_map_trigger_area_entered(area):
 		new_map.set_name("map")
 		old_map.hide()
 		
-		game_controller.player.active_move=true
+		game_controller.game_stop = false
 		game_controller.fade_animation.play_backwards_fade()
 		yield(game_controller.fade_animation.animation_player, "animation_finished")
 		game_controller.fade_animation.hide()

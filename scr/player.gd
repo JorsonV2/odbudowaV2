@@ -24,7 +24,7 @@ func _ready():
 	signals.connect("update_equipment", self, "update_equipment")
 	signals.connect("collect_item", self, "collected_item")
 	get_node("animated_sprite").connect("animation_finished", self, "animation_finished")
-	signals.emit_update_health(health)
+	signals.emit_update_health()
 	pass
 
 func _process(delta):
@@ -141,7 +141,7 @@ func take_damage(val):
 	immute = true
 	
 	current_immute_time = immute_time
-	signals.emit_update_health(health)
+	signals.emit_update_health()
 	pass
 	
 func dead():
@@ -152,6 +152,11 @@ func dead():
 	new_camera.position = position
 	get_tree().get_root().get_node("map").add_child(new_camera)
 	signals.emit_dead()
+	var file = File.new()
+	if file.file_exists("user://villagereborn.save"):
+		var dir = Directory.new()
+		dir.remove("user://villagereborn.save")
+		pass
 	.dead()
 	pass	
 	
