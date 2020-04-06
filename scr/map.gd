@@ -37,6 +37,7 @@ func spawn_player():
 	get_tree().get_root().call_deferred("add_child", in_game_ui)
 	get_tree().get_root().call_deferred("add_child", player)
 	get_tree().get_root().call_deferred("add_child", fade_animation)
+	signals.emit_add_map()
 	pass
 	
 func hide():

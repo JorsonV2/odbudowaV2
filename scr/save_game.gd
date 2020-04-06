@@ -62,4 +62,4 @@ func load_the_game():
 		mission_controller.current_mission.tasks[t].completed = save_dictionary.current_mission.tasks[t].completed
 	
 	game_controller.player.equipment = save_dictionary.player_equipment
-	signals.emit_update_equipment()
+	signals.emit_update_equipment(game_controller.player.equipment)

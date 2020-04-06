@@ -73,6 +73,14 @@ func play_meteor_video():
 	signals.emit_mission_complete()
 	pass
 	
+func start_the_game():
+	if get_tree().get_root().has_node("lobby"):
+		get_tree().get_root().get_node("lobby").queue_free()
+	get_tree().get_root().call_deferred("add_child", village_scene.instance())
+	
+	yield(signals, "add_map")
+	
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

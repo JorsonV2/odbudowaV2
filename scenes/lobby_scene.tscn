@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/backgroud_village_scene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/rabbit_scene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/fox_scene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/basic_font_50.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scr/lobby.gd" type="Script" id=6]
 
 [node name="lobby" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="background" parent="." instance=ExtResource( 2 )]
 
@@ -62,3 +64,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 5 )
 text = "Load"
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/load_button" to="." method="_on_load_button_pressed"]

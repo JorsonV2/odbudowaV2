@@ -11,7 +11,7 @@ var mission_notification
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	signals.connect("update_equipment", self, "update_equipment")
+	#signals.connect("update_equipment", self, "update_equipment")
 	signals.connect("update_health", self, "update_health")
 	signals.connect("update_current_mission", self, "update_current_mission")
 	signals.connect("mission_completed", self, "mission_completed")
@@ -24,17 +24,22 @@ func _ready():
 	update_current_mission()
 	pass # Replace with function body.
 	
-func update_equipment(equipment):
-	for e in range(0, equipment.size()):
-		match e:
-			0:
-				find_node("gold_amound").text = String(equipment[e])
-			1:
-				find_node("wood_amound").text = String(equipment[e])
-			2:
-				find_node("rock_amound").text = String(equipment[e])
-			3:
-				find_node("leather_amound").text = String(equipment[e])
+func update_equipment():
+	var equipment = game_controller.player.equipment
+	find_node("gold_amound").text = String(equipment[0])
+	find_node("wood_amound").text = String(equipment[1])
+	find_node("rock_amound").text = String(equipment[2])
+	find_node("leather_amound").text = String(equipment[3])
+#	for e in range(0, equipment.size()):
+#		match e:
+#			0:
+#				find_node("gold_amound").text = String(equipment[e])
+#			1:
+#				find_node("wood_amound").text = String(equipment[e])
+#			2:
+#				find_node("rock_amound").text = String(equipment[e])
+#			3:
+#				find_node("leather_amound").text = String(equipment[e])
 	#print_debug("ui ", equipment)
 func update_health(health):
 	find_node("health_bar").value = health 

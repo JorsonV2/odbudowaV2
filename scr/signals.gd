@@ -8,6 +8,7 @@ signal update_current_mission()
 signal spawn_player()
 signal mission_trigger(trigger)
 signal mission_completed()
+signal add_map()
 
 func _ready():
 	pass
@@ -17,6 +18,7 @@ func emit_collect_item(item):
 	
 func emit_update_equipment(equipment):
 	emit_signal("update_equipment", equipment)
+	game_controller.in_game_ui.update_equipment()
 	emit_mission_task("resource", "gold")
 	emit_mission_task("resource", "wood")
 	emit_mission_task("resource", "rock")
@@ -40,4 +42,8 @@ func emit_mission_trigger(trigger):
 
 func emit_mission_complete():
 	emit_signal("mission_completed")
+	pass
+	
+func emit_add_map():
+	emit_signal("add_map")
 	pass
