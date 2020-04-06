@@ -145,10 +145,22 @@ func take_damage(val):
 	signals.emit_update_health(health)
 	pass
 	
+func dead():
+	game_controller.player = null
+	.dead()
+	pass	
+	
 func animation_finished():
 	if current_animation == "shot":
 		active_move = true
 		current_animation = "stand"
+		
+	if current_animation == "jump":
+		current_animation = "stand"
+		
+	if current_animation == "run":
+		current_animation = "stand"
+	
 	pass
 	
 func update_equipment(eq):

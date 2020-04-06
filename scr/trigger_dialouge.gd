@@ -34,8 +34,8 @@ func update_trigger_state():
 	pass
 
 func enable_trigger():
-	set_deferred("monitoring", false)
-	set_deferred("monitorable", false)
+	set_deferred("monitoring", true)
+	set_deferred("monitorable", true)
 	pass
 
 func disable_trigger():

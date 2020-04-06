@@ -3,7 +3,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var file = File.new()
-	if file.file_exists("user://"):
+	if file.file_exists("user://villagereborn.save"):
 		find_node("load_button").disabled = false
 		pass
 	pass # Replace with function body.

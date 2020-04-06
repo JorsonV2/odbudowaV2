@@ -166,7 +166,7 @@ func update_action_requirements():
 	
 func update_texts():
 	find_node("building_name").text = building_name
-	find_node("build_label").text = build_text
-	find_node("action_label").text = action_text
+	#find_node("build_label").text = build_text
+	#find_node("action_label").text = action_text
 	pass
 

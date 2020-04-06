@@ -62,11 +62,12 @@ margin_bottom = 40.0
 alignment = 2
 
 [node name="health_label" type="Label" parent="right_container/health_container/HBoxContainer"]
+margin_left = 12.0
 margin_top = 7.0
 margin_right = 68.0
 margin_bottom = 33.0
 custom_fonts/font = ExtResource( 2 )
-text = "Health:"
+text = "Życie:"
 
 [node name="health_bar" type="TextureProgress" parent="right_container/health_container/HBoxContainer"]
 margin_left = 72.0
@@ -100,7 +101,7 @@ alignment = 1
 margin_right = 272.0
 margin_bottom = 31.0
 custom_fonts/font = SubResource( 1 )
-text = "Curent Mission"
+text = "Aktualna Misja"
 align = 1
 valign = 1
 
@@ -118,14 +119,14 @@ margin_right = 100.0
 margin_bottom = 26.0
 
 [node name="gold_label" type="Label" parent="resourse_container/HBoxContainer"]
-margin_right = 46.0
+margin_right = 56.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
-text = "Gold:"
+text = "Złoto:"
 
 [node name="gold_amound" type="Label" parent="resourse_container/HBoxContainer"]
-margin_left = 50.0
-margin_right = 62.0
+margin_left = 60.0
+margin_right = 72.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "0"
@@ -136,14 +137,14 @@ margin_right = 100.0
 margin_bottom = 56.0
 
 [node name="wood_label" type="Label" parent="resourse_container/HBoxContainer2"]
-margin_right = 56.0
+margin_right = 78.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
-text = "Wood:"
+text = "Drewno:"
 
 [node name="wood_amound" type="Label" parent="resourse_container/HBoxContainer2"]
-margin_left = 60.0
-margin_right = 72.0
+margin_left = 82.0
+margin_right = 94.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "0"
@@ -154,14 +155,14 @@ margin_right = 100.0
 margin_bottom = 86.0
 
 [node name="rock_label" type="Label" parent="resourse_container/HBoxContainer3"]
-margin_right = 48.0
+margin_right = 74.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
-text = "Rock:"
+text = "Kamień:"
 
 [node name="rock_amound" type="Label" parent="resourse_container/HBoxContainer3"]
-margin_left = 52.0
-margin_right = 64.0
+margin_left = 78.0
+margin_right = 90.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "0"
@@ -172,14 +173,14 @@ margin_right = 100.0
 margin_bottom = 116.0
 
 [node name="leather_label" type="Label" parent="resourse_container/HBoxContainer4"]
-margin_right = 84.0
+margin_right = 60.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
-text = "Leather:"
+text = "Skóra:"
 
 [node name="leather_amound" type="Label" parent="resourse_container/HBoxContainer4"]
-margin_left = 88.0
-margin_right = 100.0
+margin_left = 64.0
+margin_right = 76.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "0"
@@ -190,14 +191,15 @@ anims/mission_notification = SubResource( 2 )
 [node name="sfx_complete" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
-[node name="Button" type="Button" parent="."]
+[node name="save_button" type="Button" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -6.0
-margin_right = 6.0
-margin_bottom = 20.0
-text = "test save"
+margin_left = -65.0
+margin_right = 65.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 2 )
+text = "ZAPISZ GRĘ"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="save_button" to="." method="_on_Button_pressed"]

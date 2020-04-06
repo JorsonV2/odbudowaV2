@@ -12,12 +12,12 @@ func _ready():
 	pass # Replace with function body.
 
 func add_missions():
-	var new_mission = mission.new()
+	var new_mission
+	new_mission = mission.new()
 	new_mission.add_task("W sumie to gadasz ze sobą xD", "talk", "self",  1)
-	new_mission.active = true
 	add_mission_to_table(new_mission)
 	current_mission = new_mission
-	
+
 	new_mission = mission.new()
 	new_mission.add_task("Udaj się na polowanie do lasu", "place", "forest", 1)
 	add_mission_to_table(new_mission)
@@ -25,19 +25,19 @@ func add_missions():
 	new_mission = mission.new()
 	new_mission.add_task("Upoluj 10 królików", "kill", "rabbit", 10)
 	add_mission_to_table(new_mission)
-	
+
 	new_mission = mission.new("meteor")
 	new_mission.add_task("Upoluj 6 lisów", "kill", "fox", 6)
 	add_mission_to_table(new_mission)
-	
+
 	new_mission = mission.new()
 	new_mission.add_task("Sprawdź co stało się z miastem", "place", "village", 1)
 	add_mission_to_table(new_mission)
-	
+
 	new_mission = mission.new()
 	new_mission.add_task("Porozmawiaj z nieznajomym", "talk", "tradesman", 1)
 	add_mission_to_table(new_mission)
-	
+
 	new_mission = mission.new()
 	new_mission.add_task("Sprawdź co stało się z twoim domem", "place", "Dom", 1)
 	add_mission_to_table(new_mission)
