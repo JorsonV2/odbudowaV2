@@ -80,8 +80,10 @@ func show_missions():
 	pass
 
 func player_dead():
-	$dead_panel.show()
 	$save_button.disabled = true
+	yield(get_tree().create_timer(1.0), "timeout")
+	$dead_panel.show()
+	
 	pass
 
 func _on_Button_pressed():

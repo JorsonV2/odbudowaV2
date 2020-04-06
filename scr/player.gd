@@ -136,7 +136,6 @@ func collected_item(item):
 	
 func take_damage(val):
 	.take_damage(val)
-	print_debug("take_damage")
 	
 	$sfx_dmg.play()
 	immute = true

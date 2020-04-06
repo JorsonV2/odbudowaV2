@@ -14,6 +14,7 @@ export var action_text = "Action text"
 
 var active = false
 var speech_player
+var rescue = true
 
 func _ready():
 	speech_player = AudioStreamPlayer.new()
@@ -75,7 +76,7 @@ func show_build_info():
 	find_node("build_info").show()
 	var can_build = true
 	for e in range(0, resources_to_build.size()):
-		if resources_to_build[e] > game_controller.player_equipment[e]:
+		if resources_to_build[e] > game_controller.player_equipment[e] and rescue:
 			can_build = false
 			break
 	find_node("build_button").disabled = !can_build

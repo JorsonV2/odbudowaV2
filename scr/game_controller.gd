@@ -12,6 +12,8 @@ var game_stop = false
 var player_destination
 var activated_buildings = []
 var meteor_fallen = false
+var blacksmith_rescued = false
+var guard_rescued = false
 
 var player_scene
 var camera_scene
@@ -94,6 +96,7 @@ func start_the_game():
 	pass
 	
 func go_to_lobby():
+	restart_game_controller()
 	var lobby = lobby_scene.instance()
 	fade_animation.show()
 	fade_animation.play_fade()
@@ -105,6 +108,14 @@ func go_to_lobby():
 	yield(fade_animation.animation_player, "animation_finished")
 	fade_animation.hide()
 	get_tree().get_root().get_node("map").queue_free()
+	pass
+	
+func restart_game_controller():
+	player_equipment = [0,0,0,0]
+	activated_buildings = []
+	meteor_fallen = false
+	blacksmith_rescued = false
+	guard_rescued = false
 	pass
 
 

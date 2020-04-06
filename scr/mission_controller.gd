@@ -12,6 +12,8 @@ func _ready():
 	pass # Replace with function body.
 
 func add_missions():
+	missions = []
+	current_mission_id = 0
 	var new_mission
 	new_mission = mission.new()
 	new_mission.add_task("W sumie to gadasz ze sobą xD", "talk", "self",  1)
