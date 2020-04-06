@@ -1,0 +1,17 @@
+trigger:talk:tradesman:
+-Ty:
+Ej ziomek, co się tutaj stało?
+-Sklepikarz:
+No elo.
+Wygląda na to że ta wioska została rozwalona przez meteor.
+-Ty:
+A w ogóle co ty tutaj robisz?
+-Sklepikarz:
+Nie no stwierdziłem że w sumie trochę zarobię na ludziach którzy będą odbudowywać tę wioskę hehe.
+Więc sobie tutaj przyszedłem.
+Mieszkałeś tu?
+-Ty:
+Tak.
+-Sklepikarz:
+To jak będziesz czegoś potrzebował to wpadaj do mnie.
+W szczególności jak będziesz chciał wymienić przedmioty na złoto.

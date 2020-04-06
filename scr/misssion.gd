@@ -36,13 +36,37 @@ func add_task(text, type, object, amount):
 func mission_task(task_type, task_object):
 	for t in tasks:
 		if t.type == task_type and t.object == task_object:
-			if t.current_amount < t.amount:
+			if task_object == "gold":
+				t.current_amount = game_controller.player_equipment[0]
+				signals.emit_update_current_mission()
+				if t.current_amount >= t.amount:
+					t.completed = true
+					check_complition()
+			elif task_object == "wood":
+				t.current_amount = game_controller.player_equipment[1]
+				signals.emit_update_current_mission()
+				if t.current_amount >= t.amount:
+					t.completed = true
+					check_complition()
+			elif task_object == "rock":
+				t.current_amount = game_controller.player_equipment[2]
+				signals.emit_update_current_mission()
+				if t.current_amount >= t.amount:
+					t.completed = true
+					check_complition()
+			elif task_object == "leather":
+				t.current_amount = game_controller.player_equipment[3]
+				signals.emit_update_current_mission()
+				if t.current_amount >= t.amount:
+					t.completed = true
+					check_complition()
+			elif t.current_amount < t.amount:
 				t.current_amount += 1
 				signals.emit_update_current_mission()
 				if t.current_amount == t.amount:
 					t.completed = true
 					check_complition()
-					pass
+
 	pass
 
 func check_complition():

@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scr/building.gd"
 }, {
+"base": "Object",
+"class": "dialouge",
+"language": "GDScript",
+"path": "res://scr/dialouge.gd"
+}, {
 "base": "being_controller",
 "class": "enemy",
 "language": "GDScript",
@@ -73,6 +78,7 @@ _global_script_class_icons={
 "animal": "",
 "being_controller": "",
 "building": "",
+"dialouge": "",
 "enemy": "",
 "fade_animation": "",
 "fox": "",
@@ -95,6 +101,7 @@ config/icon="res://icon.png"
 signals="*res://scr/signals.gd"
 game_controller="*res://scr/game_controller.gd"
 mission_controller="*res://scr/mission_controller.gd"
+dialouge_controller="*res://scr/dialouge_controller.gd"
 
 [display]
 

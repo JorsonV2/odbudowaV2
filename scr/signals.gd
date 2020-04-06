@@ -17,6 +17,10 @@ func emit_collect_item(item):
 	
 func emit_update_equipment(equipment):
 	emit_signal("update_equipment", equipment)
+	emit_mission_task("resource", "gold")
+	emit_mission_task("resource", "wood")
+	emit_mission_task("resource", "rock")
+	emit_mission_task("resource", "leather")
 
 func emit_update_health(health):
 	emit_signal("update_health", health)

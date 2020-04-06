@@ -7,8 +7,10 @@ var right_spawn_point
 func _ready():
 	
 	signals.connect("spawn_player", self, "spawn_player")
-	left_spawn_point = get_node("left_spawn_point")
-	right_spawn_point = get_node("right_spawn_point")
+	if has_node("left_spawn_point"):
+		left_spawn_point = get_node("left_spawn_point")
+	if has_node("right_spawn_point"):
+		right_spawn_point = get_node("right_spawn_point")
 	if game_controller.player == null:
 		spawn_player()
 	else:
