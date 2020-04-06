@@ -20,7 +20,7 @@ func add_missions():
 	add_mission_to_table(new_mission)
 	current_mission = new_mission
 
-	new_mission = mission.new("meteor")
+	new_mission = mission.new()
 	new_mission.add_task("Udaj się na polowanie do lasu", "place", "forest", 1)
 	add_mission_to_table(new_mission)
 
