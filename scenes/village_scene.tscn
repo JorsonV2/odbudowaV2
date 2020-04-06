@@ -15,7 +15,6 @@
 [ext_resource path="res://gfx/Home/watchtower_ruins.png" type="Texture" id=13]
 [ext_resource path="res://gfx/Home/watchtower.png" type="Texture" id=14]
 [ext_resource path="res://sounds/music/main.ogg" type="AudioStream" id=15]
-[ext_resource path="res://scenes/trigger_dialouge_scene.tscn" type="PackedScene" id=16]
 [ext_resource path="res://sounds/sfx/seller.ogg" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -54,7 +53,8 @@ script = ExtResource( 6 )
 ruins_texture = ExtResource( 4 )
 building_texture = ExtResource( 5 )
 resources_to_build = [ 10, 10, 0, 0 ]
-building_name = "Kuźnia"
+resources_to_action = [ 0, 0, 0, 0 ]
+building_name = "Home"
 build_text = "Zbuduj go sobie"
 action_text = "Zrób coś"
 
@@ -321,7 +321,9 @@ z_index = -1
 script = ExtResource( 6 )
 ruins_texture = ExtResource( 10 )
 building_texture = ExtResource( 11 )
-building_name = "Dom"
+resources_to_build = [ 0, 0, 0, 0 ]
+resources_to_action = [ 0, 0, 0, 0 ]
+building_name = "Smithy"
 build_text = "Zbuduj go sobie"
 action_text = "Zrób coś"
 
@@ -590,7 +592,8 @@ script = ExtResource( 6 )
 ruins_texture = ExtResource( 13 )
 building_texture = ExtResource( 14 )
 resources_to_build = [ 100, 50, 50, 0 ]
-building_name = "Wieża"
+resources_to_action = [ 0, 0, 0, 0 ]
+building_name = "Tower"
 build_text = "Zbuduj go sobie"
 action_text = "Zrób coś"
 
@@ -865,15 +868,3 @@ volume_db = 16.0
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 volume_db = -18.0
-
-[node name="trigger_dialouge" parent="." instance=ExtResource( 16 )]
-position = Vector2( 195.75, 404.551 )
-dialouge_name = "talk_to_tradesman"
-
-[node name="dialouge_container" parent="trigger_dialouge" index="1"]
-margin_left = -146.813
-margin_top = -231.638
-margin_right = 153.187
-margin_bottom = -31.6379
-
-[editable path="trigger_dialouge"]
