@@ -12,6 +12,7 @@ func _ready():
 func add_missions():
 	var new_mission = mission.new("meteor")
 	new_mission.add_task("idz do jebanego lasu", "place", "forest", 1)
+	new_mission.add_task("Idź do lasu skórwysynie", "place", "forest", 1)
 	new_mission.active = true
 	add_mission_to_table(new_mission)
 	current_mission = new_mission

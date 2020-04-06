@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://gfx/dzida/run/run_07.png" type="Texture" id=1]
 [ext_resource path="res://scr/spear_man.gd" type="Script" id=2]
@@ -14,21 +14,16 @@
 [ext_resource path="res://gfx/dzida/hit/Dzikus_hit_03.png" type="Texture" id=12]
 [ext_resource path="res://gfx/dzida/hit/Dzikus_hit_05.png" type="Texture" id=13]
 [ext_resource path="res://gfx/dzida/hit/Dzikus_hit_01.png" type="Texture" id=14]
-[ext_resource path="res://gfx/dzida/stand/syand (6.png" type="Texture" id=15]
-[ext_resource path="res://gfx/dzida/stand/syand (1).png" type="Texture" id=16]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=17]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=18]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=19]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=20]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia — kopia.png" type="Texture" id=21]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia — kopia — kopia — kopia.png" type="Texture" id=22]
-[ext_resource path="res://gfx/dzida/stand/syand (4).png" type="Texture" id=23]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia.png" type="Texture" id=24]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia — kopia — kopia.png" type="Texture" id=25]
-[ext_resource path="res://gfx/dzida/stand/syand (1) — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=26]
-[ext_resource path="res://gfx/dzida/stand/syand (2).png" type="Texture" id=27]
-[ext_resource path="res://gfx/dzida/stand/syand (3).png" type="Texture" id=28]
-[ext_resource path="res://gfx/dzida/stand/syand (5.png" type="Texture" id=29]
+[ext_resource path="res://gfx/dzida/stand2/stand_05.png" type="Texture" id=15]
+[ext_resource path="res://gfx/dzida/stand2/stand_01.png" type="Texture" id=16]
+[ext_resource path="res://gfx/dzida/stand2/stand_07.png" type="Texture" id=17]
+[ext_resource path="res://gfx/dzida/stand2/stand_04.png" type="Texture" id=18]
+[ext_resource path="res://gfx/dzida/stand2/stand_02.png" type="Texture" id=19]
+[ext_resource path="res://gfx/dzida/stand2/stand_03.png" type="Texture" id=20]
+[ext_resource path="res://gfx/dzida/stand2/stand_06.png" type="Texture" id=21]
+[ext_resource path="res://gfx/dzida/stand2/stand_08.png" type="Texture" id=22]
+[ext_resource path="res://gfx/dzida/stand2/stand_10.png" type="Texture" id=23]
+[ext_resource path="res://gfx/dzida/stand2/stand_09.png" type="Texture" id=24]
 [ext_resource path="res://sounds/sfx/dead_savage.ogg" type="AudioStream" id=30]
 [ext_resource path="res://sounds/sfx/dmg_savage.ogg" type="AudioStream" id=31]
 [ext_resource path="res://sounds/sfx/atk_savage.ogg" type="AudioStream" id=32]
@@ -41,7 +36,7 @@ height = 49.4085
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 26 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 16 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "stand",
 "speed": 5.0

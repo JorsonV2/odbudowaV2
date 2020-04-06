@@ -162,6 +162,7 @@ func add_resoure(resource, val):
 
 func _on_tradesman_area_entered(area):
 	if area.is_in_group("player"):
+		$sfx_hmm.play()
 		update_buttons()
 		find_node("trade_info").show()
 		game_controller.in_game_ui.hide_missions()

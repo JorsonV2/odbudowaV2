@@ -16,6 +16,7 @@
 [ext_resource path="res://gfx/Home/watchtower.png" type="Texture" id=14]
 [ext_resource path="res://sounds/music/main.ogg" type="AudioStream" id=15]
 [ext_resource path="res://scenes/trigger_dialouge_scene.tscn" type="PackedScene" id=16]
+[ext_resource path="res://sounds/sfx/seller.ogg" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 64 )
@@ -856,6 +857,10 @@ position = Vector2( -186.413, 455.994 )
 
 [node name="tradesman" parent="." instance=ExtResource( 9 )]
 position = Vector2( 408.45, 455.443 )
+
+[node name="sfx_hmm" type="AudioStreamPlayer2D" parent="tradesman"]
+stream = ExtResource( 16 )
+volume_db = 16.0
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
