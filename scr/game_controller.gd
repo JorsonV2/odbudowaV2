@@ -14,6 +14,7 @@ var activated_buildings = []
 var meteor_fallen = false
 
 var player_scene
+var camera_scene
 var village_scene
 var forest_scene
 var deep_forest_scene
@@ -33,6 +34,7 @@ func _ready():
 	signals.connect("update_equipment", self, "update_equipment")
 	signals.connect("mission_trigger", self, "mission_trigger")
 	player_scene = preload("res://scenes/player_scene.tscn")
+	camera_scene = preload("res://scenes/camera_scene.tscn")
 	in_game_ui_scene = preload("res://scenes/in_game_ui.tscn")
 	village_scene = preload("res://scenes/village_scene.tscn")
 	forest_scene = preload("res://scenes/forest1_scene.tscn")
@@ -41,6 +43,10 @@ func _ready():
 	deep_forest_right_scene = preload("res://scenes/forest3_scene.tscn")
 	fade_animation_scene = preload("res://scenes/fade_animation_scene.tscn")
 	meteor_video_scene = preload("res://scenes/meteor_video_scene.tscn")
+	
+	var fade_animation = game_controller.fade_animation_scene.instance()
+	game_controller.fade_animation = fade_animation
+	get_tree().get_root().call_deferred("add_child", fade_animation)
 	
 	random.randomize()
 	pass # Replace with function body.
@@ -82,6 +88,10 @@ func start_the_game():
 	
 	game_controller.player.position = get_tree().get_root().get_node("map/start_position").position
 	get_tree().get_root().get_node("map/start_trigger").start_dialouge()
+	
+	pass
+	
+func go_to_lobby():
 	
 	pass
 

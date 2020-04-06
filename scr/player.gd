@@ -147,6 +147,11 @@ func take_damage(val):
 	
 func dead():
 	game_controller.player = null
+	$Camera2D.current = false
+	var new_camera = game_controller.camera_scene.instance()
+	new_camera.current = true
+	new_camera.position = position
+	get_tree().get_root().add_child(new_camera)
 	.dead()
 	pass	
 	

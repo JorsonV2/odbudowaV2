@@ -26,7 +26,7 @@ func _process(delta):
 			current_spawn_time = spawn_time
 			if player == null:
 				player = game_controller.player
-			else:
+			elif get_tree().get_root().has_node("player"):
 				if global_position.distance_to(player.global_position) - (get_viewport().size.x / 2) - (spawn_distance) > 0:
 					#jeżeli brakuje mobów to je spawni
 					if current_spawn_count < max_spawn_count:

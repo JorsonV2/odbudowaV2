@@ -9,6 +9,7 @@ signal spawn_player()
 signal mission_trigger(trigger)
 signal mission_completed()
 signal add_map()
+signal dead()
 
 func _ready():
 	pass
@@ -38,6 +39,10 @@ func emit_spawn_player():
 	
 func emit_mission_trigger(trigger):
 	emit_signal("mission_trigger", trigger)
+	pass
+	
+func emit_dead():
+	emit_signal("dead")
 	pass
 
 func emit_mission_complete():

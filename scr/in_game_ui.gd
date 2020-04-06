@@ -15,6 +15,7 @@ func _ready():
 	signals.connect("update_health", self, "update_health")
 	signals.connect("update_current_mission", self, "update_current_mission")
 	signals.connect("mission_completed", self, "mission_completed")
+	signals.connect("dead", self, "player_dead")
 	animation_player = $animation_player
 	mission_notification = find_node("mission_notification")
 #	$right_container.mouse_filter = 1
@@ -78,7 +79,14 @@ func show_missions():
 	find_node("missions_box").show()
 	pass
 
+func player_dead():
+	
+	pass
 
 func _on_Button_pressed():
 	save_game.save_the_game()
+	pass # Replace with function body.
+
+func _on_dead_button_pressed():
+	game_controller.go_to_lobby()
 	pass # Replace with function body.

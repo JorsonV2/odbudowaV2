@@ -39,25 +39,25 @@ animations = [ {
 "name": "shot",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "fall",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "stand",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "run",
-"speed": 15.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "fall",
-"speed": 10.0
+"frames": [ ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
 } ]
 
 [node name="player" type="KinematicBody2D"]

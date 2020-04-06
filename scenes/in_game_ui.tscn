@@ -115,7 +115,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="resourse_container"]
-margin_right = 100.0
+margin_right = 94.0
 margin_bottom = 26.0
 
 [node name="gold_label" type="Label" parent="resourse_container/HBoxContainer"]
@@ -133,7 +133,7 @@ text = "0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="resourse_container"]
 margin_top = 30.0
-margin_right = 100.0
+margin_right = 94.0
 margin_bottom = 56.0
 
 [node name="wood_label" type="Label" parent="resourse_container/HBoxContainer2"]
@@ -151,7 +151,7 @@ text = "0"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="resourse_container"]
 margin_top = 60.0
-margin_right = 100.0
+margin_right = 94.0
 margin_bottom = 86.0
 
 [node name="rock_label" type="Label" parent="resourse_container/HBoxContainer3"]
@@ -169,7 +169,7 @@ text = "0"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="resourse_container"]
 margin_top = 90.0
-margin_right = 100.0
+margin_right = 94.0
 margin_bottom = 116.0
 
 [node name="leather_label" type="Label" parent="resourse_container/HBoxContainer4"]
@@ -202,4 +202,53 @@ text = "ZAPISZ GRĘ"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="dead_panel" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -154.0
+margin_right = 176.0
+margin_bottom = 154.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="dead_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 345.0
+margin_bottom = 301.0
+
+[node name="Label" type="Label" parent="dead_panel/VBoxContainer"]
+margin_right = 338.0
+margin_bottom = 258.0
+custom_fonts/font = ExtResource( 2 )
+text = "Niestety ale
+wzieło ci się i umarło.
+
+Muszisz rozpocząć grę od nowa.
+
+Twój zapis gry został usunięty.
+
+Dzięki za granie
+ i zapraszamy ponownie"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dead_button" type="Button" parent="dead_panel/VBoxContainer"]
+margin_left = 151.0
+margin_top = 262.0
+margin_right = 187.0
+margin_bottom = 294.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "OK"
 [connection signal="pressed" from="save_button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="dead_panel/VBoxContainer/dead_button" to="." method="_on_dead_button_pressed"]
