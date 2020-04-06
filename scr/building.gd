@@ -25,7 +25,7 @@ func _ready():
 		
 		speech_player.volume_db = -16
 		add_child(speech_player)
-	if game_controller.buildings_builded:
+	if not game_controller.meteor_fallen:
 		find_node("Sprite").texture = building_texture
 		
 	else:

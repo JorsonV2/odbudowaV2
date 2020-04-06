@@ -72,3 +72,8 @@ func hide_missions():
 func show_missions():
 	find_node("missions_box").show()
 	pass
+
+
+func _on_Button_pressed():
+	save_game.save_the_game()
+	pass # Replace with function body.

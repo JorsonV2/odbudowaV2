@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/backgroud_village_scene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/rabbit_scene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/fox_scene.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/basic_font_50.tres" type="DynamicFont" id=5]
+
+[node name="lobby" type="Node2D"]
+
+[node name="background" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 128 )
+collision_layer = 7
+collision_mask = 7
+format = 1
+tile_data = PoolIntArray( 327678, 12, 0, 327679, 12, 0, 262144, 12, 0, 262145, 17, 0, 262158, 16, 0, 262159, 12, 0, 262160, 12, 0, 262161, 12, 0, 393214, 21, 0, 393215, 21, 0, 327680, 21, 0, 327681, 20, 0, 327694, 20, 0, 327695, 21, 0, 327696, 21, 0, 327697, 21, 0, 458750, 21, 0, 458751, 21, 0, 393216, 21, 0, 393217, 20, 0, 393223, 16, 0, 393224, 17, 0, 393230, 20, 0, 393231, 21, 0, 393232, 21, 0, 393233, 21, 0, 524286, 21, 0, 524287, 21, 0, 458752, 21, 0, 458753, 20, 0, 458754, 12, 0, 458755, 12, 0, 458756, 12, 0, 458757, 12, 0, 458758, 12, 0, 458759, 20, 0, 458760, 20, 0, 458761, 12, 0, 458762, 12, 0, 458763, 12, 0, 458764, 12, 0, 458765, 12, 0, 458766, 20, 0, 458767, 21, 0, 458768, 21, 0, 458769, 21, 0, 589822, 21, 0, 589823, 21, 0, 524288, 21, 0, 524289, 21, 0, 524290, 21, 0, 524291, 21, 0, 524292, 21, 0, 524293, 21, 0, 524294, 21, 0, 524295, 21, 0, 524296, 21, 0, 524297, 21, 0, 524298, 21, 0, 524299, 21, 0, 524300, 21, 0, 524301, 21, 0, 524302, 21, 0, 524303, 21, 0, 524304, 21, 0, 524305, 21, 0, 655358, 21, 0, 655359, 21, 0, 589824, 21, 0, 589825, 21, 0, 589826, 21, 0, 589827, 21, 0, 589828, 21, 0, 589829, 21, 0, 589830, 21, 0, 589831, 21, 0, 589832, 21, 0, 589833, 21, 0, 589834, 21, 0, 589835, 21, 0, 589836, 21, 0, 589837, 21, 0, 589838, 21, 0, 589839, 21, 0, 589840, 21, 0, 589841, 21, 0 )
+
+[node name="KinematicBody2D3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 363.844, 398.272 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 643.054, 420.273 )
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 201.054, 416.273 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+margin_top = -100.0
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="start_button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+margin_left = 463.0
+margin_top = 278.0
+margin_right = 561.0
+margin_bottom = 325.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "Start"
+
+[node name="load_button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+margin_left = 468.0
+margin_top = 375.0
+margin_right = 556.0
+margin_bottom = 422.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "Load"

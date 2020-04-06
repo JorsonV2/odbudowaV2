@@ -11,7 +11,7 @@ var player_equipment = [0,0,0,0]
 var game_stop = false
 var player_destination
 var activated_buildings = []
-var buildings_builded = true
+var meteor_fallen = false
 
 var player_scene
 var village_scene
@@ -41,6 +41,7 @@ func _ready():
 	deep_forest_right_scene = preload("res://scenes/forest3_scene.tscn")
 	fade_animation_scene = preload("res://scenes/fade_animation_scene.tscn")
 	meteor_video_scene = preload("res://scenes/meteor_video_scene.tscn")
+	
 	random.randomize()
 	pass # Replace with function body.
 
@@ -54,7 +55,7 @@ func mission_trigger(trigger):
 	pass
 	
 func play_meteor_video():
-	game_controller.buildings_builded = false
+	meteor_fallen = true
 	var meteor_video : CanvasLayer = meteor_video_scene.instance()
 	fade_animation.show()
 	fade_animation.play_fade()

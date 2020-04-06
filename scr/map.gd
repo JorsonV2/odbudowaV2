@@ -1,5 +1,7 @@
 extends Node2D
 
+export var map_name = "map_name"
+
 var left_spawn_point
 var right_spawn_point
 

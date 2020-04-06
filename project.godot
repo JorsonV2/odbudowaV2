@@ -49,7 +49,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scr/item.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "mission",
 "language": "GDScript",
 "path": "res://scr/misssion.gd"
@@ -102,6 +102,7 @@ signals="*res://scr/signals.gd"
 game_controller="*res://scr/game_controller.gd"
 mission_controller="*res://scr/mission_controller.gd"
 dialouge_controller="*res://scr/dialouge_controller.gd"
+save_game="*res://scr/save_game.gd"
 
 [display]
 

@@ -12,7 +12,7 @@ var leather_panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if game_controller.buildings_builded:
+	if not game_controller.meteor_fallen:
 		hide()
 		set_deferred("monitorable", false)
 		set_deferred("monitoring", false)

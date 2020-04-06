@@ -2,6 +2,7 @@ extends Node
 
 var dialouges = {}
 var dialouge_directory = "res://dialouges"
+var files_loaded = false
 
 func _ready():
 	create_dialouges()
@@ -12,6 +13,7 @@ func create_dialouges():
 	for file_name in dialouge_files:
 		create_dialouge_from_file(file_name)
 		pass
+	files_loaded = true
 	pass
 	
 func create_dialouge_from_file(file_name : String):

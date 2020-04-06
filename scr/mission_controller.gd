@@ -1,7 +1,9 @@
 extends Node
 
 var current_mission : mission
+var current_mission_id = 0
 var missions = []
+
 
 func _ready():
 	signals.connect("mission_task", self, "mission_task")
@@ -16,10 +18,6 @@ func add_missions():
 	new_mission.active = true
 	add_mission_to_table(new_mission)
 	current_mission = new_mission
-	
-	new_mission = mission.new("meteor")
-	new_mission.add_task("Zabij 1 jebanego królika", "kill", "rabbit", 1)
-	add_mission_to_table(new_mission)
 	
 	new_mission = mission.new()
 	new_mission.add_task("Sprawdz kurwa co się stało w mieście", "place", "village", 1)
@@ -58,6 +56,7 @@ func mission_task(type, object):
 				current_mission = null
 			else:
 				current_mission = current_mission.next_mission
+				current_mission_id += 1
 			signals.emit_update_current_mission()
 			signals.emit_update_equipment(game_controller.player_equipment)
 	pass

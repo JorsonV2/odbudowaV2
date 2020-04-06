@@ -9,12 +9,10 @@ var dialouge_count = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$dialouge_container.hide()
-	#signals.connect("mission_completed", self, "update_trigger_state")
 	if dialouge_name == "":
 		disable_trigger()
 	else:
 		proper_dialouge = dialouge_controller.dialouges[dialouge_name]
-	#update_trigger_state()
 	pass
 	
 func update_trigger_state():
@@ -76,6 +74,8 @@ func next_statement():
 
 func _on_trigger_dialouge_area_entered(area):
 	if area.is_in_group("player") and active:
+		if proper_dialouge != null:
+			proper_dialouge = dialouge_controller.dialouges[dialouge_name]
 		if mission_controller.current_mission.tasks[0].type == "talk":
 			if mission_controller.current_mission.tasks[0].object == proper_dialouge.object:
 				start_dialouge()

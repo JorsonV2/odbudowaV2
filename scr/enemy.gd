@@ -83,26 +83,33 @@ func move():
 			previous_jump_position_y = global_position.y
 			movement.y = -jump_force
 			jumped = true
+	
+	if player != null:		
+		var direction_to_player = global_position.direction_to(player.global_position)
+		if global_position.distance_to(player.global_position) < field_of_view:
+			if is_patroling:
+				is_patroling = false
+				patrol_stop = false
+			start_move(direction_to_player)
+			agro = false
 			
-	var direction_to_player = global_position.direction_to(player.global_position)
-	if global_position.distance_to(player.global_position) < field_of_view:
-		if is_patroling:
-			is_patroling = false
-			patrol_stop = false
-		start_move(direction_to_player)
-		agro = false
-		
-	elif agro:
-		if is_patroling:
-			is_patroling = false
-			patrol_stop = false
-		start_move(direction_to_player)
-		
-	elif running_away:
-		start_move(direction_to_player)
+		elif agro:
+			if is_patroling:
+				is_patroling = false
+				patrol_stop = false
+			start_move(direction_to_player)
+			
+		elif running_away:
+			start_move(direction_to_player)
+		else:
+			if is_patroling:
+				patrol()
+			else:
+				is_patroling = true
+				patrol_position = global_position
 	else:
 		if is_patroling:
-			patrol()
+				patrol()
 		else:
 			is_patroling = true
 			patrol_position = global_position
@@ -196,12 +203,13 @@ func stop_hitting_player():
 	pass	
 	
 func check_if_player_overlaps():
-	if $Area2D.overlaps_area(player.get_node("Area2D")) and dangerous:
-		active_move = false
-		if current_next_hit_time > 0:
-			current_next_hit_time -= time_delta
-		else:
-			hit_player()
+	if player != null:
+		if $Area2D.overlaps_area(player.get_node("Area2D")) and dangerous:
+			active_move = false
+			if current_next_hit_time > 0:
+				current_next_hit_time -= time_delta
+			else:
+				hit_player()
 	pass
 	
 func animation_finished():
