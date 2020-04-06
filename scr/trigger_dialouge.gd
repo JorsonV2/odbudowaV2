@@ -2,6 +2,7 @@ extends Area2D
 
 export var dialouge_name = ""
 
+var active = true
 var proper_dialouge
 var dialouge_count = 0
 
@@ -9,7 +10,10 @@ var dialouge_count = 0
 func _ready():
 	$dialouge_container.hide()
 	#signals.connect("mission_completed", self, "update_trigger_state")
-	proper_dialouge = dialouge_controller.dialouges[dialouge_name]
+	if dialouge_name == "":
+		disable_trigger()
+	else:
+		proper_dialouge = dialouge_controller.dialouges[dialouge_name]
 	#update_trigger_state()
 	pass
 	
@@ -37,6 +41,7 @@ func enable_trigger():
 	pass
 
 func disable_trigger():
+	active = false
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
 	pass
@@ -70,7 +75,7 @@ func next_statement():
 	pass
 
 func _on_trigger_dialouge_area_entered(area):
-	if area.is_in_group("player"):
+	if area.is_in_group("player") and active:
 		if mission_controller.current_mission.tasks[0].type == "talk":
 			if mission_controller.current_mission.tasks[0].object == proper_dialouge.object:
 				start_dialouge()
