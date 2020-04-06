@@ -13,10 +13,21 @@ export var build_text = "Build text"
 export var action_text = "Action text"
 
 var active = false
+var speech_player
 
 func _ready():
+	speech_player = AudioStreamPlayer.new()
+	var audio_file = "res://sounds/sfx/building.ogg"
+	if File.new().file_exists(audio_file):
+		var sfx = load(audio_file) 
+		sfx.set_loop(false)
+		speech_player.stream = sfx
+		
+		speech_player.volume_db = -16
+		add_child(speech_player)
 	if game_controller.buildings_builded:
 		find_node("Sprite").texture = building_texture
+		
 	else:
 		connect("area_entered", self, "building_entered")
 		connect("area_exited", self, "building_exited")
@@ -108,6 +119,7 @@ func action():
 	pass
 	
 func build():
+	speech_player.play()
 	activate_building()
 	hide_build_info()
 	show_action_info()
@@ -116,6 +128,7 @@ func build():
 	for e in range(0, resources_to_build.size()):
 		game_controller.player_equipment[e] -= resources_to_build[e]
 	signals.emit_update_equipment(game_controller.player_equipment)
+	
 	pass
 	
 func update_build_requirements():
