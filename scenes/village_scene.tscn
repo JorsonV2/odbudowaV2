@@ -102,6 +102,8 @@ z_index = -1
 script = ExtResource( 48 )
 ruins_texture = ExtResource( 4 )
 building_texture = ExtResource( 5 )
+resources_to_build = [ 25, 25, 50, 25 ]
+resources_to_action = [ 100, 50, 50, 25 ]
 building_name = "Kuźnia"
 
 [node name="Sprite" type="Sprite" parent="smithy"]
@@ -377,6 +379,7 @@ script = ExtResource( 19 )
 ruins_texture = ExtResource( 10 )
 building_texture = ExtResource( 11 )
 resources_to_build = [ 10, 10, 10, 0 ]
+resources_to_action = [ 100, 50, 50, 100 ]
 building_name = "Dom"
 build_text = "Pomoże ci zregenerować \\nan życie oraz je zwiększyć"
 action_text = "Możesz dowoli regenerować\\nan życie ale za jego zwiększenie\\nan musisz już płacić"
@@ -675,6 +678,8 @@ z_index = -1
 script = ExtResource( 6 )
 ruins_texture = ExtResource( 13 )
 building_texture = ExtResource( 14 )
+resources_to_build = [ 50, 50, 100, 10 ]
+resources_to_action = [ 100, 100, 200, 50 ]
 building_name = "Wieża"
 
 [node name="Sprite" type="Sprite" parent="tower"]
@@ -705,6 +710,7 @@ __meta__ = {
 }
 
 [node name="building_name" type="Label" parent="tower/Node2D/building_info"]
+margin_right = 410.0
 margin_right = 484.0
 margin_bottom = 41.0
 custom_fonts/font = SubResource( 2 )
@@ -714,6 +720,14 @@ valign = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="tower/Node2D/building_info"]
 margin_top = 51.0
+margin_right = 410.0
+margin_bottom = 181.0
+
+[node name="build_info" type="HBoxContainer" parent="tower/Node2D/building_info/CenterContainer"]
+visible = false
+margin_left = 143.0
+margin_top = 50.0
+margin_right = 267.0
 margin_right = 484.0
 margin_bottom = 181.0
 
@@ -833,6 +847,8 @@ custom_fonts/font = ExtResource( 18 )
 text = "Wybuduj"
 
 [node name="action_info" type="HBoxContainer" parent="tower/Node2D/building_info/CenterContainer"]
+margin_right = 410.0
+margin_bottom = 130.0
 visible = false
 margin_left = 188.0
 margin_top = 50.0
@@ -952,6 +968,8 @@ position = Vector2( -31.9999, 461.228 )
 
 [node name="tradesman" parent="." instance=ExtResource( 9 )]
 position = Vector2( 408.45, 455.443 )
+cost_for_gold = [ 2, 2, 5 ]
+cost_for_wood = [ 1, 1, 1 ]
 
 [node name="sfx_hmm" type="AudioStreamPlayer2D" parent="tradesman"]
 stream = ExtResource( 16 )
@@ -991,6 +1009,8 @@ scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
 animation = "stand"
 frame = 17
+frame = 21
+frame = 13
 playing = true
 script = ExtResource( 45 )
 

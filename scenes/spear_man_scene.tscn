@@ -62,7 +62,7 @@ health = 60
 movement_speed = 190
 enemy_name = "spear_man"
 field_of_view = 400
-equipment_amount = [ 10, 5, 5, 1 ]
+equipment_amount = [ 10, 4, 4, 1 ]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
