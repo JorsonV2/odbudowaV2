@@ -80,7 +80,8 @@ func show_missions():
 	pass
 
 func player_dead():
-	
+	$dead_panel.show()
+	$save_button.disabled = true
 	pass
 
 func _on_Button_pressed():

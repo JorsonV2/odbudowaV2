@@ -151,7 +151,8 @@ func dead():
 	var new_camera = game_controller.camera_scene.instance()
 	new_camera.current = true
 	new_camera.position = position
-	get_tree().get_root().add_child(new_camera)
+	get_tree().get_root().get_node("map").add_child(new_camera)
+	signals.emit_dead()
 	.dead()
 	pass	
 	

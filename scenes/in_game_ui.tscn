@@ -204,6 +204,7 @@ __meta__ = {
 }
 
 [node name="dead_panel" type="PanelContainer" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

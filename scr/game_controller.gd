@@ -20,6 +20,7 @@ var forest_scene
 var deep_forest_scene
 var forest_right_scene
 var deep_forest_right_scene
+var lobby_scene
 
 var fade_animation_scene
 var meteor_video_scene
@@ -43,9 +44,10 @@ func _ready():
 	deep_forest_right_scene = preload("res://scenes/forest3_scene.tscn")
 	fade_animation_scene = preload("res://scenes/fade_animation_scene.tscn")
 	meteor_video_scene = preload("res://scenes/meteor_video_scene.tscn")
+	lobby_scene = preload("res://scenes/lobby_scene.tscn")
 	
-	var fade_animation = game_controller.fade_animation_scene.instance()
-	game_controller.fade_animation = fade_animation
+	var fade_animation_instance = fade_animation_scene.instance()
+	fade_animation = fade_animation_instance
 	get_tree().get_root().call_deferred("add_child", fade_animation)
 	
 	random.randomize()
@@ -92,7 +94,17 @@ func start_the_game():
 	pass
 	
 func go_to_lobby():
-	
+	var lobby = lobby_scene.instance()
+	fade_animation.show()
+	fade_animation.play_fade()
+	get_tree().get_root().get_node("map").hide()
+	in_game_ui.queue_free()
+	yield(fade_animation.animation_player, "animation_finished")
+	fade_animation.play_backwards_fade()
+	get_tree().get_root().call_deferred("add_child", lobby)
+	yield(fade_animation.animation_player, "animation_finished")
+	fade_animation.hide()
+	get_tree().get_root().get_node("map").queue_free()
 	pass
 
 
