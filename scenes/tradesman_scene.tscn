@@ -66,7 +66,7 @@ cost_for_leather = [ 1, 1, 1 ]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "stand"
-frame = 28
+frame = 37
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
