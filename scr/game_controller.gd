@@ -8,6 +8,7 @@ var time
 var day = true
 var random = RandomNumberGenerator.new()
 var player_equipment = [0,0,0,0]
+var player_dead = false
 var game_stop = false
 var player_destination
 var activated_buildings = []
@@ -123,6 +124,7 @@ func restart_game_controller():
 	meteor_fallen = false
 	blacksmith_rescued = false
 	guard_rescued = false
+	player_dead = false
 	pass
 
 

@@ -67,10 +67,10 @@ func add_missions():
 	add_mission_to_table(new_mission)
 	
 	new_mission = mission.new()
-	new_mission.add_task("Uzbieraj 10 złota", "resource", "gold", 10)
-	new_mission.add_task("Uzbieraj 10 drewna", "resource", "wood", 10)
-	new_mission.add_task("Uzbieraj 10 kamienia", "resource", "rock", 10)
-	new_mission.add_task("Uzbieraj 10 skór", "resource", "leather", 10)
+	new_mission.add_task("Uzbieraj 25 złota", "resource", "gold", 25)
+	new_mission.add_task("Uzbieraj 25 drewna", "resource", "wood", 25)
+	new_mission.add_task("Uzbieraj 50 kamienia", "resource", "rock", 50)
+	new_mission.add_task("Uzbieraj 25 skór", "resource", "leather", 25)
 	add_mission_to_table(new_mission)
 	
 	new_mission = mission.new()
@@ -90,9 +90,9 @@ func add_missions():
 	add_mission_to_table(new_mission)
 	
 	new_mission = mission.new()
-	new_mission.add_task("Uzbieraj 10 złota", "resource", "gold", 10)
-	new_mission.add_task("Uzbieraj 10 drewna", "resource", "wood", 10)
-	new_mission.add_task("Uzbieraj 10 kamienia", "resource", "rock", 10)
+	new_mission.add_task("Uzbieraj 50 złota", "resource", "gold", 50)
+	new_mission.add_task("Uzbieraj 50 drewna", "resource", "wood", 50)
+	new_mission.add_task("Uzbieraj 100 kamienia", "resource", "rock", 100)
 	new_mission.add_task("Uzbieraj 10 skór", "resource", "leather", 10)
 	add_mission_to_table(new_mission)
 	

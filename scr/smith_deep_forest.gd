@@ -12,5 +12,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if mission_controller.current_mission != null:
+		if mission_controller.current_mission.tasks[0].object == "smith":
+			show()
+		else:
+			hide()
+	else:
+		hide()
+	pass

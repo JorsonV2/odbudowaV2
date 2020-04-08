@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/backgroud_village_scene.tscn" type="PackedScene" id=2]
@@ -6,6 +6,42 @@
 [ext_resource path="res://scenes/fox_scene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/basic_font_50.tres" type="DynamicFont" id=5]
 [ext_resource path="res://scr/lobby.gd" type="Script" id=6]
+[ext_resource path="res://gfx/Logo.png" type="Texture" id=7]
+[ext_resource path="res://sounds/music/main.ogg" type="AudioStream" id=8]
+[ext_resource path="res://scenes/tradesman_animated_sprite_scene.tscn" type="PackedScene" id=9]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=10]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia.png" type="Texture" id=11]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=12]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia.png" type="Texture" id=13]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=14]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia.png" type="Texture" id=15]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_03.png" type="Texture" id=16]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_04.png" type="Texture" id=17]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_05.png" type="Texture" id=18]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_02.png" type="Texture" id=19]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=20]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_07.png" type="Texture" id=21]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_10.png" type="Texture" id=22]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_09.png" type="Texture" id=23]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=24]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=25]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=26]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=27]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia.png" type="Texture" id=28]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01.png" type="Texture" id=29]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand.png" type="Texture" id=30]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_01 — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia — kopia.png" type="Texture" id=31]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_11.png" type="Texture" id=32]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_06.png" type="Texture" id=33]
+[ext_resource path="res://gfx/Npc's/Smith/stand/stand_08.png" type="Texture" id=34]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 30 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 33 ), ExtResource( 21 ), ExtResource( 34 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+} ]
 
 [node name="lobby" type="Node2D"]
 script = ExtResource( 6 )
@@ -66,8 +102,35 @@ custom_fonts/font = ExtResource( 5 )
 disabled = true
 text = "Load"
 
+[node name="logo" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="animated_sprite" parent="." instance=ExtResource( 9 )]
+position = Vector2( 57.7019, 200.174 )
+frame = 27
+
+[node name="smith" type="AnimatedSprite" parent="."]
+position = Vector2( 954.478, 223.405 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 1 )
+animation = "stand"
+frame = 17
+playing = true
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/load_button" to="." method="_on_load_button_pressed"]

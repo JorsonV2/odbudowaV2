@@ -1,0 +1,54 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_03.png" type="Texture" id=1]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_10.png" type="Texture" id=2]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (14).png" type="Texture" id=3]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (5).png" type="Texture" id=4]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09.png" type="Texture" id=5]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (8).png" type="Texture" id=6]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_04.png" type="Texture" id=7]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (19).png" type="Texture" id=8]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_17.png" type="Texture" id=9]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (2).png" type="Texture" id=10]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (16).png" type="Texture" id=11]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_08.png" type="Texture" id=12]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_11.png" type="Texture" id=13]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (17).png" type="Texture" id=14]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (4).png" type="Texture" id=15]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia.png" type="Texture" id=16]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (10).png" type="Texture" id=17]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (13).png" type="Texture" id=18]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (18).png" type="Texture" id=19]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_06.png" type="Texture" id=20]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_01.png" type="Texture" id=21]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (11).png" type="Texture" id=22]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (15).png" type="Texture" id=23]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (20).png" type="Texture" id=24]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (12).png" type="Texture" id=25]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_13.png" type="Texture" id=26]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_16.png" type="Texture" id=27]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_15.png" type="Texture" id=28]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_14.png" type="Texture" id=29]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_12.png" type="Texture" id=30]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_07.png" type="Texture" id=31]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (6).png" type="Texture" id=32]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_05.png" type="Texture" id=33]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (3).png" type="Texture" id=34]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (7).png" type="Texture" id=35]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_02.png" type="Texture" id=36]
+[ext_resource path="res://gfx/Npc's/Shop_man_anim/shop_man_09 — kopia (9).png" type="Texture" id=37]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 36 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 34 ), ExtResource( 15 ), ExtResource( 4 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 6 ), ExtResource( 37 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 3 ), ExtResource( 23 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 8 ), ExtResource( 24 ), ExtResource( 16 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 34 ), ExtResource( 15 ), ExtResource( 4 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 6 ), ExtResource( 37 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 3 ), ExtResource( 23 ), ExtResource( 11 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "stand",
+"speed": 10.0
+} ]
+
+[node name="animated_sprite" type="AnimatedSprite"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "stand"
+frame = 28
+playing = true

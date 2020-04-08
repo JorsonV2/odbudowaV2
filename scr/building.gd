@@ -125,6 +125,10 @@ func activate_building():
 
 func action():
 	signals.emit_mission_task("action", building_name)
+	for e in range(0, resources_to_action.size()):
+		game_controller.player.equipment[e] -= resources_to_action[e]
+	signals.emit_update_equipment(game_controller.player.equipment)
+	show_action_info()
 	pass
 	
 func build():

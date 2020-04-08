@@ -44,8 +44,9 @@ func update_equipment():
 #				find_node("leather_amound").text = String(equipment[e])
 	#print_debug("ui ", equipment)
 func update_health():
-	find_node("health_bar").value = game_controller.player.health
-	find_node("health_bar").max_value = game_controller.player.max_health
+	if game_controller.player != null:
+		find_node("health_bar").value = game_controller.player.health
+		find_node("health_bar").max_value = game_controller.player.max_health
 	
 func update_current_mission():
 	var container = find_node("missions_container")

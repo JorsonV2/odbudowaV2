@@ -193,7 +193,7 @@ func hit_player():
 			$sfx_atk.play()
 		active_move = false
 		hitting = true
-		player.take_damage(2)
+		player.take_damage(damage)
 		current_next_hit_time = next_hit_time
 	pass
 	

@@ -136,18 +136,19 @@ func collected_item(item):
 	
 func take_damage(val):
 	.take_damage(val)
+	signals.emit_update_health()
 	
 	$sfx_dmg.play()
 	immute = true
 	
 	current_immute_time = immute_time
-	signals.emit_update_health()
 	pass
 	
 func dead():
 	game_controller.player = null
 	$Camera2D.current = false
 	var new_camera = game_controller.camera_scene.instance()
+	new_camera.offset.y = -100
 	new_camera.current = true
 	new_camera.position = position
 	get_tree().get_root().get_node("map").add_child(new_camera)
@@ -157,6 +158,7 @@ func dead():
 		var dir = Directory.new()
 		dir.remove("user://villagereborn.save")
 		pass
+	game_controller.player_dead = true
 	.dead()
 	pass	
 	

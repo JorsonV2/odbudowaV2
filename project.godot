@@ -92,9 +92,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="odbudowa"
+config/name="Village Reborn"
+config/description="Village Reborn"
 run/main_scene="res://scenes/lobby_scene.tscn"
+boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
+config/macos_native_icon="res://AnyConv.com__icon.icns"
+config/windows_native_icon="res://icon_F1t_icon.ico"
 
 [autoload]
 

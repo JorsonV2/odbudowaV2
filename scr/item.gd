@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	if linear_velocity.y == 0:
 		fallen = true
-	if player != null and fallen:
+	if player != null and fallen and not game_controller.player_dead:
 		if global_position.distance_to(player.global_position) < drag_distance:
 			linear_velocity = global_position.direction_to(player.global_position) * 300
 	pass
